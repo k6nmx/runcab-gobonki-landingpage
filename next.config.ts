@@ -1,7 +1,14 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
+import withNextIntl from 'next-intl/plugin';
 
-export default nextConfig;
+const withNextIntlConfigured = withNextIntl('./src/i18n.ts');
+
+/** @type {import('next').NextConfig} */
+const nextConfig: NextConfig = {
+  images: {
+    domains: ['localhost'],
+  },
+}
+
+export default withNextIntlConfigured(nextConfig);

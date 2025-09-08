@@ -1,0 +1,20 @@
+{
+  "navigation": {
+    "features": "Funktionen",
+    "testimonials": "Bewertungen",
+    "forCustomers": "Für Kunden",
+    "forBusinesses": "Für Unternehmen"
+  },
+  "hero": {
+    "customer": {
+      "title": "Ihr Handy = Ihre Treuekarten",
+      "subtitle": "Verlieren Sie nie wieder Belohnungen. Jeder Kauf zählt. Funktioniert in Restaurants, Friseuren, Cafés - ohne Downloads.",
+      "cta": "Teilnehmende Unternehmen finden"
+    },
+    "business": {
+      "title": "Verwandeln Sie Fremde sofort in Stammkunden",
+      "subtitle": "Einrichtung in 2 Minuten, alles anpassbar, keine monatlichen Gebühren. Das Treueprogramm, das wirklich für kleine Unternehmen funktioniert.",
+      "cta": "Starten Sie Ihr kostenloses Treueprogramm"
+    }
+  }
+}
