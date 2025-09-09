@@ -1,0 +1,20 @@
+{
+  "navigation": {
+    "features": "Features",
+    "testimonials": "Testimonials",
+    "forCustomers": "For Customers",
+    "forBusinesses": "For Businesses"
+  },
+  "hero": {
+    "customer": {
+      "title": "Your phone = Your loyalty cards",
+      "subtitle": "Never lose rewards again. Every purchase counts. Works at restaurants, barbers, cafes - no downloads needed.",
+      "cta": "Find participating businesses"
+    },
+    "business": {
+      "title": "Turn strangers into regulars instantly",
+      "subtitle": "Setup in 2 minutes, customize everything, zero monthly fees. The loyalty program that actually works for small businesses.",
+      "cta": "Start your free loyalty program"
+    }
+  }
+}
