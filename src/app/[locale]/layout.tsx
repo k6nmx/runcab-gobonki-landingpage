@@ -5,7 +5,7 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import "@/app/globals.css";
+import "../globals.css";
 
 const locales = ["en", "de"];
 

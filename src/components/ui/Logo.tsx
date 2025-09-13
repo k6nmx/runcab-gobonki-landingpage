@@ -12,8 +12,8 @@ export default function Logo({
   src,
   alt = "Logo",
   width = 120,
-  height = 40,
-  className = "h-10 w-auto",
+  height = 32,
+  className = "h-7 w-auto",
 }: LogoProps) {
   return (
     <div className="flex-shrink-0">

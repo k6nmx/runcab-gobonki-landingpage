@@ -1,6 +1,9 @@
 {
   "navigation": {
     "features": "Features",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact",
     "testimonials": "Testimonials",
     "forCustomers": "For Customers",
     "forBusinesses": "For Businesses"
