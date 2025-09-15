@@ -1,16 +1,19 @@
-import { getRequestConfig, GetRequestConfigParams, RequestConfig } from "next-intl/server";
+import { getRequestConfig, GetRequestConfigParams, RequestConfig } from 'next-intl/server';
 
-const locales = ["en", "de"] as const;
-type Locale = typeof locales[number];
+export const locales = ['en', 'de'] as const;
+export type AppLocale = typeof locales[number];
+export const defaultLocale: AppLocale = 'en';
+export const localePrefix = 'always';
 
-function isLocale(value: unknown): value is Locale {
-  return typeof value === "string" && (locales as readonly string[]).includes(value);
-}
-
-export default getRequestConfig(async ({ locale }: GetRequestConfigParams): Promise<RequestConfig> => {
-  const safeLocale: Locale = isLocale(locale) ? locale : "en";
-  return {
-    locale: safeLocale,
-    messages: (await import(`../messages/${safeLocale}.json`)).default
-  };
-});
+export default getRequestConfig(
+  async ({ locale }: GetRequestConfigParams): Promise<RequestConfig> => {
+    const safeLocale: AppLocale = locales.includes(locale as AppLocale)
+      ? (locale as AppLocale)
+      : defaultLocale;
+    const messages = (await import(`../messages/${safeLocale}.json`)).default;
+    return {
+      locale: safeLocale,
+      messages
+    };
+  }
+);

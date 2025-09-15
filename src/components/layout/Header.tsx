@@ -17,11 +17,14 @@ export default function Header() {
   const pathname = usePathname()
   const currentLocale = useLocale()
 
-  const basePath = (pathname.replace(/^\/(en|de)(?=\/|$)/, '') || '/') as string
-  const switchLanguage = (nextLocale: string) => {
-    const target = nextLocale === 'en' ? basePath : `/${nextLocale}${basePath === '/' ? '' : basePath}`
-    router.push(target)
-  }
+
+  const switchLanguage = (locale: 'en' | 'de') => {
+  // Split the current path and replace the locale segment
+  const segments = pathname.split('/');
+  segments[1] = locale; // assuming your locale is always the first segment after "/"
+  const newPath = segments.join('/');
+  router.replace(newPath);
+};
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 12)
@@ -115,7 +118,7 @@ export default function Header() {
             {/* CTA */}
             <div className="hidden sm:block">
               <Button className="btn-gradient btn-shadow px-5 py-2.5 text-sm font-semibold rounded-lg cursor-pointer">
-                Get Started
+                t('cta.cta')
               </Button>
             </div>
 

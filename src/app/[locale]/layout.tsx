@@ -1,40 +1,40 @@
 // app/[locale]/layout.tsx
-import type { Metadata } from "next";
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
-import { notFound } from "next/navigation";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import "../globals.css";
-
-const locales = ["en", "de"];
+import type {Metadata} from 'next';
+import {NextIntlClientProvider} from 'next-intl';
+import {getMessages, setRequestLocale} from 'next-intl/server'; // v4 API
+import {locales, type AppLocale} from '../../i18n';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import '../globals.css';
 
 export const metadata: Metadata = {
-  title: "Gobonki - Digital Stamp Card",
-  description: "Create your digital stamp card and turn customers into regulars."
+  title: 'Gobonki - Digital Stamp Card',
+  description: 'Create your digital stamp card and turn customers into regulars.'
 };
+
+// Build both locales
+export function generateStaticParams() {
+  return locales.map((l) => ({locale: l}));
+}
 
 export default async function RootLayout({
   children,
+  // ⬇️ Next 15: params is a Promise — type it that way and await it.
   params
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{locale: AppLocale}>;
 }) {
-  const { locale } = await params; // ← no await
-
-  if (!locale || !locales.includes(locale)) {
-    notFound(); // single source of truth for 404
-  }
-
-  const messages = await getMessages(); // locale already in routing context
+  const {locale} = await params;       // ✅ await params in Next 15
+  setRequestLocale(locale);             // ✅ v4 API to activate locale for this request
+  const messages = await getMessages(); // ✅ pulled from i18n.ts for the active locale
 
   return (
     <html lang={locale}>
       <body>
-        <NextIntlClientProvider messages={messages} locale={locale}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
-          {children}
+          <main className="min-h-dvh pt-16">{children}</main>
           <Footer />
         </NextIntlClientProvider>
       </body>

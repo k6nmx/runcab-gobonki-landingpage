@@ -1,6 +1,9 @@
 {
   "navigation": {
     "features": "Funktionen",
+    "pricing": "Preise",
+    "about": "Über uns",
+    "contact": "Kontakt",
     "testimonials": "Bewertungen",
     "forCustomers": "Für Kunden",
     "forBusinesses": "Für Unternehmen"
@@ -8,13 +11,42 @@
   "hero": {
     "customer": {
       "title": "Ihr Handy = Ihre Treuekarten",
-      "subtitle": "Verlieren Sie nie wieder Belohnungen. Jeder Kauf zählt. Funktioniert in Restaurants, Friseuren, Cafés - ohne Downloads.",
+      "subtitle": "Verlieren Sie nie wieder Belohnungen. Jeder Kauf zählt. Funktioniert in Restaurants, Barbershops, Cafés – ohne Downloads.",
       "cta": "Teilnehmende Unternehmen finden"
     },
     "business": {
-      "title": "Verwandeln Sie Fremde sofort in Stammkunden",
-      "subtitle": "Einrichtung in 2 Minuten, alles anpassbar, keine monatlichen Gebühren. Das Treueprogramm, das wirklich für kleine Unternehmen funktioniert.",
-      "cta": "Starten Sie Ihr kostenloses Treueprogramm"
+      "title": "Machen Sie aus Fremden sofort Stammkunden",
+      "subtitle": "In 2 Minuten eingerichtet, alles anpassbar, keine monatlichen Gebühren. Das Treueprogramm, das für kleine Unternehmen wirklich funktioniert.",
+      "cta": "Kostenloses Treueprogramm starten"
     }
+  },
+  "testimonials": {
+    "title": "Was unsere Nutzer sagen",
+    "items": [
+      {
+        "rating": 5,
+        "quote": "gobonki hat unser Treueprogramm verändert. Die Einrichtung dauerte wirklich 2 Minuten und unsere Kunden mögen, dass keine zusätzliche App nötig ist!",
+        "author": "Sarah Martinez",
+        "role": "Café Luna"
+      },
+      {
+        "rating": 5,
+        "quote": "Kostenlos und mit Whitelabel-Optionen? Genau das brauchen kleine Unternehmen. Unsere Bindung stieg in nur 3 Monaten um 40 %.",
+        "author": "Marcus Weber",
+        "role": "StyleCut Barbershop"
+      },
+      {
+        "rating": 5,
+        "quote": "Endlich ein Treuesystem, das wirklich funktioniert! Alle Karten an einem Ort, keine Downloads, kein Aufwand. Perfekt!",
+        "author": "Emma Thompson",
+        "role": "Stammkundin"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Bereit, Kundenbindung zu steigern?",
+    "subtitle": "Schließen Sie sich tausenden Unternehmen an, die mit gobonki dauerhafte Kundenbeziehungen aufbauen",
+    "cta": "Jetzt kostenlos starten",
+    "href": "#get-started"
   }
 }
