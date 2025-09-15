@@ -19,5 +19,36 @@
       "subtitle": "Setup in 2 minutes, customize everything, zero monthly fees. The loyalty program that actually works for small businesses.",
       "cta": "Start your free loyalty program"
     }
+  },
+  "testimonials": {
+    "title": "What Our Users Say",
+    "items": [
+      {
+        "rating": 5,
+        "quote": "gobonki transformed our customer loyalty program. Setup took literally 2 minutes and our customers love not needing another app!",
+        "author": "Sarah Martinez",
+        "role": "Café Luna"
+      },
+      {
+        "rating": 5,
+        "quote": "Free forever and whitelabel options? This is exactly what small businesses need. Our retention improved by 40% in just 3 months.",
+        "author": "Marcus Weber",
+        "role": "StyleCut Barbershop"
+      },
+      {
+        "rating": 5,
+        "quote": "Finally, a loyalty system that actually works! All my cards in one place, no downloads, no hassle. Perfect!",
+        "author": "Emma Thompson",
+        "role": "Regular Customer"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to boost customer loyalty?",
+    "subtitle": "Join thousands of businesses using gobonki to create lasting customer relationships",
+    "cta": "Start Free Today",
+    "href": "#get-started"
   }
+
+
 }
