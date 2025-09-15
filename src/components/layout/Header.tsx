@@ -39,7 +39,7 @@ export default function Header() {
     { href: '#contact', label: t('contact') }
   ]
 
-  // Full-width fixed canvas; we morph only the inner "container"
+  if(mounted) {
   return (
     <header className="fixed inset-x-0 top-0 z-50 pointer-events-none">
       <div
@@ -171,4 +171,5 @@ export default function Header() {
       </div>
     </header>
   )
+}
 }
