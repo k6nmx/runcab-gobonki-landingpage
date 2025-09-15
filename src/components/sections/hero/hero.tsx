@@ -23,7 +23,7 @@ export default function Hero() {
           subtitle: t('customer.subtitle'),
           ctaText: t('customer.cta'),
           ctaHref: '#directory',
-          image: '/hero-image1.jpg',
+          image: '/hero-image2.jpg',
           imageAlt: 'Customers view of participating cafe',
         }
       : {
@@ -31,7 +31,7 @@ export default function Hero() {
           subtitle: t('business.subtitle'),
           ctaText: t('business.cta'),
           ctaHref: '#get-started',
-          image: '/hero-image2.jpg',
+          image: '/hero-image1.jpg',
           imageAlt: 'Business dashboard / cafe interior',
         }
   }, [mode, t])

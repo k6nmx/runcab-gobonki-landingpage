@@ -84,7 +84,7 @@ export default function Header() {
           </nav>
 
           {/* Right Actions */}
-          <div className="flex items-center gap-2 sm:gap-4">
+          <div className="col-start-3 justify-self-end flex items-center gap-2 sm:gap-4">
             {/* Language Dropdown */}
             <div className="hidden sm:block">
               <DropdownMenu>
