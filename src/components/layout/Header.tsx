@@ -118,7 +118,7 @@ export default function Header() {
             {/* CTA */}
             <div className="hidden sm:block">
               <Button className="btn-gradient btn-shadow px-5 py-2.5 text-sm font-semibold rounded-lg cursor-pointer">
-                t('cta.cta')
+                {t('cta')}
               </Button>
             </div>
 

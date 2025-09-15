@@ -1,12 +1,13 @@
 {
   "navigation": {
-    "features": "Funktionen",
+    "features": "FUNKTIONEN!!!",
     "pricing": "Preise",
     "about": "Über uns",
     "contact": "Kontakt",
     "testimonials": "Bewertungen",
     "forCustomers": "Für Kunden",
-    "forBusinesses": "Für Unternehmen"
+    "forBusinesses": "Für Unternehmen",
+    "cta": "Jetzt kostenlos starten"
   },
   "hero": {
     "customer": {
