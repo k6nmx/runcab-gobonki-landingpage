@@ -94,10 +94,10 @@ export default function Footer() {
           {/* Bottom bar */}
           <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-neutral-500">
             <p>© {new Date().getFullYear()} gobonki. All rights reserved.</p>
-            <div className="flex gap-5">
+            {/* <div className="flex gap-5">
               <Link href="/privacy" className="hover:text-neutral-300">Privacy</Link>
               <Link href="/imprint" className="hover:text-neutral-300">Imprint</Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
