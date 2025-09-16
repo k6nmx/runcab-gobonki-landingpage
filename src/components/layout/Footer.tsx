@@ -71,13 +71,13 @@ export default function Footer() {
                   <h4 className="font-semibold mb-4">Product</h4>
                   <ul className="space-y-2">
                     <li><a href="#features" className="footer-link">Features</a></li>
-                    <li><a href="#pricing" className="footer-link">Pricing</a></li>
+                    <li><a href="#testimonials" className="footer-link">Testimonials</a></li>
                   </ul>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-4">Company</h4>
                   <ul className="space-y-2">
-                    <li><Link href="/about" className="footer-link">About</Link></li>
+                    <li><Link href="/faq" className="footer-link">FAQ</Link></li>
                     <li><Link href="/contact" className="footer-link">Contact</Link></li>
                   </ul>
                 </div>
@@ -86,6 +86,7 @@ export default function Footer() {
                   <ul className="space-y-2">
                     <li><Link href="/privacy" className="footer-link">Privacy Policy</Link></li>
                     <li><Link href="/imprint" className="footer-link">Imprint</Link></li>
+                    <li><Link href="/terms" className="footer-link">Terms of Service</Link></li>
                   </ul>
                 </div>
               </div>
