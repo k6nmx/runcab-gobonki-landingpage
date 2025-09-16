@@ -37,8 +37,8 @@ export default function Header() {
 
   const navigationItems = [
     { href: '#features', label: t('features') },
-    { href: '#pricing', label: t('pricing') },
-    { href: '#about', label: t('about') },
+    { href: '#testimonials', label: t('testimonials') },
+    { href: '#faq', label: t('faq') },
     { href: '#contact', label: t('contact') }
   ]
 

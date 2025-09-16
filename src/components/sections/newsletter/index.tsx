@@ -42,7 +42,7 @@ export default function NewsletterSection({
   }
 
   return (
-    <section id="newsletter" className={cn('relative py-14 sm:py-20', className)}>
+    <section id="contact" className={cn('relative py-14 sm:py-20', className)}>
       {/* soft section wash */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-50/60 via-white to-white" />
 

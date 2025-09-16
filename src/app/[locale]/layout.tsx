@@ -1,7 +1,7 @@
 // app/[locale]/layout.tsx
 import type {Metadata} from 'next';
 import {NextIntlClientProvider} from 'next-intl';
-import {getMessages, setRequestLocale} from 'next-intl/server'; // v4 API
+import {getMessages, setRequestLocale} from 'next-intl/server';
 import {locales, type AppLocale} from '../../i18n/request';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -19,7 +19,6 @@ export function generateStaticParams() {
 
 export default async function RootLayout({
   children,
-  // ⬇️ Next 15: params is a Promise — type it that way and await it.
   params
 }: {
   children: React.ReactNode;
