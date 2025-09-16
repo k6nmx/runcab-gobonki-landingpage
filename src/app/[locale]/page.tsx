@@ -10,7 +10,7 @@ export default async function HomePage() {
   console.log('[SERVER] Current locale messages - features:', t('features'))
   return (
     <main>
-      <div>Server says: {t('features')}</div>
+      {/* <div>Server says: {t('features')}</div> */}
       <Hero />
       <FeaturesSection />
       <TestimonialsSection />
