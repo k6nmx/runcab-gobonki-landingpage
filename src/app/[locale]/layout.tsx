@@ -9,7 +9,10 @@ import '../globals.css';
 
 export const metadata: Metadata = {
   title: 'Gobonki - Digital Stamp Card',
-  description: 'Create your digital stamp card and turn customers into regulars.'
+  description: 'Create your digital stamp card and turn customers into regulars.',
+  icons: {
+    icon: '/vercel.svg', // or '/icon.png', '/icon.svg'
+  },
 };
 
 // Build both locales
