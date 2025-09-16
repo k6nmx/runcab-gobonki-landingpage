@@ -3,6 +3,8 @@ import FeaturesSection from '@/components/sections/features/features'
 import Hero from '@/components/sections/hero/hero'
 import TestimonialsSection from '@/components/sections/testimonials'
 import { getTranslations } from 'next-intl/server'
+import NewsletterSection from '@/components/sections/newsletter'
+import FAQSection from '@/components/sections/faq'
 
 
 export default async function HomePage() {
@@ -14,6 +16,8 @@ export default async function HomePage() {
       <Hero />
       <FeaturesSection />
       <TestimonialsSection />
+      <NewsletterSection />
+      <FAQSection />
       <CTASection />
     </main>
   )

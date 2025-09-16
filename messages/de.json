@@ -49,5 +49,35 @@
     "subtitle": "Schließen Sie sich tausenden Unternehmen an, die mit gobonki dauerhafte Kundenbeziehungen aufbauen",
     "cta": "Jetzt kostenlos starten",
     "href": "#get-started"
+  },
+  "newsletter": {
+    "title": "Mehr erfahren?",
+    "subtitle": "Abonnieren Sie unseren Newsletter und erfahren Sie als Erste/r, wenn unsere Plattform für alle Shops startet.",
+    "emailPlaceholder": "ihre@email.de",
+    "cta": "Absenden",
+    "success": "Danke! Bitte bestätigen Sie Ihre Anmeldung in Ihrem Posteingang.",
+    "error": "Etwas ist schiefgelaufen. Bitte erneut versuchen.",
+    "disclaimer": "Kein Spam. Jederzeit abbestellbar."
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "forCustomers": "Für Kunden",
+    "forBusinesses": "Für Unternehmen",
+    "customers": [
+      { "q": "Brauche ich eine App?", "a": "Keine App nötig. Sie scannen den QR-Code an der Kasse; die Stempel werden im Browser gespeichert." },
+      { "q": "Wie löse ich eine Prämie ein?", "a": "Bei genügend Stempeln zeigen Sie Ihr Handy vor. Das Personal tippt auf „Einlösen“ und die Prämie wird angewendet." },
+      { "q": "Was passiert beim Handywechsel?", "a": "Mit derselben E-Mail oder Telefonnummer werden Ihre Stempel wiederhergestellt—ohne Passwörter." },
+      { "q": "Sind meine Daten sicher?", "a": "Ja. Wir speichern nur das Nötigste für Stempel. Kein Tracking, kein Weiterverkauf von Daten." },
+      { "q": "Funktioniert es in verschiedenen Läden?", "a": "Ja, gobonki funktioniert bei Cafés, Friseuren, Restaurants – jede Firma kann eine eigene Karte haben." },
+      { "q": "Funktioniert es offline?", "a": "Karten können offline geöffnet werden, Stempeln/Einlösen benötigt kurz Internet zur Betrugsprävention." }
+    ],
+    "businesses": [
+      { "q": "Wie lange dauert die Einrichtung?", "a": "Etwa 2 Minuten. Karte erstellen, Prämie festlegen, QR drucken. Keine POS-Integration nötig." },
+      { "q": "Brauche ich neue Hardware?", "a": "Nein. Jedes Handy/Tablet mit Browser reicht. Das Personal scannt den QR des Kunden." },
+      { "q": "Wie werden Stempel validiert?", "a": "QR + Serverprüfungen verhindern Duplikate. Optional PIN oder Gerätefreigabe für mehr Kontrolle." },
+      { "q": "Kann ich Branding/Prämien anpassen?", "a": "Ja. Stempelanzahl, Prämientext, Markenfarben, Whitelabel in höheren Tarifen." },
+      { "q": "Was kostet es?", "a": "Start kostenlos. Whitelabel & Analytics optional, transparent—keine Transaktionsgebühren." },
+      { "q": "POS-Integration?", "a": "Nicht erforderlich. Auf Wunsch Export & REST-API auf höheren Tarifen." }
+    ]
   }
 }

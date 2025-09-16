@@ -58,6 +58,7 @@ export default function Footer() {
                       <ul className="space-y-3 py-2">
                         <li><Link href="/privacy" className="footer-link">Privacy Policy</Link></li>
                         <li><Link href="/imprint" className="footer-link">Imprint</Link></li>
+                        <li><Link href="/terms" className="footer-link">Terms & Conditions</Link></li>
                       </ul>
                     </AccordionContent>
                   </AccordionItem>

@@ -49,7 +49,71 @@
     "subtitle": "Join thousands of businesses using gobonki to create lasting customer relationships",
     "cta": "Start Free Today",
     "href": "#get-started"
+  },
+  "newsletter": {
+    "title": "Want to know more?",
+    "subtitle": "Sign up to our newsletter and be the first to know when our platform launches for all storefronts.",
+    "emailPlaceholder": "youremail@email.com",
+    "cta": "Submit",
+    "success": "Thanks! Please check your inbox to confirm.",
+    "error": "Something went wrong. Try again.",
+    "disclaimer": "No spam. Unsubscribe anytime."
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "forCustomers": "For Customers",
+    "forBusinesses": "For Businesses",
+    "customers": [
+      {
+        "q": "Do I need to install an app?",
+        "a": "No app required. You scan a QR code at the counter and your stamps are saved to your phone’s browser wallet."
+      },
+      {
+        "q": "How do I redeem a reward?",
+        "a": "Once you collect enough stamps, show your phone to the cashier. They tap 'Redeem' and your reward is applied instantly."
+      },
+      {
+        "q": "What if I switch or lose my phone?",
+        "a": "Use the same email or phone number and your stamps sync back. No account passwords needed."
+      },
+      {
+        "q": "Is my data private?",
+        "a": "Yes. We only store what’s needed to track your stamps. No location tracking, no resale of personal data."
+      },
+      {
+        "q": "Does it work at different stores?",
+        "a": "Yes. gobonki works at cafés, barbers, restaurants—each business can have its own card and rewards."
+      },
+      {
+        "q": "Does it work offline?",
+        "a": "You can open your card offline, but stamping/redeeming requires a quick online check to prevent fraud."
+      }
+    ],
+    "businesses": [
+      {
+        "q": "How long does setup take?",
+        "a": "About 2 minutes. Create a card, set your reward, print your QR. That’s it—no POS integration required."
+      },
+      {
+        "q": "Do I need new hardware?",
+        "a": "No. Any phone or tablet that can open a browser works. Staff just scans or taps the customer’s QR."
+      },
+      {
+        "q": "How are stamps validated?",
+        "a": "QR + server checks prevent duplicates. Optionally require staff PIN or device approval for extra control."
+      },
+      {
+        "q": "Can I customize rewards and branding?",
+        "a": "Yes. Set stamp count, reward text, brand colors and even whitelabel on paid tiers."
+      },
+      {
+        "q": "What about pricing?",
+        "a": "Start free. Paid features like whitelabel and analytics are optional and transparent—no transaction fees."
+      },
+      {
+        "q": "Does it integrate with my POS?",
+        "a": "Not required. If you want POS sync, we offer a simple export and REST API on higher tiers."
+      }
+    ]
   }
-
-
 }
