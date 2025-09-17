@@ -70,7 +70,7 @@ export default function Header() {
           )}
         >
           {/* Logo */}
-          <Logo src="/gobonki-black.svg" alt="Gobonki-logo" className="h-8 w-auto" />
+          <Logo src="/gobonki-schriftzug.svg" alt="Gobonki-logo" className="h-8 w-auto" />
 
           {/* Desktop Navigation (centered) */}
           <nav className="hidden md:flex justify-center gap-8">
