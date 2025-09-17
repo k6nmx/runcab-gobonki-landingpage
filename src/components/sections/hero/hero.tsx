@@ -5,10 +5,7 @@ import { Users, Building2, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { SegmentedToggle } from '@/components/ui/segmented-toggle'
 import HeroImage from './hero-image'
-import { easeInOut } from 'framer-motion'
-
-// NEW: motion
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
+import { AnimatePresence, motion, easeInOut, useReducedMotion } from 'framer-motion'
 
 type Mode = 'customer' | 'business'
 
