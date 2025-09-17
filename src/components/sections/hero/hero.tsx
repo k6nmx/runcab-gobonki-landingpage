@@ -39,9 +39,9 @@ export default function Hero() {
   // SSR-safe skeleton to avoid hydration mismatch
   if (!mounted) {
     return (
-      <section className="hero-bg pt-24 pb-12">
+      <section className="hero-bg pt-2 pb-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center">
+          <div className="flex justify-center lg:pt-10">
             <div className="inline-flex rounded-full bg-neutral-100 p-1">
               <div className="flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm">
                 <Users size={18} />
@@ -77,7 +77,7 @@ export default function Hero() {
   return (
     <section className="hero-bg pb-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="pt-24 pb-8 sm:pt-28 sm:pb-12 lg:pt-32">
+        <div className="pt-24 pb-8 sm:pt-28 sm:pb-12 lg:pt-10">
           {/* Toggle */}
           <div className="flex justify-center">
             <SegmentedToggle
