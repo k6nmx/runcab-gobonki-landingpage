@@ -5,6 +5,10 @@ import { Users, Building2, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { SegmentedToggle } from '@/components/ui/segmented-toggle'
 import HeroImage from './hero-image'
+import { easeInOut } from 'framer-motion'
+
+// NEW: motion
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 
 type Mode = 'customer' | 'business'
 
@@ -13,6 +17,7 @@ export default function Hero() {
   const [mode, setMode] = useState<Mode>('customer')
   const t = useTranslations('hero')
   const nav = useTranslations('navigation')
+  const prefersReducedMotion = useReducedMotion()
 
   useEffect(() => setMounted(true), [])
 
@@ -36,7 +41,13 @@ export default function Hero() {
         }
   }, [mode, t])
 
-  // SSR-safe skeleton to avoid hydration mismatch
+  const fadeSlide = {
+    initial: { opacity: 0, y: prefersReducedMotion ? 0 : 12 },
+    animate: { opacity: 1, y: 0 },
+    exit:    { opacity: 0, y: prefersReducedMotion ? 0 : -12 },
+    transition: { duration: 0.25, ease: easeInOut }, // use a valid easing function for ease
+  }
+
   if (!mounted) {
     return (
       <section className="hero-bg pt-2 pb-12">
@@ -93,30 +104,57 @@ export default function Hero() {
 
           {/* Content */}
           <div className="mt-10 grid items-center gap-10 md:gap-12 lg:gap-16 md:grid-cols-2">
-            {/* Left: text */}
-            <div>
-              <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-neutral-900">
-                {/* keep your headline exactly */}
-                {mode === 'customer' ? t('customer.title') : t('business.title')}
-              </h1>
-              <p className="mt-6 max-w-xl text-lg sm:text-xl text-neutral-600">
-                {v.subtitle}
-              </p>
-              <div className="mt-8 flex flex-wrap items-center gap-3">
-                <Button className="btn-gradient btn-shadow px-6 py-2.5 text-sm font-semibold rounded-lg" asChild>
-                  <a href={v.ctaHref}>
-                    {v.ctaText}
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
-                <Button variant="outline" className="px-5 py-2.5 text-sm rounded-lg" asChild>
-                  <a href="#demo">Watch Demo</a>
-                </Button>
+            {/* Left: text (animated) */}
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={mode} // re-mount on toggle
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={fadeSlide.transition}
+                variants={fadeSlide}
+              >
+                <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-neutral-900">
+                  {mode === 'customer' ? t('customer.title') : t('business.title')}
+                </h1>
+                <p className="mt-6 max-w-xl text-lg sm:text-xl text-neutral-600">
+                  {v.subtitle}
+                </p>
+                <div className="mt-8 flex flex-wrap items-center gap-3">
+                  <Button className="btn-gradient btn-shadow px-6 py-2.5 text-sm font-semibold rounded-lg" asChild>
+                    <a href={v.ctaHref}>
+                      {v.ctaText}
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                  <Button variant="outline" className="px-5 py-2.5 text-sm rounded-lg" asChild>
+                    <a href="#demo">Watch Demo</a>
+                  </Button>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Right: image (animated) */}
+            <div className="mx-auto w-full max-w-[720px]">
+              <div className="relative h-[420px] w-full rounded-2xl overflow-hidden">
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.div
+                    key={v.image} // swap on image path
+                    className="absolute inset-0"
+                    initial={{ opacity: 0, scale: prefersReducedMotion ? 1 : 0.995 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: prefersReducedMotion ? 1 : 1.005 }}
+                    transition={{ duration: 0.28, ease: [0.2, 0.6, 0.2, 1] }}
+                  >
+                    <HeroImage
+                      src={v.image}
+                      alt={v.imageAlt}
+                      className="h-full w-full object-cover"
+                    />
+                  </motion.div>
+                </AnimatePresence>
               </div>
             </div>
-
-            {/* Right: image (swaps with mode) */}
-            <HeroImage src={v.image} alt={v.imageAlt} className="mx-auto w-full max-w-[720px]" />
           </div>
         </div>
       </div>
