@@ -6,12 +6,11 @@ import { Button } from '@/components/ui/button'
 import { SegmentedToggle } from '@/components/ui/segmented-toggle'
 import HeroImage from './hero-image'
 import { AnimatePresence, motion, easeInOut, useReducedMotion } from 'framer-motion'
-
-type Mode = 'customer' | 'business'
+import { useMode } from '@/context/mode-context'
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false)
-  const [mode, setMode] = useState<Mode>('customer')
+  const { mode, setMode } = useMode()
   const t = useTranslations('hero')
   const nav = useTranslations('navigation')
   const prefersReducedMotion = useReducedMotion()
@@ -42,7 +41,7 @@ export default function Hero() {
     initial: { opacity: 0, y: prefersReducedMotion ? 0 : 12 },
     animate: { opacity: 1, y: 0 },
     exit:    { opacity: 0, y: prefersReducedMotion ? 0 : -12 },
-    transition: { duration: 0.25, ease: easeInOut }, // use a valid easing function for ease
+    transition: { duration: 0.25, ease: easeInOut },
   }
 
   if (!mounted) {
@@ -86,11 +85,10 @@ export default function Hero() {
     <section className="hero-bg pb-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="pt-24 pb-8 sm:pt-28 sm:pb-12 lg:pt-10">
-          {/* Toggle */}
           <div className="flex justify-center">
             <SegmentedToggle
               value={mode}
-              onChange={(v) => setMode(v as Mode)}
+              onChange={(v) => setMode(v as 'customer' | 'business')}
               options={[
                 { value: 'customer', label: <span className="inline-flex items-center gap-2"><Users size={16}/> {nav('forCustomers')}</span> },
                 { value: 'business', label: <span className="inline-flex items-center gap-2"><Building2 size={16}/> {nav('forBusinesses')}</span> },
@@ -99,12 +97,10 @@ export default function Hero() {
             />
           </div>
 
-          {/* Content */}
           <div className="mt-10 grid items-center gap-10 md:gap-12 lg:gap-16 md:grid-cols-2">
-            {/* Left: text (animated) */}
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
-                key={mode} // re-mount on toggle
+                key={mode}
                 initial="initial"
                 animate="animate"
                 exit="exit"
@@ -131,12 +127,11 @@ export default function Hero() {
               </motion.div>
             </AnimatePresence>
 
-            {/* Right: image (animated) */}
             <div className="mx-auto w-full max-w-[720px]">
               <div className="relative h-[420px] w-full rounded-2xl overflow-hidden">
                 <AnimatePresence mode="wait" initial={false}>
                   <motion.div
-                    key={v.image} // swap on image path
+                    key={v.image}
                     className="absolute inset-0"
                     initial={{ opacity: 0, scale: prefersReducedMotion ? 1 : 0.995 }}
                     animate={{ opacity: 1, scale: 1 }}

@@ -1,7 +1,7 @@
 "use client"
 
 import { Card, CardContent } from "@/components/ui/card"
-import { CreditCard, Gift, Zap, Globe, ShieldCheck, Bookmark, LucideIcon } from "lucide-react"
+import { CreditCard, Gift, Zap, Globe, ShieldCheck, Bookmark, LucideIcon, MapPin, Bell, TrendingUp, BarChart3, Settings, Users, DollarSign, Smartphone } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const ICONS = {
@@ -11,12 +11,20 @@ const ICONS = {
   globe: Globe,
   "shield-check": ShieldCheck,
   bookmark: Bookmark,
-} as const
+  "map-pin": MapPin,
+  bell: Bell,
+  "trending-up": TrendingUp,
+  "bar-chart-3": BarChart3,
+  settings: Settings,
+  users: Users,
+  "dollar-sign": DollarSign,
+  smartphone: Smartphone,
+} as const;
 
 type IconKey = keyof typeof ICONS
 
 type Props = {
-  icon: IconKey            // ⬅️ string key, not a function
+  icon: IconKey           
   title: string
   description: string
   className?: string

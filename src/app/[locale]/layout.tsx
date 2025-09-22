@@ -8,7 +8,7 @@ import Footer from '@/components/layout/Footer';
 import '../globals.css';
 
 export const metadata: Metadata = {
-  title: 'Gobonki - Digital Stamp Card',
+  title: 'gobonki - Digital Stamp Card',
   description: 'Create your digital stamp card and turn customers into regulars.',
   icons: {
     icon: '/vercel.svg', // or '/icon.png', '/icon.svg'
