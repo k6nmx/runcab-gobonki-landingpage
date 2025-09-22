@@ -64,7 +64,7 @@ export default function Hero() {
               </h1>
               <p className="mt-6 max-w-xl text-lg text-neutral-600">{t('customer.subtitle')}</p>
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <Button className="btn-gradient btn-shadow px-6 py-2.5 hover:translate-y-0 transform-none text-sm font-semibold rounded-lg">
+                <Button className="btn-gradient btn-shadow px-6 py-2.5 text-sm font-semibold rounded-lg">
                   {t('customer.cta')}
                 </Button>
                 <Button variant="outline" className="px-5 py-2.5 text-sm rounded-lg">
