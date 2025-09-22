@@ -40,7 +40,7 @@ export default function Header() {
   // Language switcher keeps current path but swaps locale segment
   const switchLanguage = (locale: 'en' | 'de') => {
     const segments = pathname.split('/')
-    segments[1] = locale // locales are first segment: "/en/...”
+    segments[1] = locale // locales are first segment: "/en/..."
     const newPath = segments.join('/')
     router.replace(newPath)
   }
@@ -61,7 +61,8 @@ export default function Header() {
       <div
         className={clsx(
           'mx-auto transition-all duration-300 ease-out pointer-events-auto',
-          isScrolled ? 'w-[min(92vw,64rem)]' : 'max-w-7xl w-full',
+          // Fixed: Use same calculation method for both states
+          isScrolled ? 'w-[min(92vw,64rem)]' : 'w-[min(100vw,80rem)]',
           isScrolled ? 'px-3 sm:px-4' : 'px-4 sm:px-6 lg:px-8',
           isScrolled ? 'mt-2 sm:mt-3' : 'mt-0',
           isScrolled ? 'glass-pill rounded-full' : ''
@@ -98,7 +99,7 @@ export default function Header() {
           <div className="col-start-3 justify-self-end flex items-center gap-2 sm:gap-4">
             {/* Language Dropdown */}
             <div className="hidden sm:block">
-              <DropdownMenu>
+              <DropdownMenu modal={false}>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" size="sm" className="gap-2">
                     <Globe size={16} />
