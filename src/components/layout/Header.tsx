@@ -77,9 +77,19 @@ export default function Header() {
         >
           {/* Logo → localized home */}
           <Link
-            href={localeHome}
+            href={toHome("#")} // '/en#' or '/de#' → top anchor
             aria-label="Home"
+            prefetch
             className="inline-flex items-center"
+            onClick={(e) => {
+              // If we're already on the home route, just smooth-scroll to top
+              const home = localeHome.replace(/\/$/, "");
+              const here = pathname.replace(/\/$/, "");
+              if (here === home) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
           >
             <Logo
               src="/gobonki-schriftzug.svg"
@@ -136,7 +146,6 @@ export default function Header() {
               </DropdownMenu>
             </div>
 
-            {/* CTA → localized home#contact (adjust if different) */}
             <div className="hidden sm:block">
               <Button
                 className="btn-gradient btn-shadow px-5 py-2.5 hover:translate-y-0 transform-none text-sm font-semibold rounded-lg"
