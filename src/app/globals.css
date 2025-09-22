@@ -262,4 +262,11 @@
 /* globals.css */
 .footer-link { @apply text-neutral-400 hover:text-white transition-colors; }
 
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 100px;
+}
 }
