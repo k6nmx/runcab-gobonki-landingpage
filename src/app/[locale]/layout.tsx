@@ -2,7 +2,7 @@
 import type {Metadata} from 'next';
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, setRequestLocale} from 'next-intl/server';
-import {locales, type AppLocale} from '../../i18n/request';
+import {defaultLocale, locales, type AppLocale} from '../../i18n/request';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import '../globals.css';
@@ -25,9 +25,14 @@ export default async function RootLayout({
   params
 }: {
   children: React.ReactNode;
-  params: Promise<{locale: AppLocale}>;
+  params: Promise<{locale: string}>;
 }) {
-  const {locale} = await params;
+
+  const {locale: rawLocale} = await params;
+  const locale: AppLocale = (locales as readonly string[]).includes(rawLocale)
+    ? (rawLocale as AppLocale)
+    : defaultLocale;
+
   console.log('[LAYOUT] Locale from params:', locale);
   setRequestLocale(locale);
   const messages = await getMessages();
