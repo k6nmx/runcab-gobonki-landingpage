@@ -87,7 +87,6 @@ export default function FAQSection({ className }: { className?: string }) {
                       {item.q}
                     </AccordionTrigger>
 
-                    {/* 👉 add the animation + smoothing here */}
                     <AccordionContent
                       className="
           overflow-hidden pb-5 text-neutral-700 leading-7
@@ -96,7 +95,7 @@ export default function FAQSection({ className }: { className?: string }) {
           will-change-[height] motion-reduce:animate-none
         "
                     >
-                      {/* Optional subtle fade on inner content */}
+              
                       <div className="data-[state=open]:animate-fade-in data-[state=closed]:animate-fade-out motion-reduce:animate-none">
                         {item.a}
                       </div>

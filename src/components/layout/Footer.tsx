@@ -127,9 +127,13 @@ export default function Footer() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="#contact" className="footer-link">
-                        Contact
-                      </Link>
+                      <a
+  href={`mailto:hello@gobonki.com?subject=${encodeURIComponent('Hello Gobonki')}&body=${encodeURIComponent('I’d like to get in touch.')}`}
+  className="footer-link"
+>
+  Contact
+</a>
+
                     </li>
                   </ul>
                 </div>
