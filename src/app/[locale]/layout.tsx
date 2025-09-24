@@ -1,4 +1,4 @@
-// app/[locale]/layout.tsx
+
 import type {Metadata} from 'next';
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, setRequestLocale} from 'next-intl/server';
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'gobonki - Digital Stamp Card',
   description: 'Create your digital stamp card and turn customers into regulars.',
   icons: {
-    icon: '/vercel.svg', // or '/icon.png', '/icon.svg'
+    icon: '/vercel.svg',
   },
 };
 
