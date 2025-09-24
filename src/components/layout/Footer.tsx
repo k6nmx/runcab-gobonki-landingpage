@@ -66,8 +66,20 @@ export default function Footer() {
                           </Link>
                         </li>
                         <li>
-                          <Link href="/contact" className="footer-link">
+                          <a
+                            href={`mailto:hello@gobonki.com?subject=${encodeURIComponent(
+                              "Hello Gobonki"
+                            )}&body=${encodeURIComponent(
+                              "I’d like to get in touch."
+                            )}`}
+                            className="footer-link"
+                          >
                             Contact
+                          </a>
+                        </li>
+                        <li>
+                          <Link href="#contact" className="footer-link">
+                            Newsletter
                           </Link>
                         </li>
                       </ul>
@@ -128,12 +140,20 @@ export default function Footer() {
                     </li>
                     <li>
                       <a
-  href={`mailto:hello@gobonki.com?subject=${encodeURIComponent('Hello Gobonki')}&body=${encodeURIComponent('I’d like to get in touch.')}`}
-  className="footer-link"
->
-  Contact
-</a>
-
+                        href={`mailto:hello@gobonki.com?subject=${encodeURIComponent(
+                          "Hello Gobonki"
+                        )}&body=${encodeURIComponent(
+                          "I’d like to get in touch."
+                        )}`}
+                        className="footer-link"
+                      >
+                        Contact
+                      </a>
+                    </li>
+                    <li>
+                      <Link href="#contact" className="footer-link">
+                        Newsletter
+                      </Link>
                     </li>
                   </ul>
                 </div>
