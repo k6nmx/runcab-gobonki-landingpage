@@ -116,7 +116,7 @@ export default function NewsletterSection({
                     className="
     h-12 rounded-xl px-6 font-semibold btn-gradient shadow-md
     hover:translate-y-0 transform-none transition-colors
-    disabled:opacity-50 disabled:cursor-not-allowed
+    disabled:opacity-50 disabled:cursor-not-allowed hover:cursor-pointer
   "
                   >
                     {t("cta")}

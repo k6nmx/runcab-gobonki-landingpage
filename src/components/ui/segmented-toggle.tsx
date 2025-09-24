@@ -33,7 +33,7 @@ export function SegmentedToggle({ value, onChange, options, className }: Props) 
           aria-selected={value === opt.value}
           onClick={() => onChange(opt.value)}
           className={cn(
-            'relative z-10 px-4 py-2 text-sm font-medium transition-colors',
+            'relative z-10 px-4 py-2 text-sm font-medium transition-colors hover:cursor-pointer',
             value === opt.value ? 'text-neutral-900' : 'text-neutral-600'
           )}
         >
