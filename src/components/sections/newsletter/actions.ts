@@ -2,6 +2,8 @@
 
 import { z } from 'zod'
 import { headers } from 'next/headers'
+import { db } from '@/lib/db'
+import { newsletters } from '@/lib/db/schema'
 
 const schema = z.object({
   email: z.string().email(),
@@ -20,7 +22,7 @@ export async function subscribe(formData: FormData) {
     }
 
     const email = String(formData.get('email') || '')
-    const source = String(formData.get('source') || '').trim() || undefined
+    const source = String(formData.get('source') || '').trim() || 'landing_page'
 
     // ✅ server-side validation (authoritative)
     const parsed = schema.safeParse({ email, source })
@@ -28,7 +30,7 @@ export async function subscribe(formData: FormData) {
       return { ok: false as const, error: 'Invalid email address' }
     }
 
-    // 🔎 contextual info for the log
+    //contextual info for the log
     const h = await headers()
     const ip =
       h.get('x-forwarded-for')?.split(',')[0]?.trim() ||
@@ -36,7 +38,15 @@ export async function subscribe(formData: FormData) {
       'unknown'
     const ua = h.get('user-agent') || 'unknown'
 
-    // 🪵 LOG ONLY (no persistence)
+    // SAVE TO DATABASE via Drizzle
+    await db.insert(newsletters).values({
+      email: parsed.data.email,
+      source: parsed.data.source,
+      ipAddress: ip,
+      userAgent: ua,
+    }).onConflictDoNothing()
+
+    // 🪵 LOG
     console.log('[newsletter.subscribe]', {
       email,
       source,
