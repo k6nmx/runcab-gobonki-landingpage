@@ -14,7 +14,7 @@ export default function CTASection() {
   } : {
     title: 'Ready to Boost Customer Loyalty?',
     subtitle: 'Join hundreds of businesses using gobonki to increase repeat customers and drive revenue. Set up your loyalty program in minutes.',
-    cta: 'Start Your Free Trial',
+    cta: 'Start Your Free Loyalty Program',
     href: '#get-started'
   }
 
