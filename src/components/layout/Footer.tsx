@@ -178,6 +178,11 @@ export default function Footer() {
                       </Link>
                     </li>
                     <li>
+                      <Link href="#contact" className="footer-link">
+                        Newsletter
+                      </Link>
+                    </li>
+                    <li>
                       <a
                         href={`mailto:hello@gobonki.com?subject=${encodeURIComponent(
                           "Hello Gobonki"
@@ -188,11 +193,6 @@ export default function Footer() {
                       >
                         Contact
                       </a>
-                    </li>
-                    <li>
-                      <Link href="#contact" className="footer-link">
-                        Newsletter
-                      </Link>
                     </li>
                   </ul>
                 </div>
