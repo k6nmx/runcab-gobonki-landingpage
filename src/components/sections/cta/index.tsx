@@ -1,22 +1,27 @@
-'use client'
+"use client";
 
-import { Button } from '@/components/ui/button'
-import { useMode } from '@/context/mode-context'
+import { Button } from "@/components/ui/button";
+import { useMode } from "@/context/mode-context";
 
 export default function CTASection() {
-  const { mode } = useMode()
-  
-  const content = mode === 'customer' ? {
-    title: 'Start Collecting Rewards Today',
-    subtitle: 'Join thousands of smart shoppers who never miss out on rewards. Find participating businesses near you and start earning instantly.',
-    cta: 'Find Businesses Near Me',
-    href: '#directory'
-  } : {
-    title: 'Ready to Boost Customer Loyalty?',
-    subtitle: 'Join hundreds of businesses using gobonki to increase repeat customers and drive revenue. Set up your loyalty program in minutes.',
-    cta: 'Start Your Free Loyalty Program',
-    href: '#get-started'
-  }
+  const { mode } = useMode();
+
+  const content =
+    mode === "customer"
+      ? {
+          title: "Start Collecting Rewards Today",
+          subtitle:
+            "Join thousands of smart shoppers who never miss out on rewards. Find participating businesses near you and start earning instantly.",
+          cta: "Find Businesses Near Me",
+          href: "#directory",
+        }
+      : {
+          title: "Ready to Boost Customer Loyalty?",
+          subtitle:
+            "Join hundreds of businesses using gobonki to increase repeat customers and drive revenue. Set up your loyalty program in minutes.",
+          cta: "Start Your Free Loyalty Program",
+          href: "#get-started",
+        };
 
   return (
     <section aria-labelledby="cta-title" className="relative isolate">
@@ -26,7 +31,10 @@ export default function CTASection() {
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="py-16 sm:py-20 lg:py-24 text-center">
-            <h2 id="cta-title" className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
+            <h2
+              id="cta-title"
+              className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white"
+            >
               {content.title}
             </h2>
 
@@ -37,7 +45,7 @@ export default function CTASection() {
             <div className="mt-8">
               <Button
                 asChild
-                className="rounded-xl bg-white text-neutral-900 hover:bg-white/90 px-6 py-3 text-sm font-semibold shadow-lg"
+                className="rounded-xl bg-white text-neutral-900 hover:bg-white/90 px-6 py-3 text-sm font-semibold shadow-lg transform transition-transform duration-200 hover:scale-105"
               >
                 <a href={content.href}>{content.cta}</a>
               </Button>
@@ -46,5 +54,5 @@ export default function CTASection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
