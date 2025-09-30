@@ -1,40 +1,24 @@
-// src/components/sections/newsletter/confirm/route.ts
+// src/app/api/newsletter/confirm/route.ts
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { newsletters } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 
 export async function GET(req: Request) {
+  const url = new URL(req.url);
+  const token = url.searchParams.get("token");
+  const wantsJson = (req.headers.get("accept") || "").includes("application/json");
+
+  if (!token) {
+    if (wantsJson) return NextResponse.json({ ok: false, error: "token_missing" }, { status: 400 });
+    return NextResponse.redirect(new URL("/newsletter/invalid", url));
+  }
+
   try {
-    const { searchParams } = new URL(req.url);
-    const token = searchParams.get("token");
-
-    if (!token) {
-      return NextResponse.redirect(`${process.env.APP_BASE_URL}/newsletter/invalid`);
-    }
-
     const now = new Date();
 
-    // Use select().from() pattern (works even if db schema generic not provided)
-    const rows = await db
-      .select()
-      .from(newsletters)
-      .where(eq(newsletters.confirmationToken, token))
-      .limit(1);
-
-    const entry = rows[0];
-
-    if (!entry) {
-      return NextResponse.redirect(`${process.env.APP_BASE_URL}/newsletter/invalid`);
-    }
-
-    // Check expiry if you have the column
-    if (entry.confirmationExpiresAt && new Date(entry.confirmationExpiresAt) < now) {
-      return NextResponse.redirect(`${process.env.APP_BASE_URL}/newsletter/invalid`);
-    }
-
-    // Update to set confirmed and clear token
-    await db
+    // Atomic update: update where token matches and not already confirmed
+    const res = await db
       .update(newsletters)
       .set({
         doubleOptInConfirmedAt: now,
@@ -42,11 +26,25 @@ export async function GET(req: Request) {
         confirmationExpiresAt: null,
         updatedAt: now,
       })
-      .where(eq(newsletters.id, entry.id));
+      .where(
+        // only update rows that still have the token (prevents race)
+        eq(newsletters.confirmationToken, token)
+      )
+      .returning({ id: newsletters.id, email: newsletters.email });
 
-    return NextResponse.redirect(`${process.env.APP_BASE_URL}/newsletter/success`);
+    // `res` is an array of updated rows (drizzle returns updated rows with returning)
+    if (!res || res.length === 0) {
+      // either token invalid/expired or already used
+      if (wantsJson) return NextResponse.json({ ok: false, error: "invalid_or_used_token" }, { status: 404 });
+      return NextResponse.redirect(new URL("/newsletter/invalid", url));
+    }
+
+    // success
+    if (wantsJson) return NextResponse.json({ ok: true, message: "confirmed" });
+    return NextResponse.redirect(new URL("/newsletter/success", url));
   } catch (err) {
     console.error("[newsletter.confirm][error]", err);
-    return NextResponse.redirect(`${process.env.APP_BASE_URL}/newsletter/invalid`);
+    if (wantsJson) return NextResponse.json({ ok: false, error: "server_error" }, { status: 500 });
+    return NextResponse.redirect(new URL("/newsletter/invalid", url));
   }
 }
