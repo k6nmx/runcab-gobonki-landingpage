@@ -18,7 +18,7 @@ function isBot(form: FormData) {
 
 export async function subscribe(formData: FormData) {
   console.log('[newsletter.subscribe] START');
-  
+
   try {
     if (isBot(formData)) {
       console.log('[newsletter.subscribe] Bot detected, skipping');
@@ -42,8 +42,6 @@ export async function subscribe(formData: FormData) {
     const now = new Date();
     const expiresAt = new Date(now.getTime() + 1000 * 60 * 60 * 24);
 
-    console.log('[newsletter.subscribe] Inserting into DB:', { email, source });
-    
     await db
       .insert(newsletters)
       .values({
@@ -68,30 +66,45 @@ export async function subscribe(formData: FormData) {
         },
       });
 
-    console.log('[newsletter.subscribe] DB operation complete');
-
     const confirmUrl = `${process.env.APP_BASE_URL}/api/newsletter/confirm?token=${token}`;
-    
-    const transporter = getTransporter(); // FIX: Actually call the function
-    
-    console.log('[newsletter.subscribe] Attempting to send email:', {
-      from: process.env.FROM_EMAIL,
-      to: email,
-      transporterExists: !!transporter, // FIX: Check the actual transporter object
-      confirmUrl,
-    });
 
-    const mailResult = await transporter.sendMail({ // FIX: Use the transporter instance
+    // --- TRANSPORTER SAFETY CHECK ---
+    const transporter = await getTransporter(); // await if it returns a promise
+
+    if (!transporter || typeof transporter.sendMail !== 'function') {
+      console.error('[newsletter.subscribe] transporter invalid:', transporter);
+      return { ok: false as const, error: 'Email transporter not configured' };
+    }
+
+    try {
+      // optional: verify connection (useful for debugging)
+      if (typeof transporter.verify === 'function') {
+        await transporter.verify();
+        console.log('[newsletter.subscribe] transporter verified');
+      }
+    } catch (verifyErr) {
+      console.error('[newsletter.subscribe] transporter verify failed', verifyErr);
+      // proceed — verification may not be supported in all transports
+    }
+
+    const mailOptions = {
       from: process.env.FROM_EMAIL,
       to: email,
       subject: "Confirm your subscription",
       text: `Confirm subscription: ${confirmUrl}`,
       html: `<p>Please confirm your subscription:</p><p><a href="${confirmUrl}">Confirm Subscription</a></p>`,
-    });
+    };
 
-    console.log('[newsletter.subscribe] Email sent successfully:', mailResult);
+    let mailResult;
+    try {
+      mailResult = await transporter.sendMail(mailOptions);
+      console.log('[newsletter.subscribe] Email sent successfully:', mailResult);
+    } catch (sendErr) {
+      console.error('[newsletter.subscribe] sendMail failed', sendErr);
+      return { ok: false as const, error: 'Failed to send confirmation email' };
+    }
+
     console.log('[newsletter.subscribe] Complete:', { email, source, ip, ua });
-
     return { ok: true as const };
   } catch (err) {
     console.error('[newsletter.subscribe][CRITICAL ERROR]', {
