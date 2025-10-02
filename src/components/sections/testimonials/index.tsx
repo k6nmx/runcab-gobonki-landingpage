@@ -6,21 +6,21 @@ import { useMode } from "@/context/mode-context"
 const CUSTOMER_TESTIMONIALS = [
   {
     rating: 5,
-    quote: "I used to lose my coffee punch cards all the time. Now I never miss out on my free drinks!",
+    quote: "Okay so I had like 6 different punch cards in my wallet and could never find the right one. This app is honestly just way easier.",
     author: "Sarah M.",
-    role: "Regular Customer"
+    location: "Toronto"
   },
   {
-    rating: 5,
-    quote: "Love that I can track rewards from all my favorite places in one app. So convenient!",
+    rating: 4,
+    quote: "Pretty solid app. I've saved maybe $30-40 this month just from actually remembering to use my rewards. The barcode scanner is a bit slow sometimes but whatever, it works.",
     author: "Mike R.",
-    role: "Food Enthusiast"
+    location: "Vancouver"
   },
   {
     rating: 5,
-    quote: "The notifications remind me when I'm close to earning rewards. I actually save money now!",
+    quote: "I'm one stamp away from a free burrito at my local spot and the app sent me a notification. Small thing but it made my day lol",
     author: "Emma L.",
-    role: "Busy Professional"
+    location: "Calgary"
   }
 ]
 
