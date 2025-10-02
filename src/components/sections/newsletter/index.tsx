@@ -215,7 +215,7 @@ export default function NewsletterSection({
                   <Button
                     type="submit"
                     disabled={isBusy}
-                    className="h-12 w-full sm:w-auto rounded-xl px-5 font-semibold btn-gradient shadow-md transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                    className="h-12 w-full sm:w-auto rounded-xl px-5 font-semibold btn-gradient shadow-md transition-all duration-300 ease-in-out hover:shadow-lg hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                   >
                     <span className="mr-2">{t("cta")}</span>
                     <ArrowRight className="h-4 w-4"/>
