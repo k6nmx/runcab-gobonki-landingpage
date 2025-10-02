@@ -4,7 +4,6 @@ import withNextIntl from 'next-intl/plugin';
 
 const withNextIntlConfigured = withNextIntl();
 
-console.log("Next root:", __dirname);
 
 
 /** @type {import('next').NextConfig} */
