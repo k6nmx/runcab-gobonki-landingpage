@@ -41,7 +41,7 @@ export default function NewsletterSection({
     startTransition(async () => {
       const formData = new FormData(e.currentTarget);
       formData.set("email", email);
-      formData.set("source", "landing"); // optional context
+      formData.set("source", "landing");
 
       const res = await subscribe(formData);
 
