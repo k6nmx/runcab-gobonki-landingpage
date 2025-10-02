@@ -1,11 +1,36 @@
 import nodemailer from "nodemailer";
+import type { Transporter } from "nodemailer";
 
-export const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT) || 587,
-  secure: Number(process.env.SMTP_PORT) === 465, // true for 465, false for 587 (STARTTLS)
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
+let transporter: Transporter | null = null;
+
+export function getTransporter() {
+  if (!transporter) {
+    const smtpHost = process.env.SMTP_HOST;
+    const smtpPort = process.env.SMTP_PORT;
+    const smtpUser = process.env.SMTP_USER;
+    const smtpPass = process.env.SMTP_PASS;
+
+    if (!smtpHost || !smtpUser || !smtpPass) {
+      throw new Error('[email] Missing required SMTP environment variables');
+    }
+
+    console.log('[email] Creating transporter with config:', {
+      host: smtpHost,
+      port: smtpPort,
+      user: smtpUser,
+      hasPassword: !!smtpPass,
+    });
+
+    transporter = nodemailer.createTransport({
+      host: smtpHost,
+      port: Number(smtpPort) || 587,
+      secure: Number(smtpPort) === 465,
+      auth: {
+        user: smtpUser,
+        pass: smtpPass,
+      },
+    });
+  }
+  
+  return transporter;
+}

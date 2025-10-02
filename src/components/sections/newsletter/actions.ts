@@ -5,7 +5,7 @@ import crypto from 'crypto';
 import { headers } from 'next/headers';
 import { db } from '@/lib/db';
 import { newsletters } from '@/lib/db/schema';
-import { transporter } from '@/lib/email';
+import { getTransporter } from '@/lib/email';
 
 const schema = z.object({
   email: z.string().email(),
@@ -72,14 +72,16 @@ export async function subscribe(formData: FormData) {
 
     const confirmUrl = `${process.env.APP_BASE_URL}/api/newsletter/confirm?token=${token}`;
     
+    const transporter = getTransporter(); // FIX: Actually call the function
+    
     console.log('[newsletter.subscribe] Attempting to send email:', {
       from: process.env.FROM_EMAIL,
       to: email,
-      transporterExists: !!transporter,
+      transporterExists: !!transporter, // FIX: Check the actual transporter object
       confirmUrl,
     });
 
-    const mailResult = await transporter.sendMail({
+    const mailResult = await transporter.sendMail({ // FIX: Use the transporter instance
       from: process.env.FROM_EMAIL,
       to: email,
       subject: "Confirm your subscription",
