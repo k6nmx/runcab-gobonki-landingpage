@@ -1,5 +1,5 @@
 // src/lib/db/schema.ts
-import { pgTable, text, timestamp, uuid, boolean } from 'drizzle-orm/pg-core';
+import { pgTable, text, timestamp, uuid, boolean, varchar } from 'drizzle-orm/pg-core';
 
 export const newsletters = pgTable('newsletters', {
   id: uuid('id').defaultRandom().primaryKey(),
@@ -16,6 +16,7 @@ export const newsletters = pgTable('newsletters', {
   confirmationToken: text('confirmation_token'),
   confirmationSentAt: timestamp('confirmation_sent_at'),
   confirmationExpiresAt: timestamp('confirmation_expires_at'),
+  userType: varchar('user_type', { length: 32 }).notNull().default('customer')
 });
 
 export type Newsletter = typeof newsletters.$inferSelect;

@@ -6,7 +6,7 @@ type Props = {
   rating: number
   quote: string
   author: string
-  role: string
+  role?: string         // optional now
   className?: string
 }
 
@@ -46,14 +46,12 @@ export function TestimonialCard({ rating, quote, author, role, className }: Prop
         </div>
 
         {/* Quote */}
-        <p className="italic text-neutral-700 leading-7">
-          “{quote}”
-        </p>
+        <p className="italic text-neutral-700 leading-7">“{quote}”</p>
 
         {/* Author */}
         <div className="mt-6">
           <div className="font-semibold text-neutral-900">{author}</div>
-          <div className="text-sm text-neutral-500">{role}</div>
+          {role ? <div className="text-sm text-neutral-500">{role}</div> : null}
         </div>
       </CardContent>
     </Card>

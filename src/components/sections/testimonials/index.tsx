@@ -3,6 +3,7 @@
 import { TestimonialCard } from "./testimonial-card"
 import { useMode } from "@/context/mode-context"
 
+// raw source arrays (unchanged)
 const CUSTOMER_TESTIMONIALS = [
   {
     rating: 5,
@@ -45,10 +46,41 @@ const BUSINESS_TESTIMONIALS = [
   }
 ]
 
+// canonical shape for downstream components
+type NormalizedTestimonial = {
+  rating: number
+  quote: string
+  author: string
+  role: string
+}
+
 export default function TestimonialsSection() {
   const { mode } = useMode()
-  const testimonials = mode === 'customer' ? CUSTOMER_TESTIMONIALS : BUSINESS_TESTIMONIALS
+  const raw = mode === 'customer' ? CUSTOMER_TESTIMONIALS : BUSINESS_TESTIMONIALS
   const title = mode === 'customer' ? 'What Our Users Say' : 'What Business Owners Say'
+
+  // Normalize at the boundary: guarantee every item has `role`
+  type RawTestimonial = {
+    rating?: number
+    quote?: string
+    author?: string
+    location?: string
+    role?: string
+  }
+
+  const normalizedTestimonials: NormalizedTestimonial[] = raw.map((t: RawTestimonial) => {
+    // Normalization policy:
+    // - prefer t.role
+    // - fallback to t.location
+    // - fallback to empty dash if missing
+    const role = (t.role ?? t.location ?? "—").toString()
+    return {
+      rating: Number(t.rating ?? 0),
+      quote: String(t.quote ?? ""),
+      author: String(t.author ?? "Anonymous"),
+      role,
+    }
+  })
 
   return (
     <section id="testimonials" className="relative">
@@ -62,7 +94,7 @@ export default function TestimonialsSection() {
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {testimonials.map((item, i) => (
+            {normalizedTestimonials.map((item, i) => (
               <TestimonialCard
                 key={i}
                 rating={item.rating}
