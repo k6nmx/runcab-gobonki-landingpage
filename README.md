@@ -2,6 +2,10 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+### Local Git Hooks
+
+This repo uses [Husky](https://typicode.github.io/husky/) to enforce local Git hooks. After installing dependencies (`npm install`), Husky installs automatically through the `prepare` script. Before pushing, Git runs the pre-push hook that executes `npm run build`. Make sure the build succeeds locally before pushing changes.
+
 First, run the development server:
 
 ```bash
