@@ -152,5 +152,20 @@
       { "q": "What about pricing?", "a": "Start free. Paid features like whitelabel and analytics are optional and transparent—no transaction fees." },
       { "q": "Does it integrate with my POS?", "a": "Not required. If you want POS sync, we offer a simple export and REST API on higher tiers." }
     ]
+  },
+"cta": {
+  "customer": {
+    "title": "Start Collecting Rewards Today",
+    "subtitle": "Join thousands of smart shoppers who never miss out on rewards. Find participating businesses near you and start earning instantly.",
+    "cta": "Find Businesses Near Me",
+    "href": "#directory"
+  },
+  "business": {
+    "title": "Ready to Boost Customer Loyalty?",
+    "subtitle": "Join hundreds of businesses using gobonki to increase repeat customers and drive revenue. Set up your loyalty program in minutes.",
+    "cta": "Start Your Free Loyalty Program",
+    "href": "#get-started"
   }
+}
+
 }
