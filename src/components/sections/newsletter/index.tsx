@@ -1,7 +1,7 @@
-// app/components/NewsletterSection.tsx
-"use client";
+'use client';
 
 import { useState, useTransition } from "react";
+import { useTranslations, useMessages } from "next-intl";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,84 +11,73 @@ import { cn } from "@/lib/utils";
 import { useMode } from "@/context/mode-context";
 import { subscribe } from "@/components/sections/newsletter/actions";
 
-const useTranslations = (namespace: string) => {
-  const translations: { [key: string]: { [key: string]: string } } = {
-    newsletter: {
-      title: "Stay Ahead of the Curve",
-      subtitle: "Join our newsletter for exclusive updates, tips, and offers.",
-      forCustomers: "For Shoppers",
-      forBusinesses: "For Businesses",
-      "customer.title": "As a shopper, you'll get:",
-      "customer.benefit1": "Exclusive deals and early access to rewards from your favorite local stores.",
-      "customer.benefit2": "Tips and tricks to maximize your savings and never miss a freebie.",
-      "customer.benefit3": "Notifications about new businesses joining the platform near you.",
-      "business.title": "As a business, you'll get:",
-      "business.benefit1": "Actionable insights on customer retention from our data analytics.",
-      "business.benefit2": "Case studies and growth strategies from successful businesses like yours.",
-      "business.benefit3": "Early announcements for new features to help you grow your sales.",
-      emailPlaceholder: "Enter your email address",
-      cta: "Subscribe",
-      disclaimer: "We respect your privacy. No spam.",
-      success: "Thanks for subscribing! Please check your email to confirm.",
-      error: "Something went wrong. Please try again."
-    }
-  };
-  return (key: string) => translations[namespace]?.[key] || key;
-};
-
 const clientSchema = z.object({ email: z.string().email() });
 
 export default function NewsletterSection({ className }: { className?: string }) {
   const t = useTranslations("newsletter");
+  type NewsletterMessages = {
+    newsletter?: {
+      customer?: { benefits?: unknown[] };
+      business?: { benefits?: unknown[] };
+    };
+    [key: string]: unknown;
+  };
+  const messages = useMessages() as NewsletterMessages | undefined;
   const { mode } = useMode();
+
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [email, setEmail] = useState("");
   const [isPending, startTransition] = useTransition();
   const isBusy = status === 'loading' || isPending;
 
-  const content = {
-    customer: {
-      title: t("customer.title"),
-      benefits: [t("customer.benefit1"), t("customer.benefit2"), t("customer.benefit3")],
-    },
-    business: {
-      title: t("business.title"),
-      benefits: [t("business.benefit1"), t("business.benefit2"), t("business.benefit3")],
-    },
-  };
+  // Safely read newsletter messages for the current locale:
+  // messages may be undefined in some contexts (e.g., during edges of hydration),
+  // so provide a defensive fallback shape.
+  const newsletterMessages = (messages && messages.newsletter)
+    ? messages.newsletter
+    : { customer: { benefits: [] }, business: { benefits: [] } };
+
+  // Choose the correct array based on mode and normalize to strings.
+  const rawBenefits = mode === 'customer'
+    ? newsletterMessages?.customer?.benefits ?? []
+    : newsletterMessages?.business?.benefits ?? [];
+
+  const benefits = Array.isArray(rawBenefits)
+    ? rawBenefits.map((b) => (typeof b === 'string' ? b : String(b ?? ''))).filter(Boolean).slice(0, 3)
+    : [];
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
-  e.preventDefault();
-  
-  const parsed = clientSchema.safeParse({ email });
-  if (!parsed.success) {
-    setStatus("error");
-    return;
-  }
+    e.preventDefault();
 
-  setStatus("loading");
+    const parsed = clientSchema.safeParse({ email });
+    if (!parsed.success) {
+      setStatus("error");
+      return;
+    }
 
-  startTransition(async () => {
-    try {
-      const formData = new FormData(e.currentTarget);
-      formData.set("userType", mode);
-      formData.set("email", email);
+    setStatus("loading");
 
-      const result = await subscribe(formData);
+    startTransition(async () => {
+      try {
+        const formData = new FormData(e.currentTarget);
+        formData.set("userType", mode);
+        formData.set("email", email);
 
-      if (result.ok) {
-        setStatus("success");
-        setEmail("");
-      } else {
-        console.error("subscribe failed:", result);
+        const result = await subscribe(formData);
+
+        if (result.ok) {
+          setStatus("success");
+          setEmail("");
+        } else {
+          console.error("subscribe failed:", result);
+          setStatus("error");
+        }
+      } catch (err) {
+        console.error("subscribe error:", err);
         setStatus("error");
       }
-    } catch (err) {
-      console.error("subscribe error:", err);
-      setStatus("error");
-    }
-  });
-}
+    });
+  }
 
   return (
     <section id="contact" className={cn("relative py-14 sm:py-20 smooth-scroll", className)}>
@@ -97,23 +86,37 @@ export default function NewsletterSection({ className }: { className?: string })
           <Card className="rounded-3xl border-none bg-white/80 backdrop-blur overflow-hidden">
             <CardContent className="relative p-6 sm:p-10">
               <div className="text-center">
-                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900">{t("title")}</h2>
-                <p className="mt-2 max-w-2xl mx-auto text-neutral-600">{t("subtitle")}</p>
+                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900">
+                  {t("title")}
+                </h2>
+                <p className="mt-2 max-w-2xl mx-auto text-neutral-600">
+                  {t("subtitle")}
+                </p>
 
                 <div className="mt-8 inline-flex rounded-xl bg-neutral-100/80 shadow-sm ring-1 ring-inset ring-neutral-200 p-1">
-                  <div className={cn("flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition-colors", mode === "customer" ? "bg-white text-neutral-900 shadow" : "text-neutral-500")}>
-                    <Users className="h-4 w-4" />{t("forCustomers")}
+                  <div className={cn(
+                    "flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition-colors",
+                    mode === "customer" ? "bg-white text-neutral-900 shadow" : "text-neutral-500"
+                  )}>
+                    <Users className="h-4 w-4" />
+                    {t("forCustomers")}
                   </div>
-                  <div className={cn("flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition-colors", mode === "business" ? "bg-white text-neutral-900 shadow" : "text-neutral-500")}>
-                    <Building2 className="h-4 w-4" />{t("forBusinesses")}
+                  <div className={cn(
+                    "flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition-colors",
+                    mode === "business" ? "bg-white text-neutral-900 shadow" : "text-neutral-500"
+                  )}>
+                    <Building2 className="h-4 w-4" />
+                    {t("forBusinesses")}
                   </div>
                 </div>
               </div>
 
               <div className="mt-6 max-w-md mx-auto text-left text-neutral-700">
-                <h3 className="font-semibold text-neutral-800">{content[mode].title}</h3>
+                <h3 className="font-semibold text-neutral-800">
+                  {t(`${mode === 'customer' ? 'customer' : 'business'}.title`)}
+                </h3>
                 <ul className="mt-3 space-y-2">
-                  {content[mode].benefits.map((benefit, i) => (
+                  {benefits.map((benefit, i) => (
                     <li key={i} className="flex items-start">
                       <CheckCircle2 className="h-5 w-5 text-emerald-500 mr-2.5 shrink-0 mt-0.5" />
                       <span>{benefit}</span>
@@ -139,7 +142,11 @@ export default function NewsletterSection({ className }: { className?: string })
                       required
                     />
                   </div>
-                  <Button type="submit" disabled={isBusy} className="h-12 w-full sm:w-auto rounded-xl px-5 font-semibold btn-gradient shadow-md">
+                  <Button
+                    type="submit"
+                    disabled={isBusy}
+                    className="h-12 w-full sm:w-auto rounded-xl px-5 font-semibold btn-gradient shadow-md"
+                  >
                     <span className="mr-2">{t("cta")}</span>
                     <ArrowRight className="h-4 w-4" />
                   </Button>
@@ -150,8 +157,16 @@ export default function NewsletterSection({ className }: { className?: string })
                   <span>{t("disclaimer")}</span>
                 </div>
 
-                {status === "success" && <p className="mt-3 text-center text-sm font-medium text-emerald-600">{t("success")}</p>}
-                {status === "error" && <p className="mt-3 text-center text-sm font-medium text-red-600">{t("error")}</p>}
+                {status === "success" && (
+                  <p className="mt-3 text-center text-sm font-medium text-emerald-600">
+                    {t("success")}
+                  </p>
+                )}
+                {status === "error" && (
+                  <p className="mt-3 text-center text-sm font-medium text-red-600">
+                    {t("error")}
+                  </p>
+                )}
               </form>
             </CardContent>
           </Card>
