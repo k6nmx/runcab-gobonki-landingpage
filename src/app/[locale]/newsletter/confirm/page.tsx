@@ -10,12 +10,11 @@ import { Button } from "@/components/ui/button";
 // The props for a Next.js Page component.
 // `searchParams` is an object containing the query parameters.
 interface PageProps {
-  searchParams: { token?: string };
+  searchParams: Promise<{ token: string | null }>;
 }
 
 export default async function NewsletterConfirmPage({ searchParams }: PageProps) {
-  // Directly access the token from searchParams. It is not a promise.
-  const token = searchParams?.token;
+  const { token } = await searchParams;
 
   if (!token) {
     return <InvalidTokenUI reason="missing" />;
