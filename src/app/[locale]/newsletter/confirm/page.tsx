@@ -12,7 +12,7 @@ interface Props {
 }
 
 export default async function NewsletterConfirmPage({ searchParams }: Props) {
-  const params = await searchParams
+  const params = await searchParams;
   const token = params?.token;
 
   if (!token) {

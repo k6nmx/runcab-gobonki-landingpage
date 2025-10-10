@@ -1,0 +1,1 @@
+ALTER TABLE "newsletters" ADD COLUMN "user_type" varchar(32) DEFAULT 'customer' NOT NULL;

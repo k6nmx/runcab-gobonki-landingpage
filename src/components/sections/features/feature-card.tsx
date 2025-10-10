@@ -21,6 +21,8 @@ const ICONS = {
   smartphone: Smartphone,
 } as const;
 
+export { ICONS }
+
 type IconKey = keyof typeof ICONS
 
 type Props = {

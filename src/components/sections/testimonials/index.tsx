@@ -1,52 +1,9 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import { TestimonialCard } from "./testimonial-card"
 import { useMode } from "@/context/mode-context"
 
-// raw source arrays (unchanged)
-const CUSTOMER_TESTIMONIALS = [
-  {
-    rating: 5,
-    quote: "Okay so I had like 6 different punch cards in my wallet and could never find the right one. This app is honestly just way easier.",
-    author: "Sarah M.",
-    location: "Toronto"
-  },
-  {
-    rating: 4,
-    quote: "Pretty solid app. I've saved maybe $30-40 this month just from actually remembering to use my rewards. The barcode scanner is a bit slow sometimes but whatever, it works.",
-    author: "Mike R.",
-    location: "Vancouver"
-  },
-  {
-    rating: 5,
-    quote: "I'm one stamp away from a free burrito at my local spot and the app sent me a notification. Small thing but it made my day lol",
-    author: "Emma L.",
-    location: "Calgary"
-  }
-]
-
-const BUSINESS_TESTIMONIALS = [
-  {
-    rating: 5,
-    quote: "We saw a 35% increase in repeat customers within the first month. The setup was incredibly easy.",
-    author: "David Chen",
-    role: "Cafe Owner, Brew & Bean"
-  },
-  {
-    rating: 5,
-    quote: "The analytics help us understand our customers better. We've optimized our rewards and increased sales.",
-    author: "Maria Rodriguez",
-    role: "Restaurant Manager, Taco Corner"
-  },
-  {
-    rating: 5,
-    quote: "Our customers love the convenience. No more paper cards cluttering their wallets!",
-    author: "James Wilson",
-    role: "Barber Shop Owner"
-  }
-]
-
-// canonical shape for downstream components
 type NormalizedTestimonial = {
   rating: number
   quote: string
@@ -56,31 +13,49 @@ type NormalizedTestimonial = {
 
 export default function TestimonialsSection() {
   const { mode } = useMode()
-  const raw = mode === 'customer' ? CUSTOMER_TESTIMONIALS : BUSINESS_TESTIMONIALS
-  const title = mode === 'customer' ? 'What Our Users Say' : 'What Business Owners Say'
+  const t = useTranslations('testimonials')
 
-  // Normalize at the boundary: guarantee every item has `role`
-  type RawTestimonial = {
-    rating?: number
-    quote?: string
-    author?: string
-    location?: string
-    role?: string
-  }
+  // Get title based on mode
+  const title = mode === 'customer' ? t('customerTitle') : t('businessTitle')
 
-  const normalizedTestimonials: NormalizedTestimonial[] = raw.map((t: RawTestimonial) => {
-    // Normalization policy:
-    // - prefer t.role
-    // - fallback to t.location
-    // - fallback to empty dash if missing
-    const role = (t.role ?? t.location ?? "—").toString()
-    return {
-      rating: Number(t.rating ?? 0),
-      quote: String(t.quote ?? ""),
-      author: String(t.author ?? "Anonymous"),
-      role,
+  // Get the correct testimonials array based on mode
+  const modeKey = mode === 'customer' ? 'customer' : 'business'
+  
+  // Read count from translations
+  const countRaw = t(`${modeKey}.count`)
+  const count = parseInt(countRaw, 10) || 0
+
+  // Build items array by reading from correct nested structure
+  const items: NormalizedTestimonial[] = []
+  
+  for (let i = 0; i < count; i++) {
+    const base = `${modeKey}.items.${i}`
+    
+    // Read rating
+    const ratingRaw = t(`${base}.rating`)
+    const rating = parseInt(ratingRaw, 10) || 0
+    
+    // Read quote
+    const quote = t(`${base}.quote`)
+    
+    // Read author
+    const author = t(`${base}.author`) || 'Anonymous'
+    
+    // Read role or location (customer mode uses location, business uses role)
+    let role = ''
+    if (mode === 'business') {
+      role = t(`${base}.role`) || '—'
+    } else {
+      role = t(`${base}.location`) || '—'
     }
-  })
+    
+    items.push({
+      rating,
+      quote,
+      author,
+      role
+    })
+  }
 
   return (
     <section id="testimonials" className="relative">
@@ -94,7 +69,7 @@ export default function TestimonialsSection() {
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {normalizedTestimonials.map((item, i) => (
+            {items.map((item, i) => (
               <TestimonialCard
                 key={i}
                 rating={item.rating}
