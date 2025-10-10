@@ -7,13 +7,15 @@ import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-interface Props {
+// The props for a Next.js Page component.
+// `searchParams` is an object containing the query parameters.
+interface PageProps {
   searchParams: { token?: string };
 }
 
-export default async function NewsletterConfirmPage({ searchParams }: Props) {
-  const params = await searchParams;
-  const token = params?.token;
+export default async function NewsletterConfirmPage({ searchParams }: PageProps) {
+  // Directly access the token from searchParams. It is not a promise.
+  const token = searchParams?.token;
 
   if (!token) {
     return <InvalidTokenUI reason="missing" />;
@@ -38,6 +40,7 @@ export default async function NewsletterConfirmPage({ searchParams }: Props) {
         userType: newsletters.userType 
       });
 
+    // If the update affected 0 rows, it means the token was invalid or already used.
     if (!result || result.length === 0) {
       return <InvalidTokenUI reason="expired" />;
     }
@@ -51,6 +54,7 @@ export default async function NewsletterConfirmPage({ searchParams }: Props) {
   }
 }
 
+// UI Component for a successful confirmation.
 function SuccessUI({ email, userType }: { email: string; userType: string | null }) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-brand-50 flex items-center justify-center p-4">
@@ -85,6 +89,7 @@ function SuccessUI({ email, userType }: { email: string; userType: string | null
   );
 }
 
+// UI Component for an invalid or expired token.
 function InvalidTokenUI({ reason }: { reason: 'missing' | 'expired' | 'error' }) {
   const messages = {
     missing: {
