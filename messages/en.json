@@ -99,20 +99,38 @@
       ]
     }
   },
+  "newsletter": {
+    "title": "Stay Ahead of the Curve",
+    "subtitle": "Join our newsletter for exclusive updates, tips, and offers.",
+    "forCustomers": "For Shoppers",
+    "forBusinesses": "For Businesses",
+    "customer": {
+      "title": "As a shopper, you'll get:",
+      "benefits": [
+        "Exclusive deals and early access to rewards from your favorite local stores.",
+        "Tips and tricks to maximize your savings and never miss a freebie.",
+        "Notifications about new businesses joining the platform near you."
+      ]
+    },
+    "business": {
+      "title": "As a business, you'll get:",
+      "benefits": [
+        "Actionable insights on customer retention from our data analytics.",
+        "Case studies and growth strategies from successful businesses like yours.",
+        "Early announcements for new features to help you grow your sales."
+      ]
+    },
+    "emailPlaceholder": "Enter your email address",
+    "cta": "Subscribe",
+    "disclaimer": "We respect your privacy. No spam.",
+    "success": "Thanks for subscribing! Please check your email to confirm.",
+    "error": "Something went wrong. Please try again."
+  },
   "cta": {
     "title": "Ready to boost customer loyalty?",
     "subtitle": "Join thousands of businesses using gobonki to create lasting customer relationships",
     "cta": "Start Free Today",
     "href": "#get-started"
-  },
-  "newsletter": {
-    "title": "Want to know more?",
-    "subtitle": "Sign up to our newsletter and be the first to know when our platform launches for all storefronts.",
-    "emailPlaceholder": "youremail@email.com",
-    "cta": "Submit",
-    "success": "Thanks! Please check your inbox to confirm.",
-    "error": "Something went wrong. Try again.",
-    "disclaimer": "No spam. Unsubscribe anytime."
   },
   "faq": {
     "title": "Frequently asked questions",
