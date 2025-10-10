@@ -39,7 +39,7 @@ export default async function RootLayout({
   console.log('[LAYOUT] Messages keys:', Object.keys(messages));
 
   return (
-    <html lang={locale}>
+    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />

@@ -1,0 +1,208 @@
+{
+  "navigation": {
+    "features": "Özellikler",
+    "testimonials": "Yorumlar",
+    "faq": "SSS",
+    "contact": "Bülten",
+    "forCustomers": "Müşteriler İçin",
+    "forBusinesses": "İşletmeler İçin",
+    "cta": "Uygulamayı Aç",
+    "language": "Dil"
+  },
+  "hero": {
+    "customer": {
+      "title": "Telefonun = Sadakat kartların",
+      "subtitle": "Ödülleri bir daha asla kaybetme. Her alışverişin değerli. Restoranlarda, berberlerde, kafelerde geçerli - indirme gerektirmez.",
+      "cta": "Uygulamayı Şimdi İndir"
+    },
+    "business": {
+      "title": "Yabancıları anında müdavimlere dönüştürün",
+      "subtitle": "2 dakikada kurun, her şeyi özelleştirin, aylık ücret yok. Küçük işletmeler için gerçekten işe yarayan sadakat programı.",
+      "cta": "Demoyu İzle"
+    }
+  },
+  "features": {
+    "customer": {
+      "title": "Neden gobonki'yi seçmelisiniz?",
+      "subtitle": "Tüm favori mekanlarınızdaki ödüllerin keyfini tek bir basit arayüzde çıkarın",
+      "count": "6",
+      "items": [
+        { "icon": "credit-card", "title": "Tüm Kartlar Tek Yerde", "description": "Farklı işletmelerdeki tüm sadakat kartlarınızı tek bir kullanışlı yerde takip edin." },
+        { "icon": "gift", "title": "Anında Ödüller", "description": "Damgaları toplayın ve ödülleri anında kullanın. Beklemek yok, karmaşa yok." },
+        { "icon": "zap", "title": "Kayıt Derdi Yok", "description": "Hemen damga toplamaya başlayın. Uzun kayıt işlemleri veya kişisel bilgi gerekmez." },
+        { "icon": "map-pin", "title": "Katılımcı Mekanları Bulun", "description": "Yakınınızdaki damga ödülleri sunan kafeleri, restoranları ve dükkanları keşfedin." },
+        { "icon": "bookmark", "title": "İlerlemeni Asla Kaybetme", "description": "Damgalarınız otomatik olarak kaydedilir—artık kayıp kağıt kartlar veya unutulan ödüller yok." },
+        { "icon": "bell", "title": "Akıllı Bildirimler", "description": "Bir ödül kazanmaya yaklaştığınızda veya özel teklifler mevcut olduğunda hatırlatma alın." }
+      ]
+    },
+    "business": {
+      "title": "İşletmeler Neden gobonki'yi Seçiyor?",
+      "subtitle": "Müşteri sadakati oluşturmak ve tekrar gelen müşteri sayısını artırmak için ihtiyacınız olan her şey",
+      "count": "6",
+      "items": [
+        { "icon": "trending-up", "title": "Müşteri Bağlılığını Artırın", "description": "Müşterilerin gerçekten kullandığı ilgi çekici dijital sadakat programlarıyla tekrar ziyaretleri %40'a kadar artırın." },
+        { "icon": "bar-chart-3", "title": "Detaylı Analizler", "description": "Kapsamlı panolarla müşteri davranışını, ödül kullanım oranlarını ve yatırım getirisini (ROI) takip edin." },
+        { "icon": "settings", "title": "Kolay Kurulum ve Yönetim", "description": "Sadakat programınızı dakikalar içinde başlatın. Teknik bilgi gerekmez, karmaşık entegrasyonlar yok." },
+        { "icon": "users", "title": "Müşteri Veritabanı", "description": "Tercihler ve ziyaret alışkanlıkları hakkında bilgilerle değerli bir müşteri veritabanı oluşturun." },
+        { "icon": "dollar-sign", "title": "Geliri Artırın", "description": "Hedefli ödüller ve promosyonlarla daha yüksek ortalama sipariş değerleri ve sıklığı sağlayın." },
+        { "icon": "smartphone", "title": "Mobil Öncelikli Deneyim", "description": "Müşteriler bu kolaylığa bayılıyor. İndirilecek uygulama yok, taşınacak kart yok—sadece okutun ve kazanın." }
+      ]
+    }
+  },
+  "testimonials": {
+    "customerTitle": "Kullanıcılarımız Ne Diyor",
+    "businessTitle": "İşletme Sahipleri Ne Diyor",
+    "customer": {
+      "count": "3",
+      "items": [
+        {
+          "rating": "5",
+          "quote": "Tamam, cüzdanımda 6 farklı delikli kart vardı ve hiçbir zaman doğru olanı bulamıyordum. Bu uygulama dürüst olmak gerekirse çok daha kolay.",
+          "author": "Selin M.",
+          "location": "İstanbul"
+        },
+        {
+          "rating": "4",
+          "quote": "Oldukça sağlam bir uygulama. Sadece ödüllerimi kullanmayı hatırladığım için bu ay belki 200-250 TL tasarruf ettim. Barkod okuyucu bazen biraz yavaş ama olsun, işe yarıyor.",
+          "author": "Murat R.",
+          "location": "Ankara"
+        },
+        {
+          "rating": "5",
+          "quote": "Mahallemdeki dükkandan bedava bir kahve kazanmama bir damga kaldı ve uygulama bana bildirim gönderdi. Küçük bir şey ama günümü güzelleştirdi haha",
+          "author": "Emel L.",
+          "location": "İzmir"
+        }
+      ]
+    },
+    "business": {
+      "count": "3",
+      "items": [
+        {
+          "rating": "5",
+          "quote": "İlk ay içinde tekrar gelen müşteri sayımızda %35'lik bir artış gördük. Kurulum inanılmaz derecede kolaydı.",
+          "author": "Ahmet Ç.",
+          "role": "Kafe Sahibi, Kahve & Çekirdek"
+        },
+        {
+          "rating": "5",
+          "quote": "Analizler, müşterilerimizi daha iyi anlamamıza yardımcı oluyor. Ödüllerimizi optimize ettik ve satışlarımızı artırdık.",
+          "author": "Meryem Y.",
+          "role": "Restoran Müdürü, Taco Köşesi"
+        },
+        {
+          "rating": "5",
+          "quote": "Müşterilerimiz bu kolaylığa bayılıyor. Artık cüzdanlarını dolduran kağıt kartlar yok!",
+          "author": "Cem V.",
+          "role": "Berber Dükkanı Sahibi"
+        }
+      ]
+    }
+  },
+  "newsletter": {
+    "title": "Gelişmelerden İlk Sizin Haberiniz Olsun",
+    "subtitle": "Özel güncellemeler, ipuçları ve teklifler için bültenimize katılın.",
+    "forCustomers": "Alışveriş Yapanlar İçin",
+    "forBusinesses": "İşletmeler İçin",
+    "customer": {
+      "title": "Bir müşteri olarak şunları elde edeceksiniz:",
+      "benefits": [
+        "Favori yerel mağazalarınızdan özel fırsatlar ve ödüllere erken erişim.",
+        "Tasarruflarınızı en üst düzeye çıkarmak ve hiçbir bedava ürünü kaçırmamak için ipuçları ve püf noktaları.",
+        "Yakınınızdaki platforma katılan yeni işletmeler hakkında bildirimler."
+      ]
+    },
+    "business": {
+      "title": "Bir işletme olarak şunları elde edeceksiniz:",
+      "benefits": [
+        "Veri analizlerimizden müşteri bağlılığına dair eyleme geçirilebilir bilgiler.",
+        "Sizinki gibi başarılı işletmelerden vaka çalışmaları ve büyüme stratejileri.",
+        "Satışlarınızı artırmanıza yardımcı olacak yeni özellikler için erken duyurular."
+      ]
+    },
+    "emailPlaceholder": "E-posta adresinizi girin",
+    "cta": "Abone Ol",
+    "disclaimer": "Gizliliğinize saygı duyuyoruz. Spam yok.",
+    "success": "Abone olduğunuz için teşekkürler! Lütfen onaylamak için e-postanızı kontrol edin.",
+    "error": "Bir şeyler ters gitti. Lütfen tekrar deneyin."
+  },
+  "cta": {
+    "customer": {
+      "title": "Bugün Ödül Toplamaya Başlayın",
+      "subtitle": "Ödülleri asla kaçırmayan binlerce akıllı alışverişçiye katılın. Yakınınızdaki katılımcı işletmeleri bulun ve anında kazanmaya başlayın.",
+      "cta": "Yakınımdaki İşletmeleri Bul",
+      "href": "#directory"
+    },
+    "business": {
+      "title": "Müşteri Sadakatini Artırmaya Hazır mısınız?",
+      "subtitle": "Tekrar gelen müşteri sayısını artırmak ve gelir elde etmek için gobonki'yi kullanan yüzlerce işletmeye katılın. Sadakat programınızı dakikalar içinde kurun.",
+      "cta": "Ücretsiz Sadakat Programınızı Başlatın",
+      "href": "#get-started"
+    },
+    "title": "Müşteri sadakatini artırmaya hazır mısınız?",
+    "subtitle": "Kalıcı müşteri ilişkileri kurmak için gobonki'yi kullanan binlerce işletmeye katılın",
+    "cta": "Bugün Ücretsiz Başlayın",
+    "href": "#get-started"
+  },
+  "faq": {
+    "title": "Sıkça sorulan sorular",
+    "forCustomers": "Müşteriler İçin",
+    "forBusinesses": "İşletmeler İçin",
+    "customers": [
+      { "q": "Bir uygulama yüklemem gerekiyor mu?", "a": "Uygulama gerekmez. Kasada bir QR kod okutursunuz ve damgalarınız telefonunuzun tarayıcı cüzdanına kaydedilir." },
+      { "q": "Bir ödülü nasıl kullanırım?", "a": "Yeterince damga topladığınızda, telefonunuzu kasiyere gösterin. 'Kullan' seçeneğine dokunurlar ve ödülünüz anında uygulanır." },
+      { "q": "Telefonumu değiştirirsem veya kaybedersem ne olur?", "a": "Aynı e-posta veya telefon numarasını kullandığınızda damgalarınız geri senkronize edilir. Hesap şifresi gerekmez." },
+      { "q": "Verilerim güvende mi?", "a": "Evet. Yalnızca damgalarınızı takip etmek için gerekenleri saklıyoruz. Konum takibi yok, kişisel verilerin yeniden satışı yok." },
+      { "q": "Farklı mağazalarda çalışır mı?", "a": "Evet. gobonki kafelerde, berberlerde, restoranlarda çalışır—her işletmenin kendi kartı ve ödülleri olabilir." },
+      { "q": "Çevrimdışı çalışır mı?", "a": "Kartınızı çevrimdışı açabilirsiniz, ancak damgalama/kullanma işlemi sahtekarlığı önlemek için hızlı bir çevrimiçi kontrol gerektirir." }
+    ],
+    "businesses": [
+      { "q": "Kurulum ne kadar sürer?", "a": "Yaklaşık 2 dakika. Bir kart oluşturun, ödülünüzü belirleyin, QR kodunuzu yazdırın. Hepsi bu—POS entegrasyonu gerekmez." },
+      { "q": "Yeni bir donanıma ihtiyacım var mı?", "a": "Hayır. Tarayıcı açabilen herhangi bir telefon veya tablet çalışır. Personel sadece müşterinin QR kodunu okutur veya dokunur." },
+      { "q": "Damgalar nasıl doğrulanır?", "a": "QR + sunucu kontrolleri kopyaları önler. İsteğe bağlı olarak ekstra kontrol için personel PIN'i veya cihaz onayı gerektirebilirsiniz." },
+      { "q": "Ödülleri ve markalamayı özelleştirebilir miyim?", "a": "Evet. Damga sayısını, ödül metnini, marka renklerini ve hatta ücretli katmanlarda kendi markanızla kullanmayı (whitelabel) ayarlayabilirsiniz." },
+      { "q": "Fiyatlandırma nasıl?", "a": "Ücretsiz başlayın. Kendi markanızla kullanma ve analizler gibi ücretli özellikler isteğe bağlı ve şeffaftır—işlem ücreti yok." },
+      { "q": "POS sistemimle entegre oluyor mu?", "a": "Gerekli değil. POS senkronizasyonu isterseniz, daha yüksek katmanlarda basit bir dışa aktarma ve REST API sunuyoruz." }
+    ]
+  },
+  "footer": {
+    "brand": {
+      "logoAlt": "Gobonki",
+      "tagline": "Dijital damga kartı çözümünüz",
+      "social": {
+        "linkedin": "https://linkedin.com/company/gobonki",
+        "instagram": "https://instagram.com/gobonki",
+        "tiktok": "https://tiktok.com/@gobonki"
+      }
+    },
+    "columns": [
+      {
+        "title": "Ürün",
+        "items": [
+          { "type": "anchor", "label": "Özellikler", "href": "#features" },
+          { "type": "anchor", "label": "Yorumlar", "href": "#testimonials" }
+        ]
+      },
+      {
+        "title": "Şirket",
+        "items": [
+          { "type": "link", "label": "Hakkında", "href": "/about" },
+          { "type": "mailto", "label": "İletişim", "email": "hello@gobonki.com", "subject": "Merhaba Gobonki", "body": "İletişime geçmek istiyorum." },
+          { "type": "anchor", "label": "Bülten", "href": "#contact" }
+        ]
+      },
+      {
+        "title": "Yasal",
+        "items": [
+          { "type": "link", "label": "Gizlilik Politikası", "href": "/privacy" },
+          { "type": "link", "label": "Künye", "href": "/imprint" },
+          { "type": "link", "label": "Hizmet Şartları", "href": "/terms" }
+        ]
+      }
+    ],
+    "bottom": {
+      "copyright": "® {year} Gobonki. Tüm hakları saklıdır.",
+      "madeIn": "Avrupa'da ❤️ ile yapıldı"
+    }
+  }
+}

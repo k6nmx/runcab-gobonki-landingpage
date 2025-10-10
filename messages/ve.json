@@ -1,0 +1,326 @@
+{
+  "navigation": {
+    "features": "Tính năng",
+    "testimonials": "Phản hồi",
+    "faq": "Hỏi đáp",
+    "contact": "Bản tin",
+    "forCustomers": "Dành cho khách hàng",
+    "forBusinesses": "Dành cho doanh nghiệp",
+    "cta": "Mở ứng dụng",
+    "language": "Ngôn ngữ"
+  },
+  "hero": {
+    "customer": {
+      "title": "Điện thoại của bạn = Thẻ tích điểm của bạn",
+      "subtitle": "Không bao giờ mất phần thưởng nữa. Mỗi lần mua hàng đều có giá trị. Hoạt động tại nhà hàng, tiệm cắt tóc, quán cà phê – không cần tải xuống.",
+      "cta": "Tải ứng dụng ngay"
+    },
+    "business": {
+      "title": "Biến người lạ thành khách quen ngay lập tức",
+      "subtitle": "Cài đặt trong 2 phút, tùy chỉnh mọi thứ, không mất phí hàng tháng. Chương trình khách hàng thân thiết thực sự hiệu quả cho các doanh nghiệp nhỏ.",
+      "cta": "Xem Demo"
+    }
+  },
+  "features": {
+    "customer": {
+      "title": "Tại sao chọn gobonki?",
+      "subtitle": "Tận hưởng phần thưởng từ tất cả các địa điểm yêu thích của bạn trong một giao diện đơn giản",
+      "count": "6",
+      "items": [
+        {
+          "icon": "credit-card",
+          "title": "Tất cả thẻ trong một nơi",
+          "description": "Theo dõi tất cả các thẻ tích điểm của bạn từ các doanh nghiệp khác nhau tại một nơi tiện lợi."
+        },
+        {
+          "icon": "gift",
+          "title": "Phần thưởng tức thì",
+          "description": "Tích tem và đổi phần thưởng ngay lập tức. Không phải chờ đợi, không phức tạp."
+        },
+        {
+          "icon": "zap",
+          "title": "Không cần đăng ký rắc rối",
+          "description": "Bắt đầu tích tem ngay lập tức. Không cần quy trình đăng ký dài dòng hay thông tin cá nhân."
+        },
+        {
+          "icon": "map-pin",
+          "title": "Tìm các địa điểm tham gia",
+          "description": "Khám phá các quán cà phê, nhà hàng và cửa hàng gần bạn có cung cấp phần thưởng tích tem."
+        },
+        {
+          "icon": "bookmark",
+          "title": "Không bao giờ mất tiến độ",
+          "description": "Tem của bạn được lưu tự động—không còn thẻ giấy bị mất hoặc phần thưởng bị quên."
+        },
+        {
+          "icon": "bell",
+          "title": "Thông báo thông minh",
+          "description": "Nhận thông báo khi bạn sắp kiếm được phần thưởng hoặc khi có ưu đãi đặc biệt."
+        }
+      ]
+    },
+    "business": {
+      "title": "Tại sao doanh nghiệp chọn gobonki?",
+      "subtitle": "Mọi thứ bạn cần để xây dựng lòng trung thành của khách hàng và thúc đẩy kinh doanh lặp lại",
+      "count": "6",
+      "items": [
+        {
+          "icon": "trending-up",
+          "title": "Tăng cường giữ chân khách hàng",
+          "description": "Tăng lượt ghé thăm lặp lại lên đến 40% với các chương trình tích điểm kỹ thuật số hấp dẫn mà khách hàng thực sự sử dụng."
+        },
+        {
+          "icon": "bar-chart-3",
+          "title": "Phân tích chi tiết",
+          "description": "Theo dõi hành vi khách hàng, tỷ lệ đổi thưởng và ROI với các bảng điều khiển toàn diện."
+        },
+        {
+          "icon": "settings",
+          "title": "Thiết lập & quản lý dễ dàng",
+          "description": "Khởi động chương trình khách hàng thân thiết của bạn trong vài phút. Không yêu cầu kiến thức kỹ thuật, không tích hợp phức tạp."
+        },
+        {
+          "icon": "users",
+          "title": "Cơ sở dữ liệu khách hàng",
+          "description": "Xây dựng một cơ sở dữ liệu khách hàng có giá trị với các thông tin chi tiết về sở thích và hành vi ghé thăm."
+        },
+        {
+          "icon": "dollar-sign",
+          "title": "Tăng doanh thu",
+          "description": "Tăng giá trị đơn hàng trung bình và tần suất mua hàng với các phần thưởng và chương trình khuyến mãi được nhắm mục tiêu."
+        },
+        {
+          "icon": "smartphone",
+          "title": "Trải nghiệm ưu tiên thiết bị di động",
+          "description": "Khách hàng yêu thích sự tiện lợi. Không cần tải ứng dụng, không cần mang theo thẻ—chỉ cần quét và kiếm điểm."
+        }
+      ]
+    }
+  },
+  "testimonials": {
+    "customerTitle": "Người dùng của chúng tôi nói gì",
+    "businessTitle": "Chủ doanh nghiệp nói gì",
+    "customer": {
+      "count": "3",
+      "items": [
+        {
+          "rating": "5",
+          "quote": "Tôi có khoảng 6 cái thẻ tích điểm khác nhau trong ví và không bao giờ tìm thấy cái đúng. Ứng dụng này thực sự dễ dùng hơn nhiều.",
+          "author": "Sarah M.",
+          "location": "Toronto"
+        },
+        {
+          "rating": "4",
+          "quote": "Ứng dụng khá ổn. Tôi đã tiết kiệm được khoảng 30-40 đô la tháng này chỉ vì thực sự nhớ dùng phần thưởng của mình. Máy quét mã vạch đôi khi hơi chậm nhưng dù sao thì nó vẫn hoạt động.",
+          "author": "Mike R.",
+          "location": "Vancouver"
+        },
+        {
+          "rating": "5",
+          "quote": "Tôi còn một tem nữa là có một chiếc burrito miễn phí ở quán quen và ứng dụng đã gửi thông báo cho tôi. Một việc nhỏ nhưng nó làm ngày của tôi vui vẻ lol.",
+          "author": "Emma L.",
+          "location": "Calgary"
+        }
+      ]
+    },
+    "business": {
+      "count": "3",
+      "items": [
+        {
+          "rating": "5",
+          "quote": "Chúng tôi đã thấy lượt khách hàng quay lại tăng 35% trong tháng đầu tiên. Việc thiết lập cực kỳ dễ dàng.",
+          "author": "David Chen",
+          "role": "Chủ quán cà phê, Brew & Bean"
+        },
+        {
+          "rating": "5",
+          "quote": "Các phân tích giúp chúng tôi hiểu khách hàng hơn. Chúng tôi đã tối ưu hóa phần thưởng và tăng doanh số.",
+          "author": "Maria Rodriguez",
+          "role": "Quản lý nhà hàng, Taco Corner"
+        },
+        {
+          "rating": "5",
+          "quote": "Khách hàng của chúng tôi yêu thích sự tiện lợi. Không còn thẻ giấy làm chật ví của họ nữa!",
+          "author": "James Wilson",
+          "role": "Chủ tiệm cắt tóc"
+        }
+      ]
+    }
+  },
+  "newsletter": {
+    "title": "Đi đầu xu hướng",
+    "subtitle": "Đăng ký bản tin của chúng tôi để nhận các cập nhật độc quyền, mẹo và ưu đãi.",
+    "forCustomers": "Dành cho người mua sắm",
+    "forBusinesses": "Dành cho doanh nghiệp",
+    "customer": {
+      "title": "Với tư cách là người mua sắm, bạn sẽ nhận được:",
+      "benefits": [
+        "Các ưu đãi độc quyền và truy cập sớm vào phần thưởng từ các cửa hàng địa phương yêu thích của bạn.",
+        "Mẹo và thủ thuật để tối đa hóa khoản tiết kiệm của bạn và không bao giờ bỏ lỡ quà tặng miễn phí.",
+        "Thông báo về các doanh nghiệp mới tham gia nền tảng gần bạn."
+      ]
+    },
+    "business": {
+      "title": "Với tư cách là doanh nghiệp, bạn sẽ nhận được:",
+      "benefits": [
+        "Thông tin chi tiết hữu ích về giữ chân khách hàng từ phân tích dữ liệu của chúng tôi.",
+        "Các trường hợp điển hình và chiến lược tăng trưởng từ các doanh nghiệp thành công như bạn.",
+        "Thông báo sớm về các tính năng mới giúp bạn tăng doanh số."
+      ]
+    },
+    "emailPlaceholder": "Nhập địa chỉ email của bạn",
+    "cta": "Đăng ký",
+    "disclaimer": "Chúng tôi tôn trọng quyền riêng tư của bạn. Không spam.",
+    "success": "Cảm ơn bạn đã đăng ký! Vui lòng kiểm tra email của bạn để xác nhận.",
+    "error": "Đã xảy ra lỗi. Vui lòng thử lại."
+  },
+  "cta": {
+    "customer": {
+      "title": "Bắt đầu tích điểm ngay hôm nay",
+      "subtitle": "Tham gia cùng hàng ngàn người mua sắm thông minh không bao giờ bỏ lỡ phần thưởng. Tìm các doanh nghiệp tham gia gần bạn và bắt đầu kiếm điểm ngay lập tức.",
+      "cta": "Tìm doanh nghiệp gần tôi",
+      "href": "#directory"
+    },
+    "business": {
+      "title": "Sẵn sàng để thúc đẩy lòng trung thành của khách hàng?",
+      "subtitle": "Tham gia cùng hàng trăm doanh nghiệp sử dụng gobonki để tăng khách hàng lặp lại và thúc đẩy doanh thu. Thiết lập chương trình khách hàng thân thiết của bạn trong vài phút.",
+      "cta": "Bắt đầu chương trình tích điểm miễn phí",
+      "href": "#get-started"
+    },
+    "title": "Sẵn sàng để thúc đẩy lòng trung thành của khách hàng?",
+    "subtitle": "Tham gia cùng hàng ngàn doanh nghiệp sử dụng gobonki để tạo dựng mối quan hệ lâu dài với khách hàng",
+    "cta": "Bắt đầu miễn phí ngay hôm nay",
+    "href": "#get-started"
+  },
+  "faq": {
+    "title": "Các câu hỏi thường gặp",
+    "forCustomers": "Dành cho khách hàng",
+    "forBusinesses": "Dành cho doanh nghiệp",
+    "customers": [
+      {
+        "q": "Tôi có cần cài đặt ứng dụng không?",
+        "a": "Không cần ứng dụng. Bạn quét mã QR tại quầy và tem của bạn sẽ được lưu vào ví trình duyệt trên điện thoại của bạn."
+      },
+      {
+        "q": "Làm thế nào để tôi đổi phần thưởng?",
+        "a": "Khi bạn đã tích đủ tem, hãy đưa điện thoại cho nhân viên thu ngân. Họ sẽ nhấn 'Đổi' và phần thưởng của bạn sẽ được áp dụng ngay lập tức."
+      },
+      {
+        "q": "Nếu tôi đổi hoặc mất điện thoại thì sao?",
+        "a": "Sử dụng cùng một email hoặc số điện thoại và tem của bạn sẽ được đồng bộ lại. Không cần mật khẩu tài khoản."
+      },
+      {
+        "q": "Dữ liệu của tôi có riêng tư không?",
+        "a": "Có. Chúng tôi chỉ lưu trữ những gì cần thiết để theo dõi tem của bạn. Không theo dõi vị trí, không bán lại dữ liệu cá nhân."
+      },
+      {
+        "q": "Nó có hoạt động ở các cửa hàng khác nhau không?",
+        "a": "Có. gobonki hoạt động tại các quán cà phê, tiệm cắt tóc, nhà hàng—mỗi doanh nghiệp có thể có thẻ và phần thưởng riêng."
+      },
+      {
+        "q": "Nó có hoạt động ngoại tuyến không?",
+        "a": "Bạn có thể mở thẻ của mình ngoại tuyến, nhưng việc tích tem/đổi thưởng yêu cầu một lần kiểm tra trực tuyến nhanh để ngăn chặn gian lận."
+      }
+    ],
+    "businesses": [
+      {
+        "q": "Việc thiết lập mất bao lâu?",
+        "a": "Khoảng 2 phút. Tạo một thẻ, đặt phần thưởng của bạn, in mã QR. Thế là xong—không cần tích hợp POS."
+      },
+      {
+        "q": "Tôi có cần phần cứng mới không?",
+        "a": "Không. Bất kỳ điện thoại hoặc máy tính bảng nào có thể mở trình duyệt đều hoạt động. Nhân viên chỉ cần quét hoặc chạm vào mã QR của khách hàng."
+      },
+      {
+        "q": "Tem được xác thực như thế nào?",
+        "a": "QR + kiểm tra máy chủ ngăn chặn việc trùng lặp. Tùy chọn yêu cầu PIN của nhân viên hoặc phê duyệt thiết bị để kiểm soát thêm."
+      },
+      {
+        "q": "Tôi có thể tùy chỉnh phần thưởng và thương hiệu không?",
+        "a": "Có. Đặt số lượng tem, văn bản phần thưởng, màu sắc thương hiệu và thậm chí là nhãn trắng (whitelabel) trên các gói trả phí."
+      },
+      {
+        "q": "Về giá cả thì sao?",
+        "a": "Bắt đầu miễn phí. Các tính năng trả phí như nhãn trắng và phân tích là tùy chọn và minh bạch—không có phí giao dịch."
+      },
+      {
+        "q": "Nó có tích hợp với POS của tôi không?",
+        "a": "Không bắt buộc. Nếu bạn muốn đồng bộ hóa POS, chúng tôi cung cấp xuất dữ liệu đơn giản và REST API trên các gói cao hơn."
+      }
+    ]
+  },
+  "footer": {
+    "brand": {
+      "logoAlt": "Gobonki",
+      "tagline": "Giải pháp thẻ tích điểm kỹ thuật số của bạn",
+      "social": {
+        "linkedin": "https://linkedin.com/company/gobonki",
+        "instagram": "https://instagram.com/gobonki",
+        "tiktok": "https://tiktok.com/@gobonki"
+      }
+    },
+    "columns": [
+      {
+        "title": "Sản phẩm",
+        "items": [
+          {
+            "type": "anchor",
+            "label": "Tính năng",
+            "href": "#features"
+          },
+          {
+            "type": "anchor",
+            "label": "Phản hồi",
+            "href": "#testimonials"
+          }
+        ]
+      },
+      {
+        "title": "Công ty",
+        "items": [
+          {
+            "type": "link",
+            "label": "Giới thiệu",
+            "href": "/about"
+          },
+          {
+            "type": "mailto",
+            "label": "Liên hệ",
+            "email": "hello@gobonki.com",
+            "subject": "Chào gobonki",
+            "body": "Tôi muốn liên hệ."
+          },
+          {
+            "type": "anchor",
+            "label": "Bản tin",
+            "href": "#contact"
+          }
+        ]
+      },
+      {
+        "title": "Pháp lý",
+        "items": [
+          {
+            "type": "link",
+            "label": "Chính sách bảo mật",
+            "href": "/privacy"
+          },
+          {
+            "type": "link",
+            "label": "Dấu ấn",
+            "href": "/imprint"
+          },
+          {
+            "type": "link",
+            "label": "Điều khoản dịch vụ",
+            "href": "/terms"
+          }
+        ]
+      }
+    ],
+    "bottom": {
+      "copyright": "® {year} Gobonki. Mọi quyền được bảo lưu.",
+      "madeIn": "Được tạo ra với ❤️ tại Châu Âu"
+    }
+  }
+}

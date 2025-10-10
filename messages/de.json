@@ -1,10 +1,9 @@
 {
   "navigation": {
-    "features": "FUNKTIONEN!!!",
-    "pricing": "Preise",
-    "about": "Über uns",
-    "contact": "Kontakt",
-    "testimonials": "Bewertungen",
+    "features": "Funktionen",
+    "testimonials": "Kundenstimmen",
+    "faq": "FAQ",
+    "contact": "Newsletter",
     "forCustomers": "Für Kunden",
     "forBusinesses": "Für Unternehmen",
     "cta": "App öffnen",
@@ -12,73 +11,314 @@
   },
   "hero": {
     "customer": {
-      "title": "Ihr Handy = Ihre Treuekarten",
-      "subtitle": "Verlieren Sie nie wieder Belohnungen. Jeder Kauf zählt. Funktioniert in Restaurants, Barbershops, Cafés – ohne Downloads.",
-      "cta": "Laden Sie die App jetzt herunter"
+      "title": "Ihr Handy = Ihre Kundenkarten",
+      "subtitle": "Nie wieder Prämien verlieren. Jeder Einkauf zählt. Funktioniert in Restaurants, bei Friseuren, in Cafés – kein Download erforderlich.",
+      "cta": "App jetzt herunterladen"
     },
     "business": {
-      "title": "Machen Sie aus Fremden sofort Stammkunden",
-      "subtitle": "In 2 Minuten eingerichtet, alles anpassbar, keine monatlichen Gebühren. Das Treueprogramm, das für kleine Unternehmen wirklich funktioniert.",
+      "title": "Machen Sie Fremde im Nu zu Stammkunden",
+      "subtitle": "In 2 Minuten eingerichtet, alles anpassbar, null monatliche Gebühren. Das Treueprogramm, das für kleine Unternehmen wirklich funktioniert.",
       "cta": "Demo ansehen"
     }
   },
-  "testimonials": {
-    "title": "Was unsere Nutzer sagen",
-    "items": [
-      {
-        "rating": 5,
-        "quote": "gobonki hat unser Treueprogramm verändert. Die Einrichtung dauerte wirklich 2 Minuten und unsere Kunden mögen, dass keine zusätzliche App nötig ist!",
-        "author": "Sarah Martinez",
-        "role": "Café Luna"
-      },
-      {
-        "rating": 5,
-        "quote": "Kostenlos und mit Whitelabel-Optionen? Genau das brauchen kleine Unternehmen. Unsere Bindung stieg in nur 3 Monaten um 40 %.",
-        "author": "Marcus Weber",
-        "role": "StyleCut Barbershop"
-      },
-      {
-        "rating": 5,
-        "quote": "Endlich ein Treuesystem, das wirklich funktioniert! Alle Karten an einem Ort, keine Downloads, kein Aufwand. Perfekt!",
-        "author": "Emma Thompson",
-        "role": "Stammkundin"
-      }
-    ]
+  "features": {
+    "customer": {
+      "title": "Warum gobonki wählen?",
+      "subtitle": "Genießen Sie Prämien von all Ihren Lieblingsorten in einer einfachen Benutzeroberfläche",
+      "count": "6",
+      "items": [
+        {
+          "icon": "credit-card",
+          "title": "Alle Karten an einem Ort",
+          "description": "Behalten Sie alle Ihre Kundenkarten von verschiedenen Geschäften an einem praktischen Ort im Blick."
+        },
+        {
+          "icon": "gift",
+          "title": "Sofortige Prämien",
+          "description": "Sammeln Sie Stempel und lösen Sie Prämien sofort ein. Kein Warten, keine Komplikationen."
+        },
+        {
+          "description": "Sammeln Sie sofort Stempel. Keine langwierigen Anmeldevorgänge oder persönlichen Daten erforderlich."
+        },
+        {
+          "icon": "map-pin",
+          "title": "Teilnehmende Orte finden",
+          "description": "Entdecken Sie Cafés, Restaurants und Geschäfte in Ihrer Nähe, die Stempelprämien anbieten."
+        },
+        {
+          "icon": "bookmark",
+          "title": "Niemals den Fortschritt verlieren",
+          "description": "Ihre Stempel werden automatisch gespeichert – keine verlorenen Papierkarten oder vergessenen Prämien mehr."
+        },
+        {
+          "icon": "bell",
+          "title": "Smarte Benachrichtigungen",
+          "description": "Lassen Sie sich benachrichtigen, wenn Sie kurz davor sind, eine Prämie zu erhalten oder wenn Sonderangebote verfügbar sind."
+        }
+      ]
+    },
+    "business": {
+      "title": "Warum Unternehmen gobonki wählen?",
+      "subtitle": "Alles, was Sie brauchen, um Kundenbindung aufzubauen und das Geschäft anzukurbeln",
+      "count": "6",
+      "items": [
+        {
+          "icon": "trending-up",
+          "title": "Kundenbindung erhöhen",
+          "description": "Steigern Sie wiederkehrende Besuche um bis zu 40% mit ansprechenden digitalen Treueprogrammen, die Kunden tatsächlich nutzen."
+        },
+        {
+          "icon": "bar-chart-3",
+          "title": "Detaillierte Analysen",
+          "description": "Verfolgen Sie das Kundenverhalten, die Einlösungsraten von Prämien und den ROI mit umfassenden Dashboards."
+        },
+        {
+          "icon": "settings",
+          "title": "Einfache Einrichtung & Verwaltung",
+          "description": "Starten Sie Ihr Treueprogramm in wenigen Minuten. Keine technischen Kenntnisse oder komplexe Integrationen erforderlich."
+        },
+        {
+          "icon": "users",
+          "title": "Kundendatenbank",
+          "description": "Bauen Sie eine wertvolle Kundendatenbank mit Einblicken in Präferenzen und Besuchsmuster auf."
+        },
+        {
+          "icon": "dollar-sign",
+          "title": "Umsatz steigern",
+          "description": "Steigern Sie den durchschnittlichen Bestellwert und die Häufigkeit mit gezielten Prämien und Aktionen."
+        },
+        {
+          "icon": "smartphone",
+          "title": "Mobile-First-Erfahrung",
+          "description": "Kunden lieben die Bequemlichkeit. Keine Apps zum Herunterladen, keine Karten zum Mitnehmen – einfach scannen und verdienen."
+        }
+      ]
+    }
   },
-  "cta": {
-    "title": "Bereit, Kundenbindung zu steigern?",
-    "subtitle": "Schließen Sie sich tausenden Unternehmen an, die mit gobonki dauerhafte Kundenbeziehungen aufbauen",
-    "cta": "Jetzt kostenlos starten",
-    "href": "#get-started"
+  "testimonials": {
+    "customerTitle": "Was unsere Nutzer sagen",
+    "businessTitle": "Was Geschäftsinhaber sagen",
+    "customer": {
+      "count": "3",
+      "items": [
+        {
+          "rating": "5",
+          "quote": "Ich hatte ungefähr 6 verschiedene Stempelkarten in meinem Portemonnaie und konnte nie die richtige finden. Diese App ist ehrlich gesagt einfach viel einfacher.",
+          "author": "Sarah M.",
+          "location": "Toronto"
+        },
+        {
+          "rating": "4",
+          "quote": "Ziemlich gute App. Ich habe diesen Monat vielleicht 30-40 $ gespart, nur weil ich mich tatsächlich daran erinnere, meine Prämien zu verwenden. Der Barcode-Scanner ist manchmal etwas langsam, aber egal, er funktioniert.",
+          "author": "Mike R.",
+          "location": "Vancouver"
+        },
+        {
+          "rating": "5",
+          "quote": "Mir fehlt ein Stempel für einen kostenlosen Burrito in meinem Stammlokal und die App hat mir eine Benachrichtigung geschickt. Eine Kleinigkeit, aber es hat meinen Tag versüßt, haha.",
+          "author": "Emma L.",
+          "location": "Calgary"
+        }
+      ]
+    },
+    "business": {
+      "count": "3",
+      "items": [
+        {
+          "rating": "5",
+          "quote": "Wir haben im ersten Monat einen Anstieg der wiederkehrenden Kunden um 35% verzeichnet. Die Einrichtung war unglaublich einfach.",
+          "author": "David Chen",
+          "role": "Café-Besitzer, Brew & Bean"
+        },
+        {
+          "rating": "5",
+          "quote": "Die Analysen helfen uns, unsere Kunden besser zu verstehen. Wir haben unsere Prämien optimiert und den Umsatz gesteigert.",
+          "author": "Maria Rodriguez",
+          "role": "Restaurant-Managerin, Taco Corner"
+        },
+        {
+          "rating": "5",
+          "quote": "Unsere Kunden lieben die Bequemlichkeit. Keine Papierkarten mehr, die ihre Geldbörsen verstopfen!",
+          "author": "James Wilson",
+          "role": "Friseurmeister"
+        }
+      ]
+    }
   },
   "newsletter": {
-    "title": "Mehr erfahren?",
-    "subtitle": "Abonnieren Sie unseren Newsletter und erfahren Sie als Erste/r, wenn unsere Plattform für alle Shops startet.",
-    "emailPlaceholder": "ihre@email.de",
-    "cta": "Absenden",
-    "success": "Danke! Bitte bestätigen Sie Ihre Anmeldung in Ihrem Posteingang.",
-    "error": "Etwas ist schiefgelaufen. Bitte erneut versuchen.",
-    "disclaimer": "Kein Spam. Jederzeit abbestellbar."
+    "title": "Bleiben Sie auf dem Laufenden",
+    "subtitle": "Abonnieren Sie unseren Newsletter für exklusive Updates, Tipps und Angebote.",
+    "forCustomers": "Für Käufer",
+    "forBusinesses": "Für Unternehmen",
+    "customer": {
+      "title": "Als Käufer erhalten Sie:",
+      "benefits": [
+        "Exklusive Angebote und frühen Zugang zu Prämien von Ihren bevorzugten lokalen Geschäften.",
+        "Tipps und Tricks, um Ihre Ersparnisse zu maximieren und nie eine Gratisprämie zu verpassen.",
+        "Benachrichtigungen über neue Unternehmen in Ihrer Nähe, die der Plattform beitreten."
+      ]
+    },
+    "business": {
+      "title": "Als Unternehmen erhalten Sie:",
+      "benefits": [
+        "Umsetzbare Erkenntnisse zur Kundenbindung aus unserer Datenanalyse.",
+        "Fallstudien und Wachstumsstrategien von erfolgreichen Unternehmen wie Ihrem.",
+        "Frühe Ankündigungen zu neuen Funktionen, die Ihnen helfen, Ihre Umsätze zu steigern."
+      ]
+    },
+    "emailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
+    "cta": "Abonnieren",
+    "disclaimer": "Wir respektieren Ihre Privatsphäre. Kein Spam.",
+    "success": "Vielen Dank für Ihr Abonnement! Bitte überprüfen Sie Ihre E-Mails zur Bestätigung.",
+    "error": "Etwas ist schief gelaufen. Bitte versuchen Sie es erneut."
+  },
+  "cta": {
+    "customer": {
+      "title": "Beginnen Sie noch heute mit dem Sammeln von Prämien",
+      "subtitle": "Schließen Sie sich Tausenden von klugen Käufern an, die keine Prämien mehr verpassen. Finden Sie teilnehmende Unternehmen in Ihrer Nähe und fangen Sie sofort an zu verdienen.",
+      "cta": "Unternehmen in meiner Nähe finden",
+      "href": "#directory"
+    },
+    "business": {
+      "title": "Bereit, die Kundenbindung zu stärken?",
+      "subtitle": "Schließen Sie sich Hunderten von Unternehmen an, die gobonki nutzen, um wiederkehrende Kunden zu gewinnen und den Umsatz zu steigern. Richten Sie Ihr Treueprogramm in wenigen Minuten ein.",
+      "cta": "Starten Sie Ihr kostenloses Treueprogramm",
+      "href": "#get-started"
+    },
+    "title": "Bereit, die Kundenbindung zu stärken?",
+    "subtitle": "Schließen Sie sich Tausenden von Unternehmen an, die gobonki nutzen, um dauerhafte Kundenbeziehungen aufzubauen",
+    "cta": "Heute kostenlos starten",
+    "href": "#get-started"
   },
   "faq": {
     "title": "Häufig gestellte Fragen",
     "forCustomers": "Für Kunden",
     "forBusinesses": "Für Unternehmen",
     "customers": [
-      { "q": "Brauche ich eine App?", "a": "Keine App nötig. Sie scannen den QR-Code an der Kasse; die Stempel werden im Browser gespeichert." },
-      { "q": "Wie löse ich eine Prämie ein?", "a": "Bei genügend Stempeln zeigen Sie Ihr Handy vor. Das Personal tippt auf „Einlösen“ und die Prämie wird angewendet." },
-      { "q": "Was passiert beim Handywechsel?", "a": "Mit derselben E-Mail oder Telefonnummer werden Ihre Stempel wiederhergestellt—ohne Passwörter." },
-      { "q": "Sind meine Daten sicher?", "a": "Ja. Wir speichern nur das Nötigste für Stempel. Kein Tracking, kein Weiterverkauf von Daten." },
-      { "q": "Funktioniert es in verschiedenen Läden?", "a": "Ja, gobonki funktioniert bei Cafés, Friseuren, Restaurants – jede Firma kann eine eigene Karte haben." },
-      { "q": "Funktioniert es offline?", "a": "Karten können offline geöffnet werden, Stempeln/Einlösen benötigt kurz Internet zur Betrugsprävention." }
+      {
+        "q": "Muss ich eine App installieren?",
+        "a": "Nein, eine App ist nicht erforderlich. Sie scannen einen QR-Code an der Theke und Ihre Stempel werden im Browser-Wallet Ihres Telefons gespeichert."
+      },
+      {
+        "q": "Wie löse ich eine Prämie ein?",
+        "a": "Sobald Sie genügend Stempel gesammelt haben, zeigen Sie Ihr Handy dem Kassierer. Dieser tippt auf 'Einlösen' und Ihre Prämie wird sofort angewendet."
+      },
+      {
+        "q": "Was, wenn ich mein Handy wechsle oder verliere?",
+        "a": "Verwenden Sie dieselbe E-Mail-Adresse oder Telefonnummer, und Ihre Stempel werden wieder synchronisiert. Es sind keine Kontopasswörter erforderlich."
+      },
+      {
+        "q": "Sind meine Daten privat?",
+        "a": "Ja. Wir speichern nur das Nötigste, um Ihre Stempel zu verfolgen. Keine Standortverfolgung, kein Weiterverkauf persönlicher Daten."
+      },
+      {
+        "q": "Funktioniert es in verschiedenen Geschäften?",
+        "a": "Ja. gobonki funktioniert in Cafés, bei Friseuren, in Restaurants – jedes Geschäft kann seine eigene Karte und Prämien haben."
+      },
+      {
+        "q": "Funktioniert es offline?",
+        "a": "Sie können Ihre Karte offline öffnen, aber das Stempeln/Einlösen erfordert eine schnelle Online-Prüfung, um Betrug zu verhindern."
+      }
     ],
     "businesses": [
-      { "q": "Wie lange dauert die Einrichtung?", "a": "Etwa 2 Minuten. Karte erstellen, Prämie festlegen, QR drucken. Keine POS-Integration nötig." },
-      { "q": "Brauche ich neue Hardware?", "a": "Nein. Jedes Handy/Tablet mit Browser reicht. Das Personal scannt den QR des Kunden." },
-      { "q": "Wie werden Stempel validiert?", "a": "QR + Serverprüfungen verhindern Duplikate. Optional PIN oder Gerätefreigabe für mehr Kontrolle." },
-      { "q": "Kann ich Branding/Prämien anpassen?", "a": "Ja. Stempelanzahl, Prämientext, Markenfarben, Whitelabel in höheren Tarifen." },
-      { "q": "Was kostet es?", "a": "Start kostenlos. Whitelabel & Analytics optional, transparent—keine Transaktionsgebühren." },
-      { "q": "POS-Integration?", "a": "Nicht erforderlich. Auf Wunsch Export & REST-API auf höheren Tarifen." }
+      {
+        "q": "Wie lange dauert die Einrichtung?",
+        "a": "Ungefähr 2 Minuten. Erstellen Sie eine Karte, legen Sie Ihre Prämie fest, drucken Sie Ihren QR-Code aus. Das war's – keine POS-Integration erforderlich."
+      },
+      {
+        "q": "Brauche ich neue Hardware?",
+        "a": "Nein. Jedes Handy oder Tablet, das einen Browser öffnen kann, funktioniert. Die Mitarbeiter scannen oder tippen einfach auf den QR-Code des Kunden."
+      },
+      {
+        "q": "Wie werden Stempel validiert?",
+        "a": "QR-Code + Serverprüfungen verhindern Duplikate. Erfordern Sie optional eine Mitarbeiter-PIN oder Gerätegenehmigung für zusätzliche Kontrolle."
+      },
+      {
+        "q": "Kann ich Prämien und Branding anpassen?",
+        "a": "Ja. Legen Sie die Anzahl der Stempel, den Prämientext, die Markenfarben und sogar das White-Label auf kostenpflichtigen Tarifen fest."
+      },
+      {
+        "q": "Wie sieht die Preisgestaltung aus?",
+        "a": "Beginnen Sie kostenlos. Kostenpflichtige Funktionen wie White-Label und Analysen sind optional und transparent – keine Transaktionsgebühren."
+      },
+      {
+        "q": "Lässt es sich in mein Kassensystem integrieren?",
+        "a": "Nicht erforderlich. Wenn Sie eine Kassensystem-Synchronisierung wünschen, bieten wir auf höheren Tarifen einen einfachen Export und eine REST-API an."
+      }
     ]
+  },
+  "footer": {
+    "brand": {
+      "logoAlt": "Gobonki",
+      "tagline": "Ihre digitale Stempelkartenlösung",
+      "social": {
+        "linkedin": "https://linkedin.com/company/gobonki",
+        "instagram": "https://instagram.com/gobonki",
+        "tiktok": "https://tiktok.com/@gobonki"
+      }
+    },
+    "columns": [
+      {
+        "title": "Produkt",
+        "items": [
+          {
+            "type": "anchor",
+            "label": "Funktionen",
+            "href": "#features"
+          },
+          {
+            "type": "anchor",
+            "label": "Kundenstimmen",
+            "href": "#testimonials"
+          }
+        ]
+      },
+      {
+        "title": "Unternehmen",
+        "items": [
+          {
+            "type": "link",
+            "label": "Über uns",
+            "href": "/about"
+          },
+          {
+            "type": "mailto",
+            "label": "Kontakt",
+            "email": "hello@gobonki.com",
+            "subject": "Hallo Gobonki",
+            "body": "Ich möchte Kontakt aufnehmen."
+          },
+          {
+            "type": "anchor",
+            "label": "Newsletter",
+            "href": "#contact"
+          }
+        ]
+      },
+      {
+        "title": "Rechtliches",
+        "items": [
+          {
+            "type": "link",
+            "label": "Datenschutz",
+            "href": "/privacy"
+          },
+          {
+            "type": "link",
+            "label": "Impressum",
+            "href": "/imprint"
+          },
+          {
+            "type": "link",
+            "label": "Nutzungsbedingungen",
+            "href": "/terms"
+          }
+        ]
+      }
+    ],
+    "bottom": {
+      "copyright": "® {year} Gobonki. Alle Rechte vorbehalten.",
+      "madeIn": "Hergestellt mit ❤️ in Europa"
+    }
   }
 }
