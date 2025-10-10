@@ -127,11 +127,23 @@
     "error": "Something went wrong. Please try again."
   },
   "cta": {
-    "title": "Ready to boost customer loyalty?",
-    "subtitle": "Join thousands of businesses using gobonki to create lasting customer relationships",
-    "cta": "Start Free Today",
+  "customer": {
+    "title": "Start Collecting Rewards Today",
+    "subtitle": "Join thousands of smart shoppers who never miss out on rewards. Find participating businesses near you and start earning instantly.",
+    "cta": "Find Businesses Near Me",
+    "href": "#directory"
+  },
+  "business": {
+    "title": "Ready to Boost Customer Loyalty?",
+    "subtitle": "Join hundreds of businesses using gobonki to increase repeat customers and drive revenue. Set up your loyalty program in minutes.",
+    "cta": "Start Your Free Loyalty Program",
     "href": "#get-started"
   },
+  "title": "Ready to boost customer loyalty?",
+  "subtitle": "Join thousands of businesses using gobonki to create lasting customer relationships",
+  "cta": "Start Free Today",
+  "href": "#get-started"
+},
   "faq": {
     "title": "Frequently asked questions",
     "forCustomers": "For Customers",
@@ -153,19 +165,45 @@
       { "q": "Does it integrate with my POS?", "a": "Not required. If you want POS sync, we offer a simple export and REST API on higher tiers." }
     ]
   },
-"cta": {
-  "customer": {
-    "title": "Start Collecting Rewards Today",
-    "subtitle": "Join thousands of smart shoppers who never miss out on rewards. Find participating businesses near you and start earning instantly.",
-    "cta": "Find Businesses Near Me",
-    "href": "#directory"
-  },
-  "business": {
-    "title": "Ready to Boost Customer Loyalty?",
-    "subtitle": "Join hundreds of businesses using gobonki to increase repeat customers and drive revenue. Set up your loyalty program in minutes.",
-    "cta": "Start Your Free Loyalty Program",
-    "href": "#get-started"
-  }
-}
 
+  "footer": {
+    "brand": {
+      "logoAlt": "Gobonki",
+      "tagline": "Your digital stamp card solution",
+      "social": {
+        "linkedin": "https://linkedin.com/company/gobonki",
+        "instagram": "https://instagram.com/gobonki",
+        "tiktok": "https://tiktok.com/@gobonki"
+      }
+    },
+    "columns": [
+      {
+        "title": "Product",
+        "items": [
+          { "type": "anchor", "label": "Features", "href": "#features" },
+          { "type": "anchor", "label": "Testimonials", "href": "#testimonials" }
+        ]
+      },
+      {
+        "title": "Company",
+        "items": [
+          { "type": "link", "label": "About", "href": "/about" },
+          { "type": "mailto", "label": "Contact", "email": "hello@gobonki.com", "subject": "Hello Gobonki", "body": "I'd like to get in touch." },
+          { "type": "anchor", "label": "Newsletter", "href": "#contact" }
+        ]
+      },
+      {
+        "title": "Legal",
+        "items": [
+          { "type": "link", "label": "Privacy Policy", "href": "/privacy" },
+          { "type": "link", "label": "Imprint", "href": "/imprint" },
+          { "type": "link", "label": "Terms of Service", "href": "/terms" }
+        ]
+      }
+    ],
+    "bottom": {
+      "copyright": "© {year} gobonki. All rights reserved.",
+      "madeIn": "Made with 💙 in Europe"
+    }
+  }
 }

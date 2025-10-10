@@ -75,14 +75,14 @@ export default function Header() {
             isScrolled ? "px-3" : ""
           )}
         >
-          {/* Logo → localized home */}
+         
           <Link
-            href={toHome("#")} // '/en#' or '/de#' → top anchor
+            href={toHome("#")} 
             aria-label="Home"
             prefetch
             className="inline-flex items-center"
             onClick={(e) => {
-              // If we're already on the home route, just smooth-scroll to top
+             
               const home = localeHome.replace(/\/$/, "");
               const here = pathname.replace(/\/$/, "");
               if (here === home) {
