@@ -13,7 +13,8 @@ export const localePrefix = 'always';
 const isDev = process.env.NODE_ENV !== 'production';
 
 function messagesFilePathFor(locale: string) {
-  return path.resolve(process.cwd(), 'messages', `${locale}.json`);
+  // return path.resolve(process.cwd(), 'messages', `${locale}.json`);
+  return `./messages/${locale}.json`;
 }
 
 export default getRequestConfig(async ({ locale }) => {
