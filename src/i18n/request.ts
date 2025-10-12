@@ -1,8 +1,6 @@
 // src/i18n/request.ts  (server-only) — dev-only, minimal logging
 import { getRequestConfig } from 'next-intl/server';
 import { headers } from 'next/headers';
-import fs from 'fs';
-import path from 'path';
 import { APP_LOCALES, DEFAULT_LOCALE } from './constants';
 
 export const locales = APP_LOCALES;
@@ -12,9 +10,40 @@ export const localePrefix = 'always';
 
 const isDev = process.env.NODE_ENV !== 'production';
 
-function messagesFilePathFor(locale: string) {
-  // return path.resolve(process.cwd(), 'messages', `${locale}.json`);
-  return `./messages/${locale}.json`;
+type MessagesDictionary = Record<string, unknown>;
+
+const MESSAGE_LOADERS: Record<AppLocale, () => Promise<MessagesDictionary>> = {
+  en: async () => (await import('@/../messages/en.json')).default,
+  de: async () => (await import('@/../messages/de.json')).default,
+  tu: async () => (await import('@/../messages/tu.json')).default,
+  ar: async () => (await import('@/../messages/ar.json')).default,
+  ve: async () => (await import('@/../messages/ve.json')).default,
+};
+
+function isAppLocale(locale: string | null | undefined): locale is AppLocale {
+  return typeof locale === 'string' && locales.includes(locale as AppLocale);
+}
+
+async function loadMessages(locale: AppLocale): Promise<MessagesDictionary> {
+  const loader = MESSAGE_LOADERS[locale] ?? MESSAGE_LOADERS[DEFAULT_LOCALE];
+
+  if (!loader) {
+    if (isDev) console.warn('[I18N] No loader found for locale', locale);
+    return {};
+  }
+
+  try {
+    const messages = await loader();
+    if (isDev) console.debug('[I18N] loaded messages keys =>', Object.keys(messages).slice(0, 20));
+    return messages;
+  } catch (error) {
+    if (isDev) console.error('[I18N] failed to load messages for', locale, error);
+    if (locale !== DEFAULT_LOCALE) {
+      if (isDev) console.warn('[I18N] falling back to default locale messages');
+      return loadMessages(DEFAULT_LOCALE);
+    }
+    return {};
+  }
 }
 
 export default getRequestConfig(async ({ locale }) => {
@@ -48,38 +77,11 @@ export default getRequestConfig(async ({ locale }) => {
     if (isDev) console.debug('[I18N] using provided locale param ->', actualLocale);
   }
 
-  const safeLocale: AppLocale = locales.includes(actualLocale as AppLocale)
-    ? (actualLocale as AppLocale)
-    : DEFAULT_LOCALE;
+  const safeLocale: AppLocale = isAppLocale(actualLocale) ? actualLocale : defaultLocale;
 
-  const candidatePath = messagesFilePathFor(safeLocale);
-  if (isDev) console.debug('[I18N] attempting to load messages file =>', candidatePath);
+  if (isDev) console.debug('[I18N] loading messages for locale =>', safeLocale);
 
-  let messages: Record<string, unknown> | null = null;
-  try {
-    if (fs.existsSync(candidatePath)) {
-      const raw = fs.readFileSync(candidatePath, 'utf8');
-      messages = JSON.parse(raw);
-      if (isDev && messages) console.debug('[I18N] loaded messages keys =>', Object.keys(messages).slice(0, 20));
-    } else {
-      if (isDev) console.warn('[I18N] messages file NOT FOUND for', safeLocale, '— falling back to en.json');
-    }
-  } catch (err) {
-    if (isDev) console.error('[I18N] error reading/parsing messages file for', safeLocale, err);
-    messages = null;
-  }
-
-  if (!messages) {
-    const enPath = messagesFilePathFor('en');
-    try {
-      const raw = fs.readFileSync(enPath, 'utf8');
-      messages = JSON.parse(raw);
-      if (isDev && messages) console.debug('[I18N] fell back to en.json, keys =>', Object.keys(messages).slice(0, 20));
-    } catch (err) {
-      if (isDev) console.error('[I18N] failed to load en.json fallback', err);
-      messages = {};
-    }
-  }
+  const messages = await loadMessages(safeLocale);
 
   return {
     locale: safeLocale,
