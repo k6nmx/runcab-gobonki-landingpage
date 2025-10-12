@@ -1,0 +1,326 @@
+{
+  "navigation": {
+    "features": "【中文翻译: Features】",
+    "testimonials": "【中文翻译: Testimonials】",
+    "faq": "【中文翻译: FAQ】",
+    "contact": "【中文翻译: Newsletter】",
+    "forCustomers": "【中文翻译: For Customers】",
+    "forBusinesses": "【中文翻译: For Businesses】",
+    "cta": "【中文翻译: Open App】",
+    "language": "【中文翻译: Language】"
+  },
+  "hero": {
+    "customer": {
+      "title": "【中文翻译: Your phone = Your loyalty cards】",
+      "subtitle": "【中文翻译: Never lose rewards again. Every purchase counts. Works at restaurants, barbers, cafes - no downloads needed.】",
+      "cta": "【中文翻译: Download the App now】"
+    },
+    "business": {
+      "title": "【中文翻译: Turn strangers into regulars instantly】",
+      "subtitle": "【中文翻译: Setup in 2 minutes, customize everything, zero monthly fees. The loyalty program that actually works for small businesses.】",
+      "cta": "【中文翻译: Watch Demo】"
+    }
+  },
+  "features": {
+    "customer": {
+      "title": "【中文翻译: Why Choose gobonki?】",
+      "subtitle": "【中文翻译: Enjoy rewards from all your favorite places in one simple interface】",
+      "count": "【中文翻译: 6】",
+      "items": [
+        {
+          "icon": "【中文翻译: credit-card】",
+          "title": "【中文翻译: All Cards in One Place】",
+          "description": "【中文翻译: Keep track of all your loyalty cards from different businesses in one convenient location.】"
+        },
+        {
+          "icon": "【中文翻译: gift】",
+          "title": "【中文翻译: Instant Rewards】",
+          "description": "【中文翻译: Collect stamps and redeem rewards instantly. No waiting, no complications.】"
+        },
+        {
+          "icon": "【中文翻译: zap】",
+          "title": "【中文翻译: No Registration Hassle】",
+          "description": "【中文翻译: Start collecting stamps immediately. No lengthy sign-up processes or personal info required.】"
+        },
+        {
+          "icon": "【中文翻译: map-pin】",
+          "title": "【中文翻译: Find Participating Places】",
+          "description": "【中文翻译: Discover cafes, restaurants, and shops near you that offer stamp rewards.】"
+        },
+        {
+          "icon": "【中文翻译: bookmark】",
+          "title": "【中文翻译: Never Lose Progress】",
+          "description": "【中文翻译: Your stamps are saved automatically—no more lost paper cards or forgotten rewards.】"
+        },
+        {
+          "icon": "【中文翻译: bell】",
+          "title": "【中文翻译: Smart Notifications】",
+          "description": "【中文翻译: Get reminded when you're close to earning a reward or when special offers are available.】"
+        }
+      ]
+    },
+    "business": {
+      "title": "【中文翻译: Why Businesses Choose gobonki?】",
+      "subtitle": "【中文翻译: Everything you need to build customer loyalty and drive repeat business】",
+      "count": "【中文翻译: 6】",
+      "items": [
+        {
+          "icon": "【中文翻译: trending-up】",
+          "title": "【中文翻译: Increase Customer Retention】",
+          "description": "【中文翻译: Boost repeat visits by up to 40% with engaging digital loyalty programs that customers actually use.】"
+        },
+        {
+          "icon": "【中文翻译: bar-chart-3】",
+          "title": "【中文翻译: Detailed Analytics】",
+          "description": "【中文翻译: Track customer behavior, reward redemption rates, and ROI with comprehensive dashboards.】"
+        },
+        {
+          "icon": "【中文翻译: settings】",
+          "title": "【中文翻译: Easy Setup & Management】",
+          "description": "【中文翻译: Launch your loyalty program in minutes. No technical knowledge required, no complex integrations.】"
+        },
+        {
+          "icon": "【中文翻译: users】",
+          "title": "【中文翻译: Customer Database】",
+          "description": "【中文翻译: Build a valuable customer database with insights into preferences and visit patterns.】"
+        },
+        {
+          "icon": "【中文翻译: dollar-sign】",
+          "title": "【中文翻译: Increase Revenue】",
+          "description": "【中文翻译: Drive higher average order values and frequency with targeted rewards and promotions.】"
+        },
+        {
+          "icon": "【中文翻译: smartphone】",
+          "title": "【中文翻译: Mobile-First Experience】",
+          "description": "【中文翻译: Customers love the convenience. No apps to download, no cards to carry—just scan and earn.】"
+        }
+      ]
+    }
+  },
+  "testimonials": {
+    "customerTitle": "【中文翻译: What Our Users Say】",
+    "businessTitle": "【中文翻译: What Business Owners Say】",
+    "customer": {
+      "count": "【中文翻译: 3】",
+      "items": [
+        {
+          "rating": "【中文翻译: 5】",
+          "quote": "【中文翻译: Okay so I had like 6 different punch cards in my wallet and could never find the right one. This app is honestly just way easier.】",
+          "author": "【中文翻译: Sarah M.】",
+          "location": "【中文翻译: Toronto】"
+        },
+        {
+          "rating": "【中文翻译: 4】",
+          "quote": "【中文翻译: Pretty solid app. I've saved maybe $30-40 this month just from actually remembering to use my rewards. The barcode scanner is a bit slow sometimes but whatever, it works.】",
+          "author": "【中文翻译: Mike R.】",
+          "location": "【中文翻译: Vancouver】"
+        },
+        {
+          "rating": "【中文翻译: 5】",
+          "quote": "【中文翻译: I'm one stamp away from a free burrito at my local spot and the app sent me a notification. Small thing but it made my day lol】",
+          "author": "【中文翻译: Emma L.】",
+          "location": "【中文翻译: Calgary】"
+        }
+      ]
+    },
+    "business": {
+      "count": "【中文翻译: 3】",
+      "items": [
+        {
+          "rating": "【中文翻译: 5】",
+          "quote": "【中文翻译: We saw a 35% increase in repeat customers within the first month. The setup was incredibly easy.】",
+          "author": "【中文翻译: David Chen】",
+          "role": "【中文翻译: Cafe Owner, Brew & Bean】"
+        },
+        {
+          "rating": "【中文翻译: 5】",
+          "quote": "【中文翻译: The analytics help us understand our customers better. We've optimized our rewards and increased sales.】",
+          "author": "【中文翻译: Maria Rodriguez】",
+          "role": "【中文翻译: Restaurant Manager, Taco Corner】"
+        },
+        {
+          "rating": "【中文翻译: 5】",
+          "quote": "【中文翻译: Our customers love the convenience. No more paper cards cluttering their wallets!】",
+          "author": "【中文翻译: James Wilson】",
+          "role": "【中文翻译: Barber Shop Owner】"
+        }
+      ]
+    }
+  },
+  "newsletter": {
+    "title": "【中文翻译: Stay Ahead of the Curve】",
+    "subtitle": "【中文翻译: Join our newsletter for exclusive updates, tips, and offers.】",
+    "forCustomers": "【中文翻译: For Shoppers】",
+    "forBusinesses": "【中文翻译: For Businesses】",
+    "customer": {
+      "title": "【中文翻译: As a shopper, you'll get:】",
+      "benefits": [
+        "【中文翻译: Exclusive deals and early access to rewards from your favorite local stores.】",
+        "【中文翻译: Tips and tricks to maximize your savings and never miss a freebie.】",
+        "【中文翻译: Notifications about new businesses joining the platform near you.】"
+      ]
+    },
+    "business": {
+      "title": "【中文翻译: As a business, you'll get:】",
+      "benefits": [
+        "【中文翻译: Actionable insights on customer retention from our data analytics.】",
+        "【中文翻译: Case studies and growth strategies from successful businesses like yours.】",
+        "【中文翻译: Early announcements for new features to help you grow your sales.】"
+      ]
+    },
+    "emailPlaceholder": "【中文翻译: Enter your email address】",
+    "cta": "【中文翻译: Subscribe】",
+    "disclaimer": "【中文翻译: We respect your privacy. No spam.】",
+    "success": "【中文翻译: Thanks for subscribing! Please check your email to confirm.】",
+    "error": "【中文翻译: Something went wrong. Please try again.】"
+  },
+  "cta": {
+    "customer": {
+      "title": "【中文翻译: Start Collecting Rewards Today】",
+      "subtitle": "【中文翻译: Join thousands of smart shoppers who never miss out on rewards. Find participating businesses near you and start earning instantly.】",
+      "cta": "【中文翻译: Find Businesses Near Me】",
+      "href": "【中文翻译: #directory】"
+    },
+    "business": {
+      "title": "【中文翻译: Ready to Boost Customer Loyalty?】",
+      "subtitle": "【中文翻译: Join hundreds of businesses using gobonki to increase repeat customers and drive revenue. Set up your loyalty program in minutes.】",
+      "cta": "【中文翻译: Start Your Free Loyalty Program】",
+      "href": "【中文翻译: #get-started】"
+    },
+    "title": "【中文翻译: Ready to boost customer loyalty?】",
+    "subtitle": "【中文翻译: Join thousands of businesses using gobonki to create lasting customer relationships】",
+    "cta": "【中文翻译: Start Free Today】",
+    "href": "【中文翻译: #get-started】"
+  },
+  "faq": {
+    "title": "【中文翻译: Frequently asked questions】",
+    "forCustomers": "【中文翻译: For Customers】",
+    "forBusinesses": "【中文翻译: For Businesses】",
+    "customers": [
+      {
+        "q": "【中文翻译: Do I need to install an app?】",
+        "a": "【中文翻译: No app required. You scan a QR code at the counter and your stamps are saved to your phone's browser wallet.】"
+      },
+      {
+        "q": "【中文翻译: How do I redeem a reward?】",
+        "a": "【中文翻译: Once you collect enough stamps, show your phone to the cashier. They tap 'Redeem' and your reward is applied instantly.】"
+      },
+      {
+        "q": "【中文翻译: What if I switch or lose my phone?】",
+        "a": "【中文翻译: Use the same email or phone number and your stamps sync back. No account passwords needed.】"
+      },
+      {
+        "q": "【中文翻译: Is my data private?】",
+        "a": "【中文翻译: Yes. We only store what's needed to track your stamps. No location tracking, no resale of personal data.】"
+      },
+      {
+        "q": "【中文翻译: Does it work at different stores?】",
+        "a": "【中文翻译: Yes. gobonki works at cafés, barbers, restaurants—each business can have its own card and rewards.】"
+      },
+      {
+        "q": "【中文翻译: Does it work offline?】",
+        "a": "【中文翻译: You can open your card offline, but stamping/redeeming requires a quick online check to prevent fraud.】"
+      }
+    ],
+    "businesses": [
+      {
+        "q": "【中文翻译: How long does setup take?】",
+        "a": "【中文翻译: About 2 minutes. Create a card, set your reward, print your QR. That's it—no POS integration required.】"
+      },
+      {
+        "q": "【中文翻译: Do I need new hardware?】",
+        "a": "【中文翻译: No. Any phone or tablet that can open a browser works. Staff just scans or taps the customer's QR.】"
+      },
+      {
+        "q": "【中文翻译: How are stamps validated?】",
+        "a": "【中文翻译: QR + server checks prevent duplicates. Optionally require staff PIN or device approval for extra control.】"
+      },
+      {
+        "q": "【中文翻译: Can I customize rewards and branding?】",
+        "a": "【中文翻译: Yes. Set stamp count, reward text, brand colors and even whitelabel on paid tiers.】"
+      },
+      {
+        "q": "【中文翻译: What about pricing?】",
+        "a": "【中文翻译: Start free. Paid features like whitelabel and analytics are optional and transparent—no transaction fees.】"
+      },
+      {
+        "q": "【中文翻译: Does it integrate with my POS?】",
+        "a": "【中文翻译: Not required. If you want POS sync, we offer a simple export and REST API on higher tiers.】"
+      }
+    ]
+  },
+  "footer": {
+    "brand": {
+      "logoAlt": "【中文翻译: Gobonki】",
+      "tagline": "【中文翻译: Your digital stamp card solution】",
+      "social": {
+        "linkedin": "【中文翻译: https://linkedin.com/company/gobonki】",
+        "instagram": "【中文翻译: https://instagram.com/gobonki】",
+        "tiktok": "【中文翻译: https://tiktok.com/@gobonki】"
+      }
+    },
+    "columns": [
+      {
+        "title": "【中文翻译: Product】",
+        "items": [
+          {
+            "type": "【中文翻译: anchor】",
+            "label": "【中文翻译: Features】",
+            "href": "【中文翻译: #features】"
+          },
+          {
+            "type": "【中文翻译: anchor】",
+            "label": "【中文翻译: Testimonials】",
+            "href": "【中文翻译: #testimonials】"
+          }
+        ]
+      },
+      {
+        "title": "【中文翻译: Company】",
+        "items": [
+          {
+            "type": "【中文翻译: link】",
+            "label": "【中文翻译: About】",
+            "href": "【中文翻译: /about】"
+          },
+          {
+            "type": "【中文翻译: mailto】",
+            "label": "【中文翻译: Contact】",
+            "email": "【中文翻译: hello@gobonki.com】",
+            "subject": "【中文翻译: Hello Gobonki】",
+            "body": "【中文翻译: I'd like to get in touch.】"
+          },
+          {
+            "type": "【中文翻译: anchor】",
+            "label": "【中文翻译: Newsletter】",
+            "href": "【中文翻译: #contact】"
+          }
+        ]
+      },
+      {
+        "title": "【中文翻译: Legal】",
+        "items": [
+          {
+            "type": "【中文翻译: link】",
+            "label": "【中文翻译: Privacy Policy】",
+            "href": "【中文翻译: /privacy】"
+          },
+          {
+            "type": "【中文翻译: link】",
+            "label": "【中文翻译: Imprint】",
+            "href": "【中文翻译: /imprint】"
+          },
+          {
+            "type": "【中文翻译: link】",
+            "label": "【中文翻译: Terms of Service】",
+            "href": "【中文翻译: /terms】"
+          }
+        ]
+      }
+    ],
+    "bottom": {
+      "copyright": "【中文翻译: ® {year} Gobonki. All rights reserved.】",
+      "madeIn": "【中文翻译: Made with ❤️ in Europe】"
+    }
+  }
+}
