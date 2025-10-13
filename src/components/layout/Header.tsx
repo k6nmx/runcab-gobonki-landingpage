@@ -45,10 +45,10 @@ export default function Header() {
   const { mode, setMode } = useMode();
 
   const switchLanguage = (locale: AppLocale) => {
-  const params = new URLSearchParams(searchParams.toString());
-  const pathWithoutLocale = pathname.replace(/^\/(en|de|tu|ar|ve)/, "");
-  router.push(`/${locale}${pathWithoutLocale}${params.toString() ? `?${params.toString()}` : ""}`);
-};
+    const params = new URLSearchParams(searchParams.toString());
+    const pathWithoutLocale = pathname.replace(/^\/(en|de|tu|ar|ve|zh|hi)/, "");
+    router.push(`/${locale}${pathWithoutLocale}${params.toString() ? `?${params.toString()}` : ""}`);
+  };
 
   const toHome = (hash: string) => `/${currentLocale}${hash}`;
 
