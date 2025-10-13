@@ -27,35 +27,37 @@
       "subtitle": "Genießen Sie Prämien von all Ihren Lieblingsorten in einer einfachen Benutzeroberfläche",
       "count": "6",
       "items": [
-        {
-          "icon": "credit-card",
-          "title": "Alle Karten an einem Ort",
-          "description": "Behalten Sie alle Ihre Kundenkarten von verschiedenen Geschäften an einem praktischen Ort im Blick."
-        },
-        {
-          "icon": "gift",
-          "title": "Sofortige Prämien",
-          "description": "Sammeln Sie Stempel und lösen Sie Prämien sofort ein. Kein Warten, keine Komplikationen."
-        },
-        {
-          "description": "Sammeln Sie sofort Stempel. Keine langwierigen Anmeldevorgänge oder persönlichen Daten erforderlich."
-        },
-        {
-          "icon": "map-pin",
-          "title": "Teilnehmende Orte finden",
-          "description": "Entdecken Sie Cafés, Restaurants und Geschäfte in Ihrer Nähe, die Stempelprämien anbieten."
-        },
-        {
-          "icon": "bookmark",
-          "title": "Niemals den Fortschritt verlieren",
-          "description": "Ihre Stempel werden automatisch gespeichert – keine verlorenen Papierkarten oder vergessenen Prämien mehr."
-        },
-        {
-          "icon": "bell",
-          "title": "Smarte Benachrichtigungen",
-          "description": "Lassen Sie sich benachrichtigen, wenn Sie kurz davor sind, eine Prämie zu erhalten oder wenn Sonderangebote verfügbar sind."
-        }
-      ]
+    {
+      "icon": "credit-card",
+      "title": "Alle Karten an einem Ort",
+      "description": "Behalten Sie alle Ihre Kundenkarten von verschiedenen Geschäften an einem praktischen Ort im Blick."
+    },
+    {
+      "icon": "gift",
+      "title": "Sofortige Prämien",
+      "description": "Sammeln Sie Stempel und lösen Sie Prämien sofort ein. Kein Warten, keine Komplikationen."
+    },
+    {
+      "icon": "zap",
+      "title": "Keine lästige Registrierung",
+      "description": "Starten Sie sofort mit dem Sammeln von Stempeln. Keine langwierigen Anmeldeprozesse oder persönlichen Daten erforderlich."
+    },
+    {
+      "icon": "map-pin",
+      "title": "Teilnehmende Orte finden",
+      "description": "Entdecken Sie Cafés, Restaurants und Geschäfte in Ihrer Nähe, die Stempelprämien anbieten."
+    },
+    {
+      "icon": "bookmark",
+      "title": "Keinen Fortschritt mehr verlieren",
+      "description": "Ihre Stempel werden automatisch gespeichert – keine verlorenen Papierkarten oder vergessenen Prämien mehr."
+    },
+    {
+      "icon": "bell",
+      "title": "Smarte Benachrichtigungen",
+      "description": "Lassen Sie sich erinnern, wenn Sie kurz davor stehen, eine Prämie zu erhalten, oder wenn Sonderangebote verfügbar sind."
+    }
+  ]
     },
     "business": {
       "title": "Warum Unternehmen gobonki wählen?",

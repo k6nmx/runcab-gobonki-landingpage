@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { FeatureCard } from "./feature-card"
 import { useMode } from "@/context/mode-context"
-import { ICONS } from "./feature-card" // SEE NOTE: we'll export ICONS (or re-import the same mapping)
+import { ICONS } from "./feature-card"
 
 export default function FeaturesSection() {
   const { mode } = useMode()
@@ -21,7 +21,6 @@ export default function FeaturesSection() {
   // build items array by reading indexed keys
   const items = Array.from({ length: itemsCount }).map((_, i) => {
     const iconRaw = t(`${namespace}.items.${i}.icon`) as string
-    // validate icon key against ICONS map; safe default if translator typo
     const validIconKey = Object.prototype.hasOwnProperty.call(ICONS, iconRaw) ? (iconRaw as keyof typeof ICONS) : 'globe'
     const title = t(`${namespace}.items.${i}.title`)
     const description = t(`${namespace}.items.${i}.description`)
