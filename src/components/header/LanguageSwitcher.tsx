@@ -50,7 +50,7 @@ export function LanguageSwitcher({ currentLocale, onSwitch }: LanguageSwitcherPr
         <Button
           variant="ghost"
           size="icon"
-          className="hover:bg-white/70 transition-all rounded-full"
+          className="hover:cursor-pointer transition-all rounded-full"
           aria-label="Change language"
           
           onMouseEnter={supportsHover ? handleOpen : undefined}

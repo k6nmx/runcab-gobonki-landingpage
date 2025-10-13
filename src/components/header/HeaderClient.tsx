@@ -38,7 +38,7 @@ export default function HeaderClient() {
   const isScrolled = useIsScrolled(12);
   const { mode, setMode } = useMode();
 
-  // generate locale regex dynamically so it doesn't go stale
+ 
   const localeRegex = new RegExp(`^/(${APP_LOCALES.join("|")})`);
 
   const switchLanguage = (locale: AppLocale) => {
@@ -53,7 +53,7 @@ export default function HeaderClient() {
   if (!mounted) return null;
 
   return (
-    // <-- THIS wrapper is client-controlled and toggles the glass-pill classes
+    
     <div
       className={clsx(
         "mx-auto pointer-events-auto transition-all duration-300 ease-out",
@@ -63,7 +63,7 @@ export default function HeaderClient() {
       )}
     >
       <div className="grid grid-cols-[auto_1fr_auto] items-center h-16">
-        {/* LOGO - client-rendered now (safe) */}
+    
         <Link href={toHome("#")} aria-label="Home" prefetch className="inline-flex items-center">
           <Logo src="/gobonki-schriftzug.svg" alt="Gobonki-logo" className="h-8 w-auto" />
         </Link>
@@ -71,14 +71,15 @@ export default function HeaderClient() {
         <DesktopNav items={NAV_ITEMS} toHome={toHome} t={t} />
 
         <div className="col-start-3 justify-self-end flex items-center gap-3 sm:gap-4">
-          <MiniModeToggle mode={mode} onModeChange={setMode} isVisible={isScrolled} />
+          <MiniModeToggle mode={mode} onModeChange={setMode} isVisible={isScrolled} isRTL={currentLocale === "ar"} />
 
           <LanguageSwitcher currentLocale={currentLocale} onSwitch={switchLanguage} />
 
           <div className="hidden sm:inline-flex">
-            <Link href={toHome("#contact")} className="inline-flex">
-              <button className="btn bg-brand-600 hover:bg-brand-700 text-white px-3 py-1 rounded">
-                {t("contact")}
+            <Link href='https://app.gobonki.com' className="inline-flex">
+              <button className="btn bg-brand-600 hover:bg-brand-700 hover:cursor-pointer text-white px-3 py-1 rounded">
+                {/* {t("contact")} */}
+                Go To App
               </button>
             </Link>
           </div>

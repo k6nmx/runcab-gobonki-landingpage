@@ -1,15 +1,20 @@
-"use client";
-
-
-import React from "react";
+import { Users, Building2 } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { SegmentedToggle } from "@/components/ui/segmented-toggle";
-import { Users, Building2 } from "lucide-react";
-import { MiniModeToggleProps } from "./types";
 
-export function MiniModeToggle({ mode, onModeChange, isVisible }: MiniModeToggleProps) {
+export default function MiniModeToggle({ 
+  mode, 
+  onModeChange, 
+  isVisible,
+  isRTL 
+}: { 
+  mode: string; 
+  onModeChange: (mode: "customer" | "business") => void;
+  isVisible: boolean;
+  isRTL: boolean;
+}) {
   const prefersReducedMotion = useReducedMotion();
-
+  
   return (
     <div className="hidden md:flex items-center">
       <AnimatePresence>
@@ -19,8 +24,11 @@ export function MiniModeToggle({ mode, onModeChange, isVisible }: MiniModeToggle
             initial={{ opacity: 0, y: -8, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.9 }}
-            transition={{ duration: prefersReducedMotion ? 0 : 0.25, ease: [0.22, 0.6, 0.2, 1] }}
-            className="mr-2"
+            transition={{ 
+              duration: prefersReducedMotion ? 0 : 0.25, 
+              ease: [0.22, 0.6, 0.2, 1] 
+            }}
+            className={isRTL ? "ml-2" : "mr-2"}
           >
             <div className="rounded-full bg-white/90 p-1 shadow-sm">
               <SegmentedToggle
@@ -46,7 +54,8 @@ export function MiniModeToggle({ mode, onModeChange, isVisible }: MiniModeToggle
                     ),
                   },
                 ]}
-                className="h-8 w-[110px] text-sm"
+                className="h-8 min-w-[110px] text-sm"
+                dir={isRTL ? "rtl" : "ltr"}
               />
             </div>
           </motion.div>
@@ -55,5 +64,3 @@ export function MiniModeToggle({ mode, onModeChange, isVisible }: MiniModeToggle
     </div>
   );
 }
-
-export default MiniModeToggle;
