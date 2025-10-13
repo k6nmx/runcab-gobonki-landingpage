@@ -43,7 +43,7 @@ export default function FAQSection({ className }: { className?: string }) {
           </h2>
         </div>
 
-        <div className="mt-8 rounded-3xl p-[1px] bg-gradient-to-r from-brand-200 to-secondary-200">
+        <div className="mt-8 rounded-3xl p-[1px] bg-gradient-to-r from-brand-200 to-secondary-200 ">
           <Card className="rounded-3xl border-none bg-white/80 backdrop-blur">
             <CardContent className="relative p-4 sm:p-8">
               <AnimatePresence mode="wait" initial={false}>
@@ -51,7 +51,7 @@ export default function FAQSection({ className }: { className?: string }) {
                   <Accordion
                     type="single"
                     collapsible
-                    className="w-full divide-y divide-neutral-200"
+                    className="w-full divide-y divide-neutral-200 hover:cursor-pointer"
                   >
                     {items.map((item, i) => (
                       <AccordionItem
@@ -59,7 +59,7 @@ export default function FAQSection({ className }: { className?: string }) {
                         value={`faq-${audience}-${i}`}
                         className="border-0"
                       >
-                        <AccordionTrigger className="text-left py-4 text-base sm:text-lg font-semibold text-neutral-900 hover:no-underline">
+                        <AccordionTrigger className="text-left py-4 text-base sm:text-lg font-semibold text-neutral-900 hover:no-underline hover:cursor-pointer">
                           {item.q}
                         </AccordionTrigger>
                         <AccordionContent className="pb-5 text-neutral-700 leading-7">

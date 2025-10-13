@@ -1,4 +1,4 @@
-// src/components/hero/types.ts
+
 export type Mode = "customer" | "business";
 
 export type ModeToggleProps = {
