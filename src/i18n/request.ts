@@ -19,6 +19,7 @@ const MESSAGE_LOADERS: Record<AppLocale, () => Promise<MessagesDictionary>> = {
   ar: async () => (await import('@/../messages/ar.json')).default,
   ve: async () => (await import('@/../messages/ve.json')).default,
   zh: async () => (await import('@/../messages/zh.json')).default,
+  hi: async () => (await import('@/../messages/hi.json')).default,
 };
 
 function isAppLocale(locale: string | null | undefined): locale is AppLocale {

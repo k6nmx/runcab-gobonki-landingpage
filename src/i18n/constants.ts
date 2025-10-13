@@ -1,5 +1,5 @@
 // src/i18n/constants.ts
-export const APP_LOCALES = ['en', 'de', 'tu', 'ar', 've', 'zh'] as const;
+export const APP_LOCALES = ['en', 'de', 'tu', 'ar', 've', 'zh', 'hi'] as const;
 export type AppLocale = typeof APP_LOCALES[number];
 export const DEFAULT_LOCALE: AppLocale = 'en';
 export const LOCALE_PREFIX = 'always';
@@ -12,6 +12,7 @@ export const LOCALE_LABELS: Record<AppLocale, string> = {
   ar: 'العربية',
   ve: 'Tiếng Việt',
   zh: '中文',
+  hi: 'हिन्दी',
 };
 
 // Locales that need RTL direction
