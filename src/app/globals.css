@@ -205,6 +205,7 @@
   html {
     font-family: var(--font-sans);
     scroll-behavior: smooth;
+    overflow-y: scroll;
   }
 
   * {
@@ -217,9 +218,9 @@
   }
 
   /* Prevent layout shift when dropdowns or modals open */
-  /* body[data-scroll-locked] {
+  body[data-scroll-locked] {
     margin-right: 0 !important;
-  } */
+  }
 
   /* Glass morphism utility class */
   .glass {
