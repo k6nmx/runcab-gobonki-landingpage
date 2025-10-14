@@ -1,62 +1,65 @@
-// app/layout.tsx
-import type { Metadata } from 'next'
-import './globals.css'
+import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: 'gobonki - Digital Loyalty Cards on Your Phone',
-    template: '%s | gobonki'
+    default: "gobonki - Digital Loyalty Cards on Your Phone",
+    template: "%s | gobonki",
   },
   description:
-    'Never lose rewards again. Keep all your loyalty cards from restaurants, barbers, and cafes in one place. No downloads, no registration, instant rewards.',
+    "Never lose rewards again. Keep all your loyalty cards from restaurants, barbers, and cafes in one place. No downloads, no registration, instant rewards.",
   keywords: [
-    'digital loyalty cards',
-    'rewards app',
-    'loyalty program',
-    'stamp cards',
-    'restaurant rewards',
-    'cafe loyalty',
-    'mobile wallet'
+    "digital loyalty cards",
+    "rewards app",
+    "loyalty program",
+    "stamp cards",
+    "restaurant rewards",
+    "cafe loyalty",
+    "mobile wallet",
   ],
-  authors: [{ name: 'gobonki' }],
-  creator: 'gobonki',
-  publisher: 'gobonki',
+  authors: [{ name: "gobonki" }],
+  creator: "gobonki",
+  publisher: "gobonki",
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://runcab-gobonki-landingpage.vercel.app',
-    siteName: 'gobonki',
-    title: 'gobonki - Your Phone = Your Loyalty Cards',
+    type: "website",
+    locale: "en_US",
+    url: "https://runcab-gobonki-landingpage.vercel.app",
+    siteName: "gobonki",
+    title: "gobonki - Your Phone = Your Loyalty Cards",
     description:
-      'Never lose rewards again. Every purchase counts. Works at restaurants, barbers, cafes - no downloads needed.',
+      "Never lose rewards again. Every purchase counts. Works at restaurants, barbers, cafes - no downloads needed.",
     images: [
       {
-        url: '/og-image.jpg',
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: 'gobonki - Digital Loyalty Cards'
-      }
-    ]
+        alt: "gobonki - Digital Loyalty Cards",
+      },
+    ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'gobonki - Your Phone = Your Loyalty Cards',
+    card: "summary_large_image",
+    title: "gobonki - Your Phone = Your Loyalty Cards",
     description:
-      'Never lose rewards again. Every purchase counts. Works at restaurants, barbers, cafes.',
-    images: ['/og-image.jpg'],
-    creator: '@gobonki'
+      "Never lose rewards again. Every purchase counts. Works at restaurants, barbers, cafes.",
+    images: ["/og-image.jpg"],
+    creator: "@gobonki",
   },
   viewport: {
-    width: 'device-width',
+    width: "device-width",
     initialScale: 1,
-    maximumScale: 5
+    maximumScale: 5,
   },
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#000000' }
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
   ],
   alternates: {
-    canonical: 'https://runcab-gobonki-landingpage.vercel.app'
+    canonical: "https://runcab-gobonki-landingpage.vercel.app",
+    languages: {
+      en: "https://runcab-gobonki-landingpage.vercel.app/en",
+      ar: "https://runcab-gobonki-landingpage.vercel.app/ar",
+    },
   },
   robots: {
     index: true,
@@ -64,18 +67,21 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1
-    }
-  }
-}
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // top-level layout should be minimal — locale-specific html attributes are handled in the locale layout
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body>{children}</body>
     </html>
-  )
+  );
 }
