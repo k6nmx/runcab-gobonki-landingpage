@@ -162,7 +162,8 @@
       { "q": "How are stamps validated?", "a": "QR + server checks prevent duplicates. Optionally require staff PIN or device approval for extra control." },
       { "q": "Can I customize rewards and branding?", "a": "Yes. Set stamp count, reward text, brand colors and even whitelabel on paid tiers." },
       { "q": "What about pricing?", "a": "Start free. Paid features like whitelabel and analytics are optional and transparent—no transaction fees." },
-      { "q": "Does it integrate with my POS?", "a": "Not required. If you want POS sync, we offer a simple export and REST API on higher tiers." }
+      { "q": "Does it integrate with my POS?", "a": "Not required. If you want POS sync, we offer a simple export and REST API on higher tiers." },
+      {"q": "What about an API at gobonki?", "a": "gobonki offers API integration upon request to seamlessly connect systems. The API can be customized to meet your specific requirements, enabling efficient and automated communication between your applications and gobonki. If you’d like to learn more about our API solutions, feel free to contact us at hello@gobonki.com."}
     ]
   },
 

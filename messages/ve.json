@@ -246,6 +246,10 @@
       {
         "q": "Nó có tích hợp với POS của tôi không?",
         "a": "Không bắt buộc. Nếu bạn muốn đồng bộ hóa POS, chúng tôi cung cấp xuất dữ liệu đơn giản và REST API trên các gói cao hơn."
+      },
+      {
+        "q": "API tại goBonki như thế nào?",
+        "a": "gobonki cung cấp tích hợp API theo yêu cầu, giúp kết nối các hệ thống một cách liền mạch. API có thể được tùy chỉnh theo nhu cầu cụ thể của bạn, cho phép giao tiếp tự động và hiệu quả giữa các ứng dụng của bạn và gobonki.Nếu bạn muốn tìm hiểu thêm về giải pháp API của chúng tôi, vui lòng liên hệ qua hello@gobonki.com."
       }
     ]
   },

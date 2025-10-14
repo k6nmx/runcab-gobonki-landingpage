@@ -77,8 +77,7 @@ export default function HeaderClient() {
 
           <div className="hidden sm:inline-flex">
             <Link href='https://app.gobonki.com' className="inline-flex">
-              <button className="btn bg-brand-600 hover:bg-brand-700 hover:cursor-pointer text-white px-3 py-1 rounded">
-                {/* {t("contact")} */}
+              <button className="btn-gradient btn-shadow px-6 py-2.5 text-white hover:translate-y-0 transform-none text-sm font-semibold rounded-lg hover:cursor-pointer">
                 Go To App
               </button>
             </Link>

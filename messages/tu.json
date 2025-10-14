@@ -162,7 +162,8 @@
       { "q": "Damgalar nasıl doğrulanır?", "a": "QR + sunucu kontrolleri kopyaları önler. İsteğe bağlı olarak ekstra kontrol için personel PIN'i veya cihaz onayı gerektirebilirsiniz." },
       { "q": "Ödülleri ve markalamayı özelleştirebilir miyim?", "a": "Evet. Damga sayısını, ödül metnini, marka renklerini ve hatta ücretli katmanlarda kendi markanızla kullanmayı (whitelabel) ayarlayabilirsiniz." },
       { "q": "Fiyatlandırma nasıl?", "a": "Ücretsiz başlayın. Kendi markanızla kullanma ve analizler gibi ücretli özellikler isteğe bağlı ve şeffaftır—işlem ücreti yok." },
-      { "q": "POS sistemimle entegre oluyor mu?", "a": "Gerekli değil. POS senkronizasyonu isterseniz, daha yüksek katmanlarda basit bir dışa aktarma ve REST API sunuyoruz." }
+      { "q": "POS sistemimle entegre oluyor mu?", "a": "Gerekli değil. POS senkronizasyonu isterseniz, daha yüksek katmanlarda basit bir dışa aktarma ve REST API sunuyoruz." },
+      {"q": "goBonki’de API nasıl çalışıyor?", "a": "gobonki, sistemlerin sorunsuz bir şekilde entegre edilmesini sağlamak için isteğe bağlı olarak API entegrasyonu sunar. API, özel gereksinimlerinize göre uyarlanabilir ve uygulamalarınız ile goBonki arasında verimli, otomatik bir iletişim sağlar. API çözümlerimiz hakkında daha fazla bilgi almak için lütfen hello@gobonki.com adresinden bizimle iletişime geçin."}
     ]
   },
   "footer": {

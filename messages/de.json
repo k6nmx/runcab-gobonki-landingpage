@@ -220,6 +220,10 @@
       {
         "q": "Funktioniert es offline?",
         "a": "Sie können Ihre Karte offline öffnen, aber das Stempeln/Einlösen erfordert eine schnelle Online-Prüfung, um Betrug zu verhindern."
+      },
+      {
+        "q": "Wie sieht es mit einer API bei gobonki aus?",
+        "a": "gobonki bietet auf Wunsch eine API-Integration an, um Systeme nahtlos miteinander zu verbinden. Die API kann individuell an Ihre Anforderungen angepasst werden und ermöglicht eine effiziente, automatisierte Kommunikation zwischen Ihren Anwendungen und gobonki. Wenn Sie mehr über unsere API-Lösungen erfahren möchten, kontaktieren Sie uns gerne unter hello@gobonki.com."
       }
     ],
     "businesses": [
