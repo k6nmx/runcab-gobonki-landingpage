@@ -19,7 +19,7 @@ export default function Hero() {
   const t = useTranslations("hero");
   const nav = useTranslations("navigation");
   const prefersReducedMotion = useReducedMotion();
-  const isScrolled = useIsScrolled(12);
+  const isScrolled = useIsScrolled();
 
   // RTL detection
   const isRTL = locale === "ar";

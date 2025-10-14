@@ -35,7 +35,7 @@ export default function HeaderClient() {
   const pathname = usePathname() || "/";
   const searchParams = useSearchParams();
   const currentLocale = useLocale();
-  const isScrolled = useIsScrolled(12);
+  const isScrolled = useIsScrolled();
   const { mode, setMode } = useMode();
 
  

@@ -16,7 +16,7 @@ export default function MiniModeToggle({
   const prefersReducedMotion = useReducedMotion();
   
   return (
-    <div className="hidden md:flex items-center">
+    <div className="flex items-center">
       <AnimatePresence>
         {isVisible && (
           <motion.div
