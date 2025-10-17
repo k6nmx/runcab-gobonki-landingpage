@@ -1,6 +1,3 @@
-// components/SchemaMarkup.tsx
-// Add this to your root layout
-
 export function SchemaMarkup() {
   const schema = {
     '@context': 'https://schema.org',
