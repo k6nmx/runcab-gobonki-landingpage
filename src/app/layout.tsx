@@ -59,6 +59,11 @@ export const metadata: Metadata = {
     languages: {
       en: "https://runcab-gobonki-landingpage.vercel.app/en",
       ar: "https://runcab-gobonki-landingpage.vercel.app/ar",
+      de: "https://runcab-gobonki-landingpage.vercel.app/de",
+      hi: "https://runcab-gobonki-landingpage.vercel.app/hi",
+      tr: "https://runcab-gobonki-landingpage.vercel.app/tu",
+      ve: "https://runcab-gobonki-landingpage.vercel.app/ve",
+      zh: "https://runcab-gobonki-landingpage.vercel.app/zh",
     },
   }
 };

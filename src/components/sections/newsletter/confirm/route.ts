@@ -1,4 +1,3 @@
-// src/components/sections/newsletter/confirm/route.ts
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { newsletters } from "@/lib/db/schema";
@@ -15,7 +14,7 @@ export async function GET(req: Request) {
 
     const now = new Date();
 
-    // Use select().from() pattern (works even if db schema generic not provided)
+    
     const rows = await db
       .select()
       .from(newsletters)
@@ -28,12 +27,11 @@ export async function GET(req: Request) {
       return NextResponse.redirect(`${process.env.APP_BASE_URL}/newsletter/invalid`);
     }
 
-    // Check expiry if you have the column
+  
     if (entry.confirmationExpiresAt && new Date(entry.confirmationExpiresAt) < now) {
       return NextResponse.redirect(`${process.env.APP_BASE_URL}/newsletter/invalid`);
     }
 
-    // Update to set confirmed and clear token
     await db
       .update(newsletters)
       .set({
