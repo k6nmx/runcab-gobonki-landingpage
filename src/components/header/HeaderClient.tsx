@@ -8,7 +8,7 @@ import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import clsx from "clsx";
 
 import Logo from "../ui/Logo";
-import useIsScrolled from "@/lib/use-is-scrolled";
+import { useIsScrolled } from "../../lib/use-is-scrolled";
 import { useMode } from "@/context/mode-context";
 
 import { LanguageSwitcher } from "./LanguageSwitcher";

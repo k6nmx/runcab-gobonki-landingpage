@@ -3,8 +3,9 @@ import { getMessages, setRequestLocale } from 'next-intl/server'
 import { defaultLocale, locales, type AppLocale } from '../../i18n/request'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
-import { ModeProvider } from '@/context/mode-context'
-import '../globals.css'
+import { ModeProvider } from '@/context/mode-context';
+import { IsScrolledProvider } from '@/context/is-scrolled-context';
+import '../globals.css';
 import { SchemaMarkup } from '@/components/SchemaMarkup'
 
 
@@ -30,17 +31,17 @@ export default async function RootLayout({
   console.log('[LAYOUT] Messages keys:', Object.keys(messages))
 
   return (
-    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
-      <body>
-        <SchemaMarkup />
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <ModeProvider>
+    <>
+      <SchemaMarkup />
+      <NextIntlClientProvider locale={locale} messages={messages}>
+        <ModeProvider>
+          <IsScrolledProvider>
             <Header />
             <main className="min-h-dvh pt-16">{children}</main>
             <Footer />
-          </ModeProvider>
-        </NextIntlClientProvider>
-      </body>
-    </html>
-  )
+          </IsScrolledProvider>
+        </ModeProvider>
+      </NextIntlClientProvider>
+    </>
+  );
 }

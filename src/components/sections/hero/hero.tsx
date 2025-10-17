@@ -2,9 +2,9 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
-import { useReducedMotion } from "framer-motion";
+import { useReducedMotion, AnimatePresence, motion } from "framer-motion";
 import { useMode } from "@/context/mode-context";
-import useIsScrolled from "@/lib/use-is-scrolled";
+import { useIsScrolled } from "@/lib/use-is-scrolled";
 
 import ModeToggle from "./ModeToggle";
 import HeroContent from "./HeroContent";
@@ -62,15 +62,28 @@ export default function Hero() {
     <section className="hero-bg pb-12" dir={isRTL ? "rtl" : "ltr"}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="pt-24 pb-8 sm:pt-28 sm:pb-12 lg:pt-10">
-          <div className="flex justify-center">
-            {!isScrolled && (
-              <ModeToggle
-                mode={mode}
-                onModeChange={setMode}
-                labels={toggleLabels}
-                isRTL={isRTL}
-              />
-            )}
+          <div className="flex items-center justify-center h-11">
+            <AnimatePresence>
+              {!isScrolled && (
+                <motion.div
+                  key="mode-toggle"
+                  initial={{ opacity: 0, y: 8, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 8, scale: 0.9 }}
+                  transition={{
+                    duration: prefersReducedMotion ? 0 : 0.25,
+                    ease: [0.22, 0.6, 0.2, 1],
+                  }}
+                >
+                  <ModeToggle
+                    mode={mode}
+                    onModeChange={setMode}
+                    labels={toggleLabels}
+                    isRTL={isRTL}
+                  />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
           <div className="mt-10 grid items-center gap-10 md:gap-12 lg:gap-16 md:grid-cols-2">
