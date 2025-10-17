@@ -30,7 +30,7 @@ export default function MiniModeToggle({
             }}
             className={isRTL ? "ml-2" : "mr-2"}
           >
-            <div className="rounded-full bg-white/90 p-1 shadow-sm">
+            <div className="rounded-full">
               <SegmentedToggle
                 value={mode}
                 onChange={(v) => onModeChange(v as "customer" | "business")}
