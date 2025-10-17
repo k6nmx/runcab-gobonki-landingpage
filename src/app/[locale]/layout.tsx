@@ -37,7 +37,7 @@ export default async function RootLayout({
         <ModeProvider>
           <IsScrolledProvider>
             <Header />
-            <main className="min-h-dvh pt-16">{children}</main>
+            <main className="min-h-dvh">{children}</main>
             <Footer />
           </IsScrolledProvider>
         </ModeProvider>

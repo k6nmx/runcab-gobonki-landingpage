@@ -9,7 +9,7 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from '@/components/ui/accordion';
-import { useMessages, useTranslations } from 'next-intl';
+import { useMessages, useLocale, useTranslations } from 'next-intl';
 import React from 'react';
 
 // --- Types for the footer messages coming from locales
@@ -72,6 +72,8 @@ export default function Footer() {
   // useMessages returns "any-ish" at runtime; cast to unknown then narrow
   const rawMessages = useMessages() as unknown;
   const t = useTranslations();
+  const currentLocale = useLocale();
+  const toHome = (hash: string) => `/${currentLocale}${hash}`;
 
   // Defensive extraction: ensure the structure matches our expected shape, else fallback
   const footerMessages: FooterMessages =
@@ -95,6 +97,14 @@ export default function Footer() {
     return `mailto:${email}${paramStr ? `?${paramStr}` : ''}`;
   };
 
+  const handleScrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <footer className="bg-neutral-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -102,7 +112,9 @@ export default function Footer() {
           <div className="md:grid md:grid-cols-12 md:gap-8">
             {/* Brand column */}
             <div className="md:col-span-4">
+              <Link href={toHome("#")} aria-label="Home" onClick={handleScrollToTop}>
               <Logo src="/gobonki-white.svg" alt={brand.logoAlt ?? 'Gobonki'} className="h-7 w-auto" />
+              </Link>
               <p className="mt-3 text-sm text-neutral-400 max-w-xs">
                 {brand.tagline ?? 'Your digital stamp card solution'}
               </p>

@@ -71,11 +71,12 @@ export const viewport: Viewport = {
 
 export default function RootLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params?: { locale: string };
 }) {
+  const locale = params?.locale || "en";
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
       <body>{children}</body>
