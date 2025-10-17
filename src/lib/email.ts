@@ -1,36 +1,21 @@
-import nodemailer from "nodemailer";
-import type { Transporter } from "nodemailer";
+import sgMail from '@sendgrid/mail'
 
-let transporter: Transporter | null = null;
+sgMail.setApiKey(process.env.SENDGRID_API_KEY!)
 
-export function getTransporter() {
-  if (!transporter) {
-    const smtpHost = process.env.SMTP_HOST;
-    const smtpPort = process.env.SMTP_PORT;
-    const smtpUser = process.env.SMTP_USER;
-    const smtpPass = process.env.SMTP_PASS;
-
-    if (!smtpHost || !smtpUser || !smtpPass) {
-      throw new Error('[email] Missing required SMTP environment variables');
+export async function sendConfirmationEmail(
+    to: string,
+    confirmUrl: string,
+    userType: 'customer' | 'business'
+) {
+    const msg = {
+        to,
+        from: process.env.FROM_EMAIL!,
+        templateId: process.env.SENDGRID_TEMPLATE_ID!,
+        dynamicTemplateDate: {
+            confirm_url: confirmUrl,
+            user_type: userType,
+        },
     }
 
-    console.log('[email] Creating transporter with config:', {
-      host: smtpHost,
-      port: smtpPort,
-      user: smtpUser,
-      hasPassword: !!smtpPass,
-    });
-
-    transporter = nodemailer.createTransport({
-      host: smtpHost,
-      port: Number(smtpPort) || 587,
-      secure: Number(smtpPort) === 465,
-      auth: {
-        user: smtpUser,
-        pass: smtpPass,
-      },
-    });
-  }
-  
-  return transporter;
+    return await sgMail.send(msg)
 }

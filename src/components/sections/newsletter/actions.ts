@@ -1,54 +1,62 @@
-'use server'
+"use server";
 
-import { z } from 'zod'
-import crypto from 'crypto'
-import { headers } from 'next/headers'
-import { db } from '@/lib/db'
-import { newsletters } from '@/lib/db/schema'
-import { getTransporter } from '@/lib/email'
+import { z } from "zod";
+import crypto from "crypto";
+import { headers } from "next/headers";
+import { db } from "@/lib/db";
+import { newsletters } from "@/lib/db/schema";
+import { sendConfirmationEmail } from "@/lib/email";
 
 const schema = z.object({
   email: z.string().email(),
   source: z.string().optional(),
-  userType: z.union([z.literal('customer'), z.literal('business')]).optional(),
-})
+  userType: z.union([z.literal("customer"), z.literal("business")]).optional(),
+});
 
 function isBot(form: FormData) {
-  return String(form.get('company') || '').trim().length > 0
+  return String(form.get("company") || "").trim().length > 0;
 }
 
 export async function subscribe(formData: FormData) {
-  console.log('[newsletter.subscribe] START')
+  console.log("[newsletter.subscribe] START");
 
   try {
     if (isBot(formData)) {
-      console.log('[newsletter.subscribe] Bot detected, skipping')
-      return { ok: true as const }
+      console.log("[newsletter.subscribe] Bot detected, skipping");
+      return { ok: true as const };
     }
 
-    const email = String(formData.get('email') || '').trim()
-    const source = String(formData.get('source') || '').trim() || 'landing_page'
+    const email = String(formData.get("email") || "").trim();
+    const source =
+      String(formData.get("source") || "").trim() || "landing_page";
 
-    // Accept either 'userType' or 'user_type' from client
-    const rawUserType = String(formData.get('userType') ?? formData.get('user_type') ?? '').trim().toLowerCase()
-    const userType = rawUserType === 'business' ? 'business' : 'customer' // default to customer
+    const rawUserType = String(
+      formData.get("userType") ?? formData.get("user_type") ?? ""
+    )
+      .trim()
+      .toLowerCase();
+    const userType = rawUserType === "business" ? "business" : "customer";
 
-    // Zod validation
-    const parsed = schema.safeParse({ email, source, userType })
+    const parsed = schema.safeParse({ email, source, userType });
     if (!parsed.success) {
-      console.log('[newsletter.subscribe] Validation failed:', parsed.error.format ? parsed.error.format() : parsed.error)
-      return { ok: false as const, error: 'Invalid input' }
+      console.log(
+        "[newsletter.subscribe] Validation failed:",
+        parsed.error.format ? parsed.error.format() : parsed.error
+      );
+      return { ok: false as const, error: "Invalid input" };
     }
 
-    const h = await headers()
-    const ip = h.get('x-forwarded-for')?.split(',')[0]?.trim() || h.get('x-real-ip') || 'unknown'
-    const ua = h.get('user-agent') || 'unknown'
+    const h = await headers();
+    const ip =
+      h.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      h.get("x-real-ip") ||
+      "unknown";
+    const ua = h.get("user-agent") || "unknown";
 
-    const token = crypto.randomBytes(32).toString('hex')
-    const now = new Date()
-    const expiresAt = new Date(now.getTime() + 1000 * 60 * 60 * 24) // 24 hours
+    const token = crypto.randomBytes(32).toString("hex");
+    const now = new Date();
+    const expiresAt = new Date(now.getTime() + 1000 * 60 * 60 * 24); 
 
-    // Insert or update including user_type
     await db
       .insert(newsletters)
       .values({
@@ -73,31 +81,14 @@ export async function subscribe(formData: FormData) {
           confirmationExpiresAt: expiresAt,
           updatedAt: now,
         },
-      })
+      });
 
-    // FIXED: Changed from /api/newsletter/confirm to /newsletter/confirm
-    const confirmUrl = `${process.env.APP_BASE_URL}/newsletter/confirm?token=${token}`
+    const confirmUrl = `${process.env.APP_BASE_URL}/newsletter/confirm?token=${token}`;
 
-    const transporter = await getTransporter()
-    if (!transporter || typeof transporter.sendMail !== 'function') {
-      console.error('[newsletter.subscribe] transporter invalid:', transporter)
-      return { ok: false as const, error: 'Email transporter not configured' }
-    }
-
-    try {
-      if (typeof transporter.verify === 'function') {
-        await transporter.verify()
-        console.log('[newsletter.subscribe] transporter verified')
-      }
-    } catch (verifyErr) {
-      console.error('[newsletter.subscribe] transporter verify failed', verifyErr)
-    }
-
-    // Enhanced email with better design
     const mailOptions = {
       from: process.env.FROM_EMAIL,
       to: email,
-      subject: '✅ Confirm Your Subscription',
+      subject: "✅ Confirm Your Subscription",
       text: `Thanks for subscribing! Click here to confirm: ${confirmUrl}`,
       html: `
         <!DOCTYPE html>
@@ -117,7 +108,11 @@ export async function subscribe(formData: FormData) {
                         Confirm Your Subscription
                       </h1>
                       <p style="margin: 0; font-size: 16px; color: #6b7280; line-height: 1.6;">
-                        Thanks for subscribing! Click the button below to confirm your email address and start receiving ${userType === 'business' ? 'business insights' : 'exclusive deals'}.
+                        Thanks for subscribing! Click the button below to confirm your email address and start receiving ${
+                          userType === "business"
+                            ? "business insights"
+                            : "exclusive deals"
+                        }.
                       </p>
                     </td>
                   </tr>
@@ -149,24 +144,30 @@ export async function subscribe(formData: FormData) {
         </body>
         </html>
       `,
-    }
+    };
 
     try {
-      const mailResult = await transporter.sendMail(mailOptions)
-      console.log('[newsletter.subscribe] Email sent successfully:', mailResult)
+      await sendConfirmationEmail(email, confirmUrl, userType);
+      console.log("[newsletter.subscribe] Email sent successfully");
     } catch (sendErr) {
-      console.error('[newsletter.subscribe] sendMail failed', sendErr)
-      return { ok: false as const, error: 'Failed to send confirmation email' }
+      console.error("[newsletter.subscribe] sendMail failed", sendErr);
+      return { ok: false as const, error: "Failed to send confirmation email" };
     }
 
-    console.log('[newsletter.subscribe] Complete:', { email, source, userType, ip, ua })
-    return { ok: true as const }
+    console.log("[newsletter.subscribe] Complete:", {
+      email,
+      source,
+      userType,
+      ip,
+      ua,
+    });
+    return { ok: true as const };
   } catch (err) {
-    console.error('[newsletter.subscribe][CRITICAL ERROR]', {
+    console.error("[newsletter.subscribe][CRITICAL ERROR]", {
       error: err,
-      message: err instanceof Error ? err.message : 'Unknown error',
+      message: err instanceof Error ? err.message : "Unknown error",
       stack: err instanceof Error ? err.stack : undefined,
-    })
-    return { ok: false as const, error: 'Server error' }
+    });
+    return { ok: false as const, error: "Server error" };
   }
 }
