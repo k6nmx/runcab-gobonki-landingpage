@@ -1,4 +1,4 @@
-// src/i18n/request.ts  (server-only) — dev-only, minimal logging
+
 import { getRequestConfig } from 'next-intl/server';
 import { headers } from 'next/headers';
 import { APP_LOCALES, DEFAULT_LOCALE } from './constants';

@@ -10,7 +10,7 @@ type LogoProps = {
 
 export default function Logo({
   src,
-  alt = "Logo",
+  alt = "gobonki logo",
   width = 120,
   height = 32,
   className = "h-7 w-auto",
