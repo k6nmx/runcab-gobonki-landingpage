@@ -255,7 +255,7 @@
   },
   "footer": {
     "brand": {
-      "logoAlt": "Gobonki",
+      "logoAlt": "gobonki",
       "tagline": "Giải pháp thẻ tích điểm kỹ thuật số của bạn",
       "social": {
         "linkedin": "https://linkedin.com/company/gobonki",
@@ -323,7 +323,7 @@
       }
     ],
     "bottom": {
-      "copyright": "® {year} Gobonki. Mọi quyền được bảo lưu.",
+      "copyright": "® {year} gobonki. Mọi quyền được bảo lưu.",
       "madeIn": "Được tạo ra với ❤️ tại Châu Âu"
     }
   }

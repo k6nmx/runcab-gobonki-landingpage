@@ -168,7 +168,7 @@
   },
   "footer": {
     "brand": {
-      "logoAlt": "Gobonki",
+      "logoAlt": "gobonki",
       "tagline": "حل بطاقة الختم الرقمية الخاص بك",
       "social": {
         "linkedin": "https://linkedin.com/company/gobonki",
@@ -188,7 +188,7 @@
         "title": "الشركة",
         "items": [
           { "type": "link", "label": "عنا", "href": "/about" },
-          { "type": "mailto", "label": "اتصل بنا", "email": "hello@gobonki.com", "subject": "مرحبًا Gobonki", "body": "أود التواصل معكم." },
+          { "type": "mailto", "label": "اتصل بنا", "email": "hello@gobonki.com", "subject": "مرحبًا gobonki", "body": "أود التواصل معكم." },
           { "type": "anchor", "label": "النشرة البريدية", "href": "#contact" }
         ]
       },
@@ -202,7 +202,7 @@
       }
     ],
     "bottom": {
-      "copyright": "® {year} Gobonki. جميع الحقوق محفوظة.",
+      "copyright": "® {year} gobonki. جميع الحقوق محفوظة.",
       "madeIn": "صُنع بـ ❤️ في أوروبا"
     }
   }

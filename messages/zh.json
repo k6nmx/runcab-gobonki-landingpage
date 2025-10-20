@@ -169,7 +169,7 @@
 
   "footer": {
     "brand": {
-      "logoAlt": "Gobonki",
+      "logoAlt": "gobonki",
       "tagline": "您的数字印章卡解决方案",
       "social": {
         "linkedin": "https://linkedin.com/company/gobonki",
@@ -189,7 +189,7 @@
         "title": "公司",
         "items": [
           { "type": "link", "label": "关于我们", "href": "/about" },
-          { "type": "mailto", "label": "联系我们", "email": "hello@gobonki.com", "subject": "你好 Gobonki", "body": "我想联系。" },
+          { "type": "mailto", "label": "联系我们", "email": "hello@gobonki.com", "subject": "你好 gobonki", "body": "我想联系。" },
           { "type": "anchor", "label": "邮件订阅", "href": "#contact" }
         ]
       },
@@ -203,7 +203,7 @@
       }
     ],
     "bottom": {
-      "copyright": "® {year} Gobonki。保留所有权利。",
+      "copyright": "® {year} gobonki。保留所有权利。",
       "madeIn": "在欧洲用心制作 ❤️"
     }
   }

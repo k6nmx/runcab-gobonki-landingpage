@@ -80,12 +80,12 @@ export default function Footer() {
     typeof rawMessages === 'object' && rawMessages !== null && 'footer' in (rawMessages as Record<string, unknown>)
       ? ((rawMessages as Record<string, unknown>)['footer'] as FooterMessages)
       : {
-          brand: { logoAlt: 'Gobonki', tagline: 'Your digital stamp card solution', social: {} },
+          brand: { logoAlt: 'gobonki', tagline: 'Your digital stamp card solution', social: {} },
           columns: [],
           bottom: { copyright: '', madeIn: '' },
         };
 
-  const brand = footerMessages.brand ?? { logoAlt: 'Gobonki', tagline: 'Your digital stamp card solution', social: {} };
+  const brand = footerMessages.brand ?? { logoAlt: 'gobonki', tagline: 'Your digital stamp card solution', social: {} };
   const columns: Column[] = Array.isArray(footerMessages.columns) ? (footerMessages.columns as Column[]) : [];
 
   // helper to build a mailto link from item data
@@ -113,7 +113,7 @@ export default function Footer() {
             {/* Brand column */}
             <div className="md:col-span-4">
               <Link href={toHome("#")} aria-label="Home" onClick={handleScrollToTop}>
-              <Logo src="/gobonki-white.svg" alt={brand.logoAlt ?? 'Gobonki'} className="h-7 w-auto" />
+              <Logo src="/gobonki-white.svg" alt={brand.logoAlt ?? 'gobonki'} className="h-7 w-auto" />
               </Link>
               <p className="mt-3 text-sm text-neutral-400 max-w-xs">
                 {brand.tagline ?? 'Your digital stamp card solution'}
