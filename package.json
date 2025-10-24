@@ -7,7 +7,9 @@
     "build": "next build ",
     "start": "next start",
     "lint": "eslint",
-    "prepare": "husky"
+    "prepare": "husky",
+    "i18n:push": "crowdin upload sources",
+    "i18n:pull": "crowdin download translations"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
@@ -35,6 +37,7 @@
     "zod": "^4.1.8"
   },
   "devDependencies": {
+    "@crowdin/cli": "^4.11.0",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4.1.13",
     "@types/node": "^20",
