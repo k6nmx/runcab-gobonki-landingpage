@@ -255,7 +255,7 @@
   },
   "footer": {
     "brand": {
-      "logoAlt": "Gobonki",
+      "logoAlt": "gobonki",
       "tagline": "Ihre digitale Stempelkartenlösung",
       "social": {
         "linkedin": "https://linkedin.com/company/gobonki",
@@ -291,7 +291,7 @@
             "type": "mailto",
             "label": "Kontakt",
             "email": "hello@gobonki.com",
-            "subject": "Hallo Gobonki",
+            "subject": "Hallo gobonki",
             "body": "Ich möchte Kontakt aufnehmen."
           },
           {
@@ -318,7 +318,7 @@
       }
     ],
     "bottom": {
-      "copyright": "® {year} Gobonki. Alle Rechte vorbehalten.",
+      "copyright": "® {year} gobonki. Alle Rechte vorbehalten.",
       "madeIn": "Hergestellt mit ❤️ in Europa"
     }
   }

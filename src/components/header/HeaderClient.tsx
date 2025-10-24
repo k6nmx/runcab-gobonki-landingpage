@@ -65,7 +65,7 @@ export default function HeaderClient() {
       <div className="grid grid-cols-[auto_1fr_auto] items-center h-16">
     
         <Link href={toHome("#")} aria-label="Home" prefetch className="inline-flex items-center">
-          <Logo src="/gobonki-schriftzug.svg" alt="Gobonki-logo" className="h-8 w-auto" />
+          <Logo src="/gobonki-schriftzug.svg" alt="gobonki-logo" className="h-8 w-auto" />
         </Link>
 
         <DesktopNav items={NAV_ITEMS} toHome={toHome} t={t} />

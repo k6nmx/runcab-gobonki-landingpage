@@ -169,7 +169,7 @@
 
   "footer": {
     "brand": {
-      "logoAlt": "Gobonki",
+      "logoAlt": "gobonki",
       "tagline": "आपका डिजिटल स्टैम्प कार्ड समाधान",
       "social": {
         "linkedin": "https://linkedin.com/company/gobonki",
@@ -189,7 +189,7 @@
         "title": "कंपनी",
         "items": [
           { "type": "link", "label": "हमारे बारे में", "href": "/about" },
-          { "type": "mailto", "label": "संपर्क", "email": "hello@gobonki.com", "subject": "नमस्ते Gobonki", "body": "मैं संपर्क करना चाहता हूं।" },
+          { "type": "mailto", "label": "संपर्क", "email": "hello@gobonki.com", "subject": "नमस्ते gobonki", "body": "मैं संपर्क करना चाहता हूं।" },
           { "type": "anchor", "label": "न्यूज़लेटर", "href": "#contact" }
         ]
       },
@@ -202,7 +202,7 @@
       }
     ],
     "bottom": {
-      "copyright": "® {year} Gobonki। सभी अधिकार सुरक्षित।",
+      "copyright": "® {year} gobonki। सभी अधिकार सुरक्षित।",
       "madeIn": "यूरोप में ❤️ के साथ बनाया गया"
     }
   }

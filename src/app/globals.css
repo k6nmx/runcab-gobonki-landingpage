@@ -4,7 +4,7 @@
 /* Dark variant — FIXED (the :is(...) version breaks Oxide) */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Gobonki Theme - Professional Blue Palette */
+/* gobonki Theme - Professional Blue Palette */
 @theme {
   --font-sans: Inter, system-ui, sans-serif;
   --font-display: Inter, system-ui, sans-serif;

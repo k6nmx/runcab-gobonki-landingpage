@@ -168,7 +168,7 @@
   },
   "footer": {
     "brand": {
-      "logoAlt": "Gobonki",
+      "logoAlt": "gobonki",
       "tagline": "حل بطاقة الختم الرقمية الخاص بك",
       "social": {
         "linkedin": "https://linkedin.com/company/gobonki",
@@ -201,7 +201,7 @@
       }
     ],
     "bottom": {
-      "copyright": "® {year} Gobonki. جميع الحقوق محفوظة.",
+      "copyright": "® {year} gobonki. جميع الحقوق محفوظة.",
       "madeIn": "صُنع بـ ❤️ في أوروبا"
     }
   }

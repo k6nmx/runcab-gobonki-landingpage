@@ -169,7 +169,7 @@
 
   "footer": {
     "brand": {
-      "logoAlt": "Gobonki",
+      "logoAlt": "gobonki",
       "tagline": "Your digital stamp card solution",
       "social": {
         "linkedin": "https://linkedin.com/company/gobonki",
@@ -189,7 +189,7 @@
         "title": "Company",
         "items": [
           { "type": "link", "label": "About", "href": "/about" },
-          { "type": "mailto", "label": "Contact", "email": "hello@gobonki.com", "subject": "Hello Gobonki", "body": "I'd like to get in touch." },
+          { "type": "mailto", "label": "Contact", "email": "hello@gobonki.com", "subject": "Hello gobonki", "body": "I'd like to get in touch." },
           { "type": "anchor", "label": "Newsletter", "href": "#contact" }
         ]
       },
@@ -202,7 +202,7 @@
       }
     ],
     "bottom": {
-      "copyright": "® {year} Gobonki. All rights reserved.",
+      "copyright": "® {year} gobonki. All rights reserved.",
       "madeIn": "Made with ❤️ in Europe"
     }
   }

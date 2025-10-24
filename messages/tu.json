@@ -168,7 +168,7 @@
   },
   "footer": {
     "brand": {
-      "logoAlt": "Gobonki",
+      "logoAlt": "gobonki",
       "tagline": "Dijital damga kartı çözümünüz",
       "social": {
         "linkedin": "https://linkedin.com/company/gobonki",
@@ -188,7 +188,7 @@
         "title": "Şirket",
         "items": [
           { "type": "link", "label": "Hakkında", "href": "/about" },
-          { "type": "mailto", "label": "İletişim", "email": "hello@gobonki.com", "subject": "Merhaba Gobonki", "body": "İletişime geçmek istiyorum." },
+          { "type": "mailto", "label": "İletişim", "email": "hello@gobonki.com", "subject": "Merhaba gobonki", "body": "İletişime geçmek istiyorum." },
           { "type": "anchor", "label": "Bülten", "href": "#contact" }
         ]
       },
@@ -201,7 +201,7 @@
       }
     ],
     "bottom": {
-      "copyright": "® {year} Gobonki. Tüm hakları saklıdır.",
+      "copyright": "® {year} gobonki. Tüm hakları saklıdır.",
       "madeIn": "Avrupa'da ❤️ ile yapıldı"
     }
   }
