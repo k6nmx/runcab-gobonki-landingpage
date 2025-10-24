@@ -7,28 +7,29 @@ export const metadata: Metadata = {
 
 export default function ImprintPage() {
   return (
-    <article className="prose prose-neutral max-w-none">
-      <h1 className="text-3xl font-extrabold tracking-tight text-neutral-900">Imprint</h1>
-      <p className="mt-2 mb-10 text-sm text-neutral-500">Last updated: 2025-01-01</p>
+        <main className=" bg-gray-50 py-20 px-4">
+      <div className="mx-auto max-w-3xl bg-white p-8 rounded-2xl shadow-md">
+        <h1 className="text-3xl font-semibold text-slate-800 border-b pb-4 mb-6">Imprint</h1>
+        <p className="mt-2 mb-6 text-sm text-neutral-500">Last updated: 2025-01-01</p>
 
-      <div>runcab GmbH</div>
-      <div>Flottwellstraße 28</div>
-      <div>10785 Berlin</div>
-      <div>Germany</div>
-      <br />
-      <div><strong>Kontaktinformationen:</strong></div>
-      <div>
-        E-mail: <a href="mailto:info@gobonki.com">info@gobonki.com</a>
+        <div className="mb-4">runcab GmbH</div>
+        <div className="mb-4">Flottwellstraße 28</div>
+        <div className="mb-4">10785 Berlin</div>
+        <div className="mb-4">Germany</div>
+        
+        <h2 className="text-xl font-semibold text-slate-700 mb-2">Kontaktinformationen:</h2>
+        <p className="mb-4">
+          E-mail: <a className="text-blue-600 hover:underline" href="mailto:info@gobonki.com">info@gobonki.com</a>
+        </p>
+        
+        <h2 className="text-xl font-semibold text-slate-700 mb-2">Bevollmächtigte Vertreter:</h2>
+        <p className="mb-4">Christian Renner</p>
+        <p className="mb-4">Max Kolhagen</p>
+        
+        <p className="mb-4">Eingetragener Sitz: Germany</p>
+        <p className="mb-4">Registergericht: Amtsgericht Charlottenburg</p>
+        <p className="mb-4">Handelsregisternummer: HRB 278388 B</p>
       </div>
-      <br />
-      <div><strong>Bevollmächtigte Vertreter:</strong></div>
-      <div>Christian Renner</div>
-      <div>Max Kolhagen</div>
-      <br />
-      <div>Eingetragener Sitz: Germany</div>
-      <div>Registergericht: Amtsgericht Charlottenburg</div>
-      <div>Handelsregisternummer: HRB 278388 B</div>
-
-    </article>
+    </main>
   );
 }
