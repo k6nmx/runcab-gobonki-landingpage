@@ -94,7 +94,7 @@ export default function NewsletterSection({ className }: { className?: string })
               </div>
 
               {/* Smooth animated content */}
-              <div className="mt-6 max-w-md mx-auto text-left text-neutral-700 min-h-[160px]">
+              <div className="mt-6 max-w-md mx-auto text-start text-neutral-700 min-h-[160px]">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={mode}

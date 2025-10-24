@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion, useReducedMotion, easeInOut } from "framer-motion";
 import { HeroContentProps } from "./types";
 
+
+
 export default function HeroContent({
   mode,
   title,
@@ -53,6 +55,11 @@ export default function HeroContent({
           </Button>
           <Button variant="outline" className="px-5 py-2.5 text-sm rounded-lg" asChild>
             <a href="#demo">Watch Demo</a>
+            {/* <a href={ctaHref}>
+              {!isRTL && <ArrowRight className="mr-2 h-4 w-4" />}
+              {ctaText}
+              {isRTL && <ArrowRight className="ml-2 h-4 w-4 rotate-180" />}
+            </a> */}
           </Button>
         </div>
       </motion.div>

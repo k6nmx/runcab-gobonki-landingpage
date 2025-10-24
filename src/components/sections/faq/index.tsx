@@ -59,7 +59,7 @@ export default function FAQSection({ className }: { className?: string }) {
                         value={`faq-${audience}-${i}`}
                         className="border-0"
                       >
-                        <AccordionTrigger className="text-left py-4 text-base sm:text-lg font-semibold text-neutral-900 hover:no-underline hover:cursor-pointer">
+                        <AccordionTrigger className=" py-4 text-base sm:text-lg font-semibold text-neutral-900 hover:no-underline hover:cursor-pointer">
                           {item.q}
                         </AccordionTrigger>
                         <AccordionContent className="pb-5 text-neutral-700 leading-7">

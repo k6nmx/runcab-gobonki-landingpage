@@ -145,7 +145,7 @@
   "href": "#get-started"
 },
   "faq": {
-    "title": "Frequently asked questions",
+    "title": "Frequently Asked Questions",
     "forCustomers": "For Customers",
     "forBusinesses": "For Businesses",
     "customers": [
@@ -197,8 +197,7 @@
         "title": "Legal",
         "items": [
           { "type": "link", "label": "Privacy Policy", "href": "/privacy" },
-          { "type": "link", "label": "Imprint", "href": "/imprint" },
-          { "type": "link", "label": "Terms of Service", "href": "/terms" }
+          { "type": "link", "label": "Imprint", "href": "/imprint" }
         ]
       }
     ],

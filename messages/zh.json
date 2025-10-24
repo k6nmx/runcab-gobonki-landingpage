@@ -197,8 +197,7 @@
         "title": "法律",
         "items": [
           { "type": "link", "label": "隐私政策", "href": "/privacy" },
-          { "type": "link", "label": "版权声明", "href": "/imprint" },
-          { "type": "link", "label": "服务条款", "href": "/terms" }
+          { "type": "link", "label": "版权声明", "href": "/imprint" }
         ]
       }
     ],

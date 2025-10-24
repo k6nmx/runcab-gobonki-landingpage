@@ -18,6 +18,7 @@ export function TestimonialCard({ rating, quote, author, role, className }: Prop
       className={cn(
         "group relative overflow-hidden rounded-2xl border border-neutral-200",
         "bg-white/90 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl",
+        "flex flex-col",
         className
       )}
     >
@@ -31,7 +32,7 @@ export function TestimonialCard({ rating, quote, author, role, className }: Prop
         />
       </div>
 
-      <CardContent className="relative p-6 sm:p-8">
+      <CardContent className="relative p-6 sm:p-8 flex flex-col flex-grow">
         {/* Stars */}
         <div className="mb-4 flex items-center gap-1">
           {Array.from({ length: 5 }).map((_, i) => (
@@ -46,7 +47,9 @@ export function TestimonialCard({ rating, quote, author, role, className }: Prop
         </div>
 
         {/* Quote */}
-        <p className="italic text-neutral-700 leading-7">“{quote}”</p>
+        <div className="flex-grow">
+          <p className="italic text-neutral-700 leading-7">“{quote}”</p>
+        </div>
 
         {/* Author */}
         <div className="mt-6">

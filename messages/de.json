@@ -199,11 +199,11 @@
     "customers": [
       {
         "q": "Muss ich eine App installieren?",
-        "a": "Nein, eine App ist nicht erforderlich. Sie scannen einen QR-Code an der Theke und Ihre Stempel werden im Browser-Wallet Ihres Telefons gespeichert."
+        "a": "Nein, eine App ist nicht erforderlich. Sie scannen einen QR-Code an der Theke und Ihre Stempel werden in der Wallet Ihres Smartphones gespeichert."
       },
       {
         "q": "Wie löse ich eine Prämie ein?",
-        "a": "Sobald Sie genügend Stempel gesammelt haben, zeigen Sie Ihr Handy dem Kassierer. Dieser tippt auf 'Einlösen' und Ihre Prämie wird sofort angewendet."
+        "a": "Sobald Sie genügend Stempel gesammelt haben, zeigen Sie Ihr Handy mit dem QR-Code im Geschäft vor. Dieser tippt auf 'Einlösen' , scannt ihren QR-Code ab und Ihre Prämie wird sofort eingelöst."
       },
       {
         "q": "Was, wenn ich mein Handy wechsle oder verliere?",
@@ -211,7 +211,7 @@
       },
       {
         "q": "Sind meine Daten privat?",
-        "a": "Ja. Wir speichern nur das Nötigste, um Ihre Stempel zu verfolgen. Keine Standortverfolgung, kein Weiterverkauf persönlicher Daten."
+        "a": "Ja. Wir speichern nur das Nötigste siehe Datenschutzerklärung, um Ihre Stempel zu verfolgen. Keine Standortverfolgung, kein Weiterverkauf persönlicher Daten."
       },
       {
         "q": "Funktioniert es in verschiedenen Geschäften?",
@@ -313,11 +313,6 @@
             "type": "link",
             "label": "Impressum",
             "href": "/imprint"
-          },
-          {
-            "type": "link",
-            "label": "Nutzungsbedingungen",
-            "href": "/terms"
           }
         ]
       }

@@ -11,8 +11,8 @@
   },
   "hero": {
     "customer": {
-      "title": "Telefonun = Sadakat kartların",
-      "subtitle": "Ödülleri bir daha asla kaybetme. Her alışverişin değerli. Restoranlarda, berberlerde, kafelerde geçerli - indirme gerektirmez.",
+      "title": "Telefonun = Bonus kartların",
+      "subtitle": "Dijital Bonus damga kartı her zaman yanınızda. Restoranlarda, berberlerde, kafelerde geçerli - indirme gerektirmez.",
       "cta": "Uygulamayı Şimdi İndir"
     },
     "business": {
@@ -57,7 +57,7 @@
       "items": [
         {
           "rating": "5",
-          "quote": "Tamam, cüzdanımda 6 farklı delikli kart vardı ve hiçbir zaman doğru olanı bulamıyordum. Bu uygulama dürüst olmak gerekirse çok daha kolay.",
+          "quote": "Tamam, cüzdanımda 6 farklı bonus kart vardı ve hiçbir zaman doğru olanı bulamıyordum. Bu uygulama dürüst olmak gerekirse çok daha kolay.",
           "author": "Selin M.",
           "location": "İstanbul"
         },
@@ -128,7 +128,7 @@
   },
   "cta": {
     "customer": {
-      "title": "Bugün Ödül Toplamaya Başlayın",
+      "title": "Bugün Bonus Toplamaya Başlayın",
       "subtitle": "Ödülleri asla kaçırmayan binlerce akıllı alışverişçiye katılın. Yakınınızdaki katılımcı işletmeleri bulun ve anında kazanmaya başlayın.",
       "cta": "Yakınımdaki İşletmeleri Bul",
       "href": "#directory"
@@ -196,8 +196,7 @@
         "title": "Yasal",
         "items": [
           { "type": "link", "label": "Gizlilik Politikası", "href": "/privacy" },
-          { "type": "link", "label": "Künye", "href": "/imprint" },
-          { "type": "link", "label": "Hizmet Şartları", "href": "/terms" }
+          { "type": "link", "label": "Künye", "href": "/imprint" }
         ]
       }
     ],

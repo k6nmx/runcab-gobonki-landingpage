@@ -4,8 +4,8 @@
     "testimonials": "Phản hồi",
     "faq": "Hỏi đáp",
     "contact": "Bản tin",
-    "forCustomers": "Dành cho khách hàng",
-    "forBusinesses": "Dành cho doanh nghiệp",
+    "forCustomers": "Khách hàng",
+    "forBusinesses": "Doanh nghiệp",
     "cta": "Mở ứng dụng",
     "language": "Ngôn ngữ"
   },
@@ -98,7 +98,7 @@
     }
   },
   "testimonials": {
-    "customerTitle": "Người dùng của chúng tôi nói gì",
+    "customerTitle": "khách hàng của chúng tôi nói gì",
     "businessTitle": "Chủ doanh nghiệp nói gì",
     "customer": {
       "count": "3",
@@ -214,17 +214,17 @@
         "a": "Có. Chúng tôi chỉ lưu trữ những gì cần thiết để theo dõi tem của bạn. Không theo dõi vị trí, không bán lại dữ liệu cá nhân."
       },
       {
-        "q": "Nó có hoạt động ở các cửa hàng khác nhau không?",
+        "q": "gobonki có hoạt động ở các cửa hàng khác nhau không?",
         "a": "Có. gobonki hoạt động tại các quán cà phê, tiệm cắt tóc, nhà hàng—mỗi doanh nghiệp có thể có thẻ và phần thưởng riêng."
       },
       {
-        "q": "Nó có hoạt động ngoại tuyến không?",
+        "q": "gobonki có hoạt động ngoại tuyến không?",
         "a": "Bạn có thể mở thẻ của mình ngoại tuyến, nhưng việc tích tem/đổi thưởng yêu cầu một lần kiểm tra trực tuyến nhanh để ngăn chặn gian lận."
       }
     ],
     "businesses": [
       {
-        "q": "Việc thiết lập mất bao lâu?",
+        "q": "Quá trình đăng ký mất bao lâu?",
         "a": "Khoảng 2 phút. Tạo một thẻ, đặt phần thưởng của bạn, in mã QR. Thế là xong—không cần tích hợp POS."
       },
       {
@@ -244,11 +244,11 @@
         "a": "Bắt đầu miễn phí. Các tính năng trả phí như nhãn trắng và phân tích là tùy chọn và minh bạch—không có phí giao dịch."
       },
       {
-        "q": "Nó có tích hợp với POS của tôi không?",
+        "q": "gobonki có tích hợp với POS của tôi không?",
         "a": "Không bắt buộc. Nếu bạn muốn đồng bộ hóa POS, chúng tôi cung cấp xuất dữ liệu đơn giản và REST API trên các gói cao hơn."
       },
       {
-        "q": "API tại goBonki như thế nào?",
+        "q": "API tại gobonki như thế nào?",
         "a": "gobonki cung cấp tích hợp API theo yêu cầu, giúp kết nối các hệ thống một cách liền mạch. API có thể được tùy chỉnh theo nhu cầu cụ thể của bạn, cho phép giao tiếp tự động và hiệu quả giữa các ứng dụng của bạn và gobonki.Nếu bạn muốn tìm hiểu thêm về giải pháp API của chúng tôi, vui lòng liên hệ qua hello@gobonki.com."
       }
     ]
@@ -313,11 +313,6 @@
             "type": "link",
             "label": "Dấu ấn",
             "href": "/imprint"
-          },
-          {
-            "type": "link",
-            "label": "Điều khoản dịch vụ",
-            "href": "/terms"
           }
         ]
       }
