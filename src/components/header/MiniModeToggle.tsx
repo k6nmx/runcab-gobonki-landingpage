@@ -30,34 +30,33 @@ export default function MiniModeToggle({
             }}
             className={isRTL ? "ml-2" : "mr-2"}
           >
-            <div className="rounded-full">
-              <SegmentedToggle
-                value={mode}
-                onChange={(v) => onModeChange(v as "customer" | "business")}
-                options={[
-                  {
-                    value: "customer",
-                    label: (
-                      <span className="inline-flex items-center gap-1 text-sm">
-                        <Users size={14} />
-                        <span className="sr-only">Customer</span>
-                      </span>
-                    ),
-                  },
-                  {
-                    value: "business",
-                    label: (
-                      <span className="inline-flex items-center gap-1 text-sm">
-                        <Building2 size={14} />
-                        <span className="sr-only">Business</span>
-                      </span>
-                    ),
-                  },
-                ]}
-                className="h-8 min-w-[110px] text-sm"
-                dir={isRTL ? "rtl" : "ltr"}
-              />
-            </div>
+            <SegmentedToggle
+              value={mode}
+              onChange={(v) => onModeChange(v as "customer" | "business")}
+              options={[
+                {
+                  value: "customer",
+                  label: (
+                    <span className="inline-flex items-center justify-center">
+                      <Users size={16} />
+                      <span className="sr-only">Customer</span>
+                    </span>
+                  ),
+                },
+                {
+                  value: "business",
+                  label: (
+                    <span className="inline-flex items-center justify-center">
+                      <Building2 size={16} />
+                      <span className="sr-only">Business</span>
+                    </span>
+                  ),
+                },
+              ]}
+              className="h-8 shadow-md"
+              dir={isRTL ? "rtl" : "ltr"}
+              compact={true}
+            />
           </motion.div>
         )}
       </AnimatePresence>

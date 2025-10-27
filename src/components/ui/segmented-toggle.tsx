@@ -9,6 +9,7 @@ type Props = {
   options: Option[]
   className?: string
   dir?: 'ltr' | 'rtl'
+  compact?: boolean // NEW: flag for mini version
 }
 
 export function SegmentedToggle({
@@ -17,6 +18,7 @@ export function SegmentedToggle({
   onChange,
   options,
   className,
+  compact = false, // NEW
 }: Props) {
   const displayOptions = React.useMemo(
     () => (dir === 'rtl' ? [...options].reverse() : options),
@@ -238,7 +240,9 @@ export function SegmentedToggle({
               onChange(opt.value)
             }}
             className={cn(
-              'relative z-10 px-4 py-2 text-sm font-medium transition-colors rounded-full focus:outline-none cursor-pointer',
+              'relative z-10 text-sm font-medium transition-colors rounded-full focus:outline-none cursor-pointer',
+              // Conditional padding based on compact mode
+              compact ? 'px-2.5 py-1.5' : 'px-4 py-2',
               selected ? 'text-neutral-900' : 'text-neutral-600 hover:text-neutral-800'
             )}
           >
