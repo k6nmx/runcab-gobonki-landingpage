@@ -7,6 +7,11 @@ import { ModeProvider } from '@/context/mode-context'
 import { IsScrolledProvider } from '@/context/is-scrolled-context'
 import '../globals.css'
 import { SchemaMarkup } from '@/components/SchemaMarkup'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  icons: [{ rel: 'icon', url: '/icon.svg' }],
+}
 
 export function generateStaticParams() {
   return locales.map((l) => ({ locale: l }))
