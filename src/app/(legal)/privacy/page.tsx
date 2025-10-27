@@ -31,7 +31,6 @@ export default function PrivacyPage() {
   const openSettings = () => setShowSettings(true);
   const closeSettings = () => setShowSettings(false);
 
-  // example custom toggle (for demo)
   const [analyticsEnabled, setAnalyticsEnabled] = useState<boolean>(() => {
     try {
       const raw = localStorage.getItem('gobonki_analytics_enabled');

@@ -8,116 +8,238 @@ type Props = {
   onChange: (v: string) => void
   options: Option[]
   className?: string
-  dir?: "ltr" | "rtl"
+  dir?: 'ltr' | 'rtl'
 }
 
-export function SegmentedToggle({ value, dir = "ltr", onChange, options, className }: Props) {
-  const [highlightStyle, setHighlightStyle] = React.useState<React.CSSProperties>({})
+export function SegmentedToggle({
+  value,
+  dir = 'ltr',
+  onChange,
+  options,
+  className,
+}: Props) {
+  const displayOptions = React.useMemo(
+    () => (dir === 'rtl' ? [...options].reverse() : options),
+    [options, dir]
+  )
+
+  const containerRef = React.useRef<HTMLDivElement | null>(null)
   const buttonsRef = React.useRef<Map<string, HTMLButtonElement | null>>(new Map())
-  const containerRef = React.useRef<HTMLDivElement>(null)
+  const [focusedValue, setFocusedValue] = React.useState<string | null>(null)
 
-  // Visual order for DOM
-  const displayOptions = dir === "rtl" ? [...options].reverse() : options
+  const [highlight, setHighlight] = React.useState<{
+    width: number
+    height: number
+    left: number
+    top: number
+    opacity: number
+  }>({
+    width: 0,
+    height: 0,
+    left: 0,
+    top: 0,
+    opacity: 0,
+  })
 
-  // Helper to measure and set highlight; run inside rAF to ensure DOM is ready
-  const measureAndSet = React.useCallback(() => {
-    const container = containerRef.current
-    if (!container) return
+  const rafRef = React.useRef<number | null>(null)
+  const resizeTimerRef = React.useRef<number | null>(null)
+  const isFirstMeasure = React.useRef(true)
 
-    const selectedButton = buttonsRef.current.get(value) || null
-    if (!selectedButton) {
-      setHighlightStyle({ width: '0px', opacity: 0 })
-      return
+  const activeKey = focusedValue ?? value
+
+  const measureAndSet = React.useCallback((skipTransition = false) => {
+    if (rafRef.current) {
+      cancelAnimationFrame(rafRef.current)
+      rafRef.current = null
     }
 
-    const buttonRect = selectedButton.getBoundingClientRect()
-    const containerRect = container.getBoundingClientRect()
-    const width = buttonRect.width
+    rafRef.current = requestAnimationFrame(() => {
+      const container = containerRef.current
+      if (!container) {
+        setHighlight((h) => ({ ...h, opacity: 0, width: 0 }))
+        return
+      }
 
-    if (dir === 'ltr') {
-      const left = buttonRect.left - containerRect.left
-      setHighlightStyle({
-        width: `${width}px`,
-        left: `${Math.round(left)}px`,
-        right: 'auto',
-        opacity: 1,
-        transform: 'none',
-      })
-    } else {
-      // RTL: position from container's right edge
-      const right = containerRect.right - buttonRect.right
-      setHighlightStyle({
-        width: `${width}px`,
-        right: `${Math.round(right)}px`,
-        left: 'auto',
-        opacity: 1,
-        transform: 'none',
-      })
-    }
-  }, [value, dir])
+      const btn = buttonsRef.current.get(activeKey) || null
+      if (!btn) {
+        setHighlight((h) => ({ ...h, opacity: 0, width: 0 }))
+        return
+      }
 
-  // Run measurement when value/options/dir changes — but wait a frame so refs update.
-  React.useEffect(() => {
-    let raf = 0
-    raf = requestAnimationFrame(() => {
-      // extra rAF in case of multiple microtasks required
-      requestAnimationFrame(() => measureAndSet())
+      const left = btn.offsetLeft
+      const top = btn.offsetTop
+      const width = btn.offsetWidth
+      const height = btn.offsetHeight
+
+      const L = Math.round(left)
+      const T = Math.round(top)
+      const W = Math.round(width)
+      const H = Math.round(height)
+
+      setHighlight({
+        width: W,
+        height: H,
+        left: L,
+        top: T,
+        opacity: 1,
+      })
+
+      if (skipTransition && container) {
+        const pill = container.querySelector('[aria-hidden="true"]') as HTMLElement
+        if (pill) {
+          pill.style.transition = 'none'
+          requestAnimationFrame(() => {
+            pill.style.transition = ''
+          })
+        }
+      }
+
+      if (isFirstMeasure.current) {
+        isFirstMeasure.current = false
+      }
     })
-    return () => cancelAnimationFrame(raf)
-  }, [value, options, dir, measureAndSet])
+  }, [activeKey])
 
-  // Keep it in sync on resize / element size changes
   React.useEffect(() => {
-    function handle() {
-      requestAnimationFrame(() => measureAndSet())
+    measureAndSet(false)
+    const id = requestAnimationFrame(() => measureAndSet(false))
+    return () => cancelAnimationFrame(id)
+  }, [measureAndSet, options])
+
+  React.useEffect(() => {
+    function handleDebounced() {
+      if (resizeTimerRef.current) {
+        window.clearTimeout(resizeTimerRef.current)
+      }
+      resizeTimerRef.current = window.setTimeout(() => {
+        measureAndSet(true)
+      }, 60)
     }
 
-    window.addEventListener('resize', handle)
-    const ro = new ResizeObserver(handle)
+    const ro = new ResizeObserver(handleDebounced)
     if (containerRef.current) ro.observe(containerRef.current)
+    window.addEventListener('resize', handleDebounced)
+    window.addEventListener('scroll', handleDebounced, { passive: true })
 
     return () => {
-      window.removeEventListener('resize', handle)
+      if (resizeTimerRef.current) window.clearTimeout(resizeTimerRef.current)
       ro.disconnect()
+      window.removeEventListener('resize', handleDebounced)
+      window.removeEventListener('scroll', handleDebounced)
     }
   }, [measureAndSet])
+
+  React.useEffect(() => {
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+    }
+  }, [])
+
+  const onKeyDown: React.KeyboardEventHandler = (e) => {
+    const KEY = e.key
+    const isLeft = KEY === 'ArrowLeft'
+    const isRight = KEY === 'ArrowRight'
+    const isHome = KEY === 'Home'
+    const isEnd = KEY === 'End'
+
+    if (!(isLeft || isRight || isHome || isEnd)) return
+
+    e.preventDefault()
+    e.stopPropagation()
+
+    const currentValue = focusedValue ?? value
+    const idx = displayOptions.findIndex((o) => o.value === currentValue)
+    if (idx === -1) return
+
+    const leftMeansPrev = dir === 'ltr' ? true : false
+
+    if (isLeft || isRight) {
+      const movePrev = isLeft ? leftMeansPrev : !leftMeansPrev
+      let nextIdx = movePrev ? idx - 1 : idx + 1
+      if (nextIdx < 0) nextIdx = displayOptions.length - 1
+      if (nextIdx >= displayOptions.length) nextIdx = 0
+      const nextVal = displayOptions[nextIdx].value
+
+      const btn = buttonsRef.current.get(nextVal)
+      btn?.focus()
+      onChange(nextVal)
+    } else if (isHome) {
+      const first = displayOptions[0].value
+      buttonsRef.current.get(first)?.focus()
+      onChange(first)
+    } else if (isEnd) {
+      const last = displayOptions[displayOptions.length - 1].value
+      buttonsRef.current.get(last)?.focus()
+      onChange(last)
+    }
+  }
+
+  function setButtonRef(valueKey: string, el: HTMLButtonElement | null) {
+    const m = buttonsRef.current
+    if (el) m.set(valueKey, el)
+    else m.delete(valueKey)
+  }
+
+  const onButtonFocus = (v: string) => {
+    setFocusedValue(v)
+  }
+  
+  const onButtonBlur = () => {
+    window.setTimeout(() => {
+      const activeEl = document.activeElement
+      const isInside = activeEl && containerRef.current && containerRef.current.contains(activeEl)
+      if (!isInside) setFocusedValue(null)
+    }, 0)
+  }
 
   return (
     <div
       ref={containerRef}
-      className={cn('relative inline-flex items-center rounded-full bg-neutral-100 p-1 shadow-sm', className)}
       role="tablist"
+      aria-orientation="horizontal"
       dir={dir}
+      onKeyDown={onKeyDown}
+      className={cn(
+        'relative inline-flex items-center rounded-full bg-neutral-100 p-1 shadow-sm',
+        className
+      )}
     >
-      {/* highlight: use left for LTR, right for RTL. pointer-events-none so it never blocks clicks */}
       <div
-        className="absolute inset-y-1 z-0 rounded-full bg-white shadow-sm transition-all duration-300 ease-out pointer-events-none"
+        aria-hidden="true"
+        className="absolute z-0 rounded-full bg-white shadow-sm transition-[transform,width,height,opacity] duration-200 ease-out pointer-events-none"
         style={{
-          // baseline: occupy no space until measured
-          width: highlightStyle.width ?? '0px',
-          left: highlightStyle.left,
-          right: highlightStyle.right,
-          opacity: highlightStyle.opacity ?? 0,
-          transform: highlightStyle.transform ?? 'none',
+          left: 0,
+          top: `${highlight.top}px`,
+          height: `${highlight.height}px`,
+          width: `${highlight.width}px`,
+          transform: `translateX(${highlight.left}px)`,
+          opacity: highlight.opacity,
+          willChange: 'transform, width, height, opacity',
         }}
       />
 
-      {displayOptions.map((opt) => {
+      {displayOptions.map((opt, i) => {
+        const selected = value === opt.value
         return (
           <button
             key={opt.value}
-            ref={(el) => {
-              const m = buttonsRef.current
-              if (el) m.set(opt.value, el)
-              else m.delete(opt.value)
-            }}
+            ref={(el) => setButtonRef(opt.value, el)}
             type="button"
             role="tab"
-            aria-selected={value === opt.value}
-            onClick={() => onChange(opt.value)}
+            aria-selected={selected}
+            aria-controls={`segmented-tab-${i}`}
+            tabIndex={selected ? 0 : -1}
+            onFocus={() => {
+              onButtonFocus(opt.value)
+              requestAnimationFrame(() => measureAndSet(false))
+            }}
+            onBlur={onButtonBlur}
+            onClick={() => {
+              onChange(opt.value)
+            }}
             className={cn(
-              'relative z-10 px-4 py-2 text-sm font-medium transition-colors hover:cursor-pointer rounded-full',
-              value === opt.value ? 'text-neutral-900' : 'text-neutral-600 hover:text-neutral-800'
+              'relative z-10 px-4 py-2 text-sm font-medium transition-colors rounded-full focus:outline-none cursor-pointer',
+              selected ? 'text-neutral-900' : 'text-neutral-600 hover:text-neutral-800'
             )}
           >
             {opt.label}
