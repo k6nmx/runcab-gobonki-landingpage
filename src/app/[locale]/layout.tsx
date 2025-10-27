@@ -29,12 +29,10 @@ export default async function LocaleLayout({
     ? (rawLocale as AppLocale)
     : defaultLocale
 
-  console.log('[LAYOUT] Locale from params:', locale)
   
   setRequestLocale(locale)
   const messages = await getMessages()
   
-  console.log('[LAYOUT] Messages keys:', Object.keys(messages))
 
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>

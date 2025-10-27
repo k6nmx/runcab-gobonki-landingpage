@@ -29,10 +29,6 @@ function isAppLocale(locale: string | null | undefined): locale is AppLocale {
 async function loadMessages(locale: AppLocale): Promise<MessagesDictionary> {
   const loader = MESSAGE_LOADERS[locale] ?? MESSAGE_LOADERS[DEFAULT_LOCALE];
 
-  if (!loader) {
-    if (isDev) console.warn('[I18N] No loader found for locale', locale);
-    return {};
-  }
 
   try {
     const messages = await loader();
@@ -49,7 +45,6 @@ async function loadMessages(locale: AppLocale): Promise<MessagesDictionary> {
 }
 
 export default getRequestConfig(async ({ locale }) => {
-  if (isDev) console.debug('[I18N] request param locale =>', locale);
 
   // Prefer explicit param
   let actualLocale = locale;
@@ -81,7 +76,6 @@ export default getRequestConfig(async ({ locale }) => {
 
   const safeLocale: AppLocale = isAppLocale(actualLocale) ? actualLocale : defaultLocale;
 
-  if (isDev) console.debug('[I18N] loading messages for locale =>', safeLocale);
 
   const messages = await loadMessages(safeLocale);
 
