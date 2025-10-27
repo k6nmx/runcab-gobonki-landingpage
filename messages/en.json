@@ -13,14 +13,12 @@
     "customer": {
       "title": "Your phone = Your loyalty cards",
       "subtitle": "Never lose rewards again. Every purchase counts. Works at restaurants, barbers, cafes - no downloads needed.",
-      "cta": "Start Collecting Rewards",
-      "href": "https://app.gobonki.com/customer"
+      "cta": "Start Collecting Rewards"
     },
     "business": {
       "title": "Turn strangers into regulars instantly",
       "subtitle": "Setup in 2 minutes, customize everything, zero monthly fees. The loyalty program that actually works for small businesses.",
-      "cta": "Start Your Free Loyalty Program",
-      "href": "https://app.gobonki.com/store"
+      "cta": "Start Your Free Loyalty Program"
     }
   },
   "features": {
