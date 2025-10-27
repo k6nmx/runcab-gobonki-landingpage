@@ -22,9 +22,9 @@ export function MobileMenu({ items, toHome, t, open, onOpenChange }: MobileMenuP
 
       <SheetContent side="right" className="w-[260px] sm:w-[300px] bg-white">
         <nav className="flex flex-col gap-4 mt-8">
-          <Link href='https://app.gobonki.com' className="inline-flex" onClick={() => onOpenChange(false)}>
+          <Link href='https://app.gobonki.com' className="inline-flex" target="_blank" onClick={() => onOpenChange(false)}>
             <button className="btn-gradient btn-shadow w-full px-6 py-2.5 text-white hover:translate-y-0 transform-none text-sm font-semibold rounded-lg hover:cursor-pointer">
-              Go To App
+              {t("cta")}
             </button>
           </Link>
 

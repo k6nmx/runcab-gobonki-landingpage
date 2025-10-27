@@ -32,9 +32,6 @@ export default function LoadingSkeleton({ labels }: LoadingSkeletonProps) {
               <Button className="btn-gradient btn-shadow px-6 py-2.5 text-sm font-semibold rounded-lg">
                 {t("customer.cta")}
               </Button>
-              <Button variant="outline" className="px-5 py-2.5 text-sm rounded-lg">
-                Watch Demo
-              </Button>
             </div>
           </div>
           <div className="mx-auto w-full max-w-[720px]">

@@ -47,19 +47,11 @@ export default function HeroContent({
             className="btn-gradient btn-shadow px-6 py-2.5 hover:translate-y-0 transform-none text-sm font-semibold rounded-lg"
             asChild
           >
-            <a href={ctaHref}>
+            <a href={ctaHref} target="_blank">
               {!isRTL && <ArrowRight className="mr-2 h-4 w-4" />}
               {ctaText}
               {isRTL && <ArrowRight className="ml-2 h-4 w-4 rotate-180" />}
             </a>
-          </Button>
-          <Button variant="outline" className="px-5 py-2.5 text-sm rounded-lg" asChild>
-            <a href="#demo">Watch Demo</a>
-            {/* <a href={ctaHref}>
-              {!isRTL && <ArrowRight className="mr-2 h-4 w-4" />}
-              {ctaText}
-              {isRTL && <ArrowRight className="ml-2 h-4 w-4 rotate-180" />}
-            </a> */}
           </Button>
         </div>
       </motion.div>
