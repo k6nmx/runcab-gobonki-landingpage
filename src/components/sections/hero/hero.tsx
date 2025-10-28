@@ -64,7 +64,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="hero-bg pb-12" dir={isRTL ? "rtl" : "ltr"}>
+    <section className="hero-bg relative z-0 pb-12" dir={isRTL ? "rtl" : "ltr"}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="pt-24 pb-8 sm:pb-12">
           <div className="flex items-center justify-center h-11">
