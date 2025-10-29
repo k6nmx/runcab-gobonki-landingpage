@@ -4,6 +4,7 @@ import { defaultLocale, locales, type AppLocale } from '../../i18n/request'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import { ModeProvider } from '@/context/mode-context'
+import { PostHogProvider } from '@/app/providers/posthog-provider'
 import { IsScrolledProvider } from '@/context/is-scrolled-context'
 import '../globals.css'
 import { SchemaMarkup } from '@/components/SchemaMarkup'
@@ -37,6 +38,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
       <body>
+        <PostHogProvider>
         <SchemaMarkup />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ModeProvider>
@@ -47,6 +49,7 @@ export default async function LocaleLayout({
             </IsScrolledProvider>
           </ModeProvider>
         </NextIntlClientProvider>
+        </PostHogProvider>
       </body>
     </html>
   )

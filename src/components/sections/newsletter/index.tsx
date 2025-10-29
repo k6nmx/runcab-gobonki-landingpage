@@ -11,6 +11,7 @@ import { cn } from '@/lib/utils'
 import { useMode } from '@/context/mode-context'
 import { subscribe } from '@/components/sections/newsletter/actions'
 import { motion, AnimatePresence } from 'framer-motion'
+import posthog from 'posthog-js'
 
 const clientSchema = z.object({ email: z.string().email() })
 
@@ -53,8 +54,22 @@ export default function NewsletterSection({ className }: { className?: string })
 
     const parsed = clientSchema.safeParse({ email })
     if (!parsed.success) {
+      // Capture validation failure
+      if (typeof window !== 'undefined' && posthog.__loaded) {
+        posthog.capture('newsletter_signup_validation_failed', {
+          userType: mode,
+        })
+      }
       setStatus('error')
       return
+    }
+
+    // Capture attempt before any async operations
+    if (typeof window !== 'undefined' && posthog.__loaded) {
+      posthog.capture('newsletter_signup_attempted', {
+        userType: mode,
+        source: 'landing_page_newsletter_section',
+      })
     }
 
     setStatus('loading')
@@ -67,13 +82,33 @@ export default function NewsletterSection({ className }: { className?: string })
 
         const result = await subscribe(formData)
         if (result.ok) {
+          // Capture success
+          if (typeof window !== 'undefined' && posthog.__loaded) {
+            posthog.capture('newsletter_signup_success', {
+              userType: mode,
+            })
+          }
           setStatus('success')
           setEmail('')
         } else {
+          // Capture backend failure
+          if (typeof window !== 'undefined' && posthog.__loaded) {
+            posthog.capture('newsletter_signup_failed', {
+              userType: mode,
+              reason: 'backend_error',
+            })
+          }
           console.error('subscribe failed:', result)
           setStatus('error')
         }
       } catch (err) {
+        // Capture exception
+        if (typeof window !== 'undefined' && posthog.__loaded) {
+          posthog.capture('newsletter_signup_error', {
+            userType: mode,
+            error: err instanceof Error ? err.message : 'unknown',
+          })
+        }
         console.error('subscribe error:', err)
         setStatus('error')
       }
