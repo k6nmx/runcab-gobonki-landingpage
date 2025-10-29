@@ -23,7 +23,6 @@ function isAppLocale(locale: string | null | undefined): locale is AppLocale {
 async function loadMessages(locale: AppLocale): Promise<MessagesDictionary> {
   try {
     const messages = await loadMessagesForLocale(locale);
-    if (isDev) console.debug('[I18N] loaded messages keys =>', Object.keys(messages).slice(0, 20));
     return messages;
   } catch (error) {
     if (isDev) console.error('[I18N] failed to load messages for', locale, error);
