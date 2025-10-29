@@ -53,7 +53,7 @@ export default function MiniModeToggle({
                   ),
                 },
               ]}
-              className="h-8 shadow-md"
+              className="h-8 shadow-md mini-toggle"
               dir={isRTL ? "rtl" : "ltr"}
               compact={true}
             />

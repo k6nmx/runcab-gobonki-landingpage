@@ -421,3 +421,21 @@
      }
    }
 }
+
+/* Mini-toggle adjustments for a more pill-shaped appearance */
+
+/* Adjust mini-toggle container */
+.mini-toggle {
+  padding: 2px !important;
+  border-radius: 9999px !important;
+}
+
+/* Adjust buttons inside mini-toggle */
+.mini-toggle button[role="tab"] {
+  padding: 4px 12px !important;
+}
+
+/* Adjust highlight inside mini-toggle */
+.mini-toggle > div[aria-hidden="true"] {
+  border-radius: 9999px !important;
+}
