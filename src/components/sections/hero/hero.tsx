@@ -32,7 +32,7 @@ export default function Hero() {
           title: t("customer.title"),
           subtitle: t("customer.subtitle"),
           ctaText: t("customer.cta"),
-          ctaHref: "#customer",
+          ctaHref: "https://app.gobonki.com",
           image: "/hero-image2.jpg",
           imageAlt: "Customers view of participating cafe",
         }
@@ -40,7 +40,7 @@ export default function Hero() {
           title: t("business.title"),
           subtitle: t("business.subtitle"),
           ctaText: t("business.cta"),
-          ctaHref: "#business",
+          ctaHref: "https://app.gobonki.com",
           image: "/hero-image1.jpg",
           imageAlt: "Business dashboard / cafe interior",
         };
