@@ -58,7 +58,7 @@ export default function HeaderClient() {
       className={clsx(
         "mx-auto pointer-events-auto transition-all duration-300 ease-out",
         isScrolled
-          ? "glass-pill w-[min(92vw,64rem)] px-4 sm:px-6 mt-2 rounded-full"
+          ? "glass w-[min(92vw,64rem)] px-4 sm:px-6 mt-2 rounded-full"
           : "w-[min(100vw,80rem)] px-6 mt-0"
       )}
     >
