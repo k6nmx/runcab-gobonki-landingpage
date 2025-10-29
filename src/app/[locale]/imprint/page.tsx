@@ -13,7 +13,7 @@ export default function ImprintPage() {
 
   return (
     <>
-      <article className=" bg-gray-50 py-20 px-4">
+      <article className="min-h-screen bg-gray-50 py-20 px-4">
         <div className="mx-auto max-w-3xl bg-white p-8 rounded-2xl shadow-md">
           <h1 className="text-3xl font-semibold text-slate-800 border-b pb-4 mb-6">
             {t("imprint.title")}
