@@ -321,5 +321,17 @@
       "copyright": "® {year} gobonki। सभी अधिकार सुरक्षित।",
       "madeIn": "यूरोप में ❤️ के साथ बनाया गया"
     }
+  },
+  "languageDisclaimer": {
+    "title": "Disclaimer",
+    "description": "This document is only available in German."
+  },
+  "legal": {
+    "imprint": {
+      "title": "Imprint"
+    },
+    "privacy": {
+      "title": "Privacy Policy"
+    }
   }
 }

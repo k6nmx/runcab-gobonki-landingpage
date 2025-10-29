@@ -321,5 +321,17 @@
       "copyright": "® {year} gobonki. Alle Rechte vorbehalten.",
       "madeIn": "Hergestellt mit ❤️ in Europa"
     }
+  },
+  "languageDisclaimer": {
+    "title": "Disclaimer",
+    "description": "This document is only available in German."
+  },
+  "legal": {
+    "imprint": {
+      "title": "Impressum"
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung"
+    }
   }
 }

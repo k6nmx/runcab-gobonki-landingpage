@@ -321,5 +321,17 @@
       "copyright": "® {year} gobonki. Tüm hakları saklıdır.",
       "madeIn": "Avrupa'da ❤️ ile yapıldı"
     }
+  },
+  "languageDisclaimer": {
+    "title": "Disclaimer",
+    "description": "This document is only available in German."
+  },
+  "legal": {
+    "imprint": {
+      "title": "Imprint"
+    },
+    "privacy": {
+      "title": "Privacy Policy"
+    }
   }
 }
