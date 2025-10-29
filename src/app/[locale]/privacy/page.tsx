@@ -2,60 +2,18 @@
 
 import React, { useEffect, useState } from 'react';
 
-type ConsentState = 'unknown' | 'necessary' | 'all' | 'custom';
-
 export default function PrivacyPage() {
-  const [consent, setConsent] = useState<ConsentState>('unknown');
-  const [showSettings, setShowSettings] = useState(false);
-
-  useEffect(() => {
-    
-    try {
-      const saved = localStorage.getItem('gobonki_cookie_consent') as ConsentState | null;
-      if (saved) setConsent(saved);
-    } catch (e) {
-      // ignore localStorage errors
-      setConsent('unknown');
-    }
-  }, []);
-
-  useEffect(() => {
-    // persist preference
-    try {
-      if (consent !== 'unknown') localStorage.setItem('gobonki_cookie_consent', consent);
-    } catch (e) {}
-  }, [consent]);
-
-  const acceptAll = () => setConsent('all');
-  const acceptNecessary = () => setConsent('necessary');
-  const openSettings = () => setShowSettings(true);
-  const closeSettings = () => setShowSettings(false);
-
-  const [analyticsEnabled, setAnalyticsEnabled] = useState<boolean>(() => {
-    try {
-      const raw = localStorage.getItem('gobonki_analytics_enabled');
-      return raw === 'true';
-    } catch {
-      return false;
-    }
-  });
-
-  useEffect(() => {
-    try {
-      localStorage.setItem('gobonki_analytics_enabled', analyticsEnabled ? 'true' : 'false');
-      
-    } catch {}
-  }, [analyticsEnabled]);
 
   return (
-    <main className="min-h-screen bg-gray-50 py-20 px-4">
+    <article className="min-h-screen bg-gray-50 py-20 px-4">
       <div className="mx-auto max-w-3xl bg-white p-8 rounded-2xl shadow-md">
+
+        <h1 className="text-3xl font-semibold text-slate-800 border-b pb-4 mb-6">Datenschutzerklärung</h1>
+
         <div className="mb-6 p-4 border-l-4 border-yellow-500 bg-yellow-50 text-yellow-800 rounded-md">
           <h3 className="font-semibold text-lg">Disclaimer</h3>
           <p className="mt-1">This document is only available in German.</p>
         </div>
-
-        <h1 className="text-3xl font-semibold text-slate-800 border-b pb-4 mb-6">Datenschutzerklärung</h1>
 
         <section className="mb-6">
           <h2 className="text-xl font-semibold text-slate-700 mb-2">1. Allgemeine Hinweise</h2>
@@ -154,107 +112,6 @@ export default function PrivacyPage() {
           </address>
         </section>
       </div>
-
-      {/* Cookie banner */}
-      {consent === 'unknown' && (
-        <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 w-full max-w-3xl px-4">
-          <div className="bg-gray-100 border-l-4 border-blue-500 p-4 rounded-xl shadow">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-              <div>
-                <h3 className="text-lg font-semibold text-slate-800">Einwilligungstext für Cookiebanner</h3>
-                <p className="text-slate-600 mt-1">
-                  Die Runcab GmbH nutzt Cookies und ähnliche Technologien, um den Betrieb von Gobonki sicherzustellen und Ihr Nutzererlebnis zu verbessern.
-                </p>
-              </div>
-
-              <div className="flex-shrink-0 flex items-center gap-2">
-                <button
-                  onClick={acceptAll}
-                  className="px-4 py-2 rounded-md bg-emerald-500 text-white font-medium shadow hover:opacity-95"
-                >
-                  Alle akzeptieren
-                </button>
-
-                <button
-                  onClick={acceptNecessary}
-                  className="px-4 py-2 rounded-md bg-gray-300 text-slate-800 font-medium hover:opacity-95"
-                >
-                  Nur notwendige
-                </button>
-
-                <button
-                  onClick={openSettings}
-                  className="px-4 py-2 rounded-md bg-blue-600 text-white font-medium hover:opacity-95"
-                >
-                  Einstellungen
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Settings modal (simple) */}
-      {showSettings && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
-        >
-          <div
-            className="absolute inset-0 bg-black/40"
-            onClick={closeSettings}
-            aria-hidden="true"
-          />
-          <div className="relative z-10 max-w-xl w-full bg-white p-6 rounded-2xl shadow-lg">
-            <h4 className="text-xl font-semibold text-slate-800">Cookie-Einstellungen</h4>
-            <p className="text-slate-600 mt-2">Wählen Sie, welche optionalen Funktionen Sie zulassen möchten.</p>
-
-            <div className="mt-4 space-y-4">
-              <label className="flex items-center justify-between">
-                <div>
-                  <div className="font-medium text-slate-700">Analytics (PostHog)</div>
-                  <div className="text-slate-500 text-sm">Ermöglicht anonyme Nutzungsanalyse zur Produktverbesserung.</div>
-                </div>
-                <input
-                  type="checkbox"
-                  checked={analyticsEnabled}
-                  onChange={(e) => setAnalyticsEnabled(e.target.checked)}
-                  className="h-5 w-5 rounded"
-                />
-              </label>
-
-              <label className="flex items-center justify-between">
-                <div>
-                  <div className="font-medium text-slate-700">Marketing</div>
-                  <div className="text-slate-500 text-sm">Personalisierte Werbung (falls aktiviert).</div>
-                </div>
-                <input type="checkbox" disabled className="h-5 w-5 rounded opacity-50" />
-              </label>
-            </div>
-
-            <div className="mt-6 flex justify-end gap-3">
-              <button onClick={closeSettings} className="px-4 py-2 rounded-md bg-gray-200">
-                Abbrechen
-              </button>
-              <button
-                onClick={() => {
-                  setConsent('custom');
-                  setShowSettings(false);
-                }}
-                className="px-4 py-2 rounded-md bg-blue-600 text-white"
-              >
-                Speichern
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Small sticky status for developer/debugging (optional) */}
-      <div className="fixed top-6 right-6 text-xs bg-white/80 backdrop-blur rounded-md p-2 border">
-        <div className="text-slate-700">Consent: <span className="font-medium">{consent}</span></div>
-      </div>
-    </main>
+    </article>
   );
 }

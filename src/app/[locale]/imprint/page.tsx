@@ -11,12 +11,17 @@ import ContactModal from '@/components/ContactModal';
 
 export default function ImprintPage() {
    const [contactModalOpen, setContactModalOpen] = useState(false);
+
   return (
     <>
-        <main className=" bg-gray-50 py-20 px-4">
+        <article className=" bg-gray-50 py-20 px-4">
       <div className="mx-auto max-w-3xl bg-white p-8 rounded-2xl shadow-md">
         <h1 className="text-3xl font-semibold text-slate-800 border-b pb-4 mb-6">Imprint</h1>
-        <p className="mt-2 mb-6 text-sm text-neutral-500">Last updated: 2025-01-01</p>
+
+        <div className="mb-6 p-4 border-l-4 border-yellow-500 bg-yellow-50 text-yellow-800 rounded-md">
+          <h3 className="font-semibold text-lg">Disclaimer</h3>
+          <p className="mt-1">This document is only available in German.</p>
+        </div>
 
         <div className="mb-4">runcab GmbH</div>
         <div className="mb-4">Flottwellstraße 28</div>
@@ -42,7 +47,7 @@ export default function ImprintPage() {
         <p className="mb-4">Registergericht: Amtsgericht Charlottenburg</p>
         <p className="mb-4">Handelsregisternummer: HRB 278388 B</p>
       </div>
-    </main>
+    </article>
     <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
     </>
     
