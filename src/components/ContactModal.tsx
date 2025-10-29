@@ -18,7 +18,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Loader2 } from 'lucide-react';
 import { submitContactForm } from '@/app/actions/contact';
-import Turnstile from '@/components/Turnstile';
+import {Turnstile} from 'next-turnstile';
 
 const formSchema = z.object({
   name: z.string().min(1, 'Name is required').max(100),
@@ -48,12 +48,6 @@ export default function ContactModal({ open, onOpenChange }: ContactModalProps) 
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
   });
-
-  const handleCaptchaVerify = (token: string) => {
-    setCaptchaToken(token);
-    setCaptchaLoading(false);
-  };
-
   const onSubmit = async (data: FormData) => {
     if (!captchaToken) {
       setSubmitError('Please complete the security check');
@@ -180,7 +174,7 @@ export default function ContactModal({ open, onOpenChange }: ContactModalProps) 
             </div>
 
             <div className="pt-2">
-              <Turnstile onVerify={handleCaptchaVerify} />
+              <Turnstile siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!} onLoad={() => setCaptchaLoading(false)} onVerify={setCaptchaToken} theme="light" />
               {captchaLoading && (
                 <p className="text-xs text-neutral-500 mt-2">
                   Loading security check...

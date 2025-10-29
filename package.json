@@ -29,6 +29,7 @@
     "lucide-react": "^0.542.0",
     "next": "15.5.2",
     "next-intl": "^4.3.9",
+    "next-turnstile": "^1.0.7",
     "nodemailer": "^7.0.6",
     "postgres": "^3.4.7",
     "posthog-js": "^1.276.0",
