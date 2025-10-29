@@ -1,5 +1,5 @@
 // src/i18n/constants.ts
-export const APP_LOCALES = ['en', 'de', 'tu', 'ar', 've', 'zh', 'hi'] as const;
+export const APP_LOCALES = ['en', 'de', 'tr', 'ar', 'vi', 'zh', 'hi'] as const;
 export type AppLocale = typeof APP_LOCALES[number];
 export const DEFAULT_LOCALE: AppLocale = 'en';
 export const LOCALE_PREFIX = 'always';
@@ -8,9 +8,9 @@ export const LOCALE_PREFIX = 'always';
 export const LOCALE_LABELS: Record<AppLocale, string> = {
   en: 'English',
   de: 'Deutsch',
-  tu: 'Türkçe',
+  tr: 'Türkçe',
   ar: 'العربية',
-  ve: 'Tiếng Việt',
+  vi: 'Tiếng Việt',
   zh: '中文',
   hi: 'हिन्दी',
 };

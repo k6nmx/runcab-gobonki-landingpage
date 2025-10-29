@@ -12,33 +12,24 @@ const isDev = process.env.NODE_ENV !== 'production';
 
 type MessagesDictionary = Record<string, unknown>;
 
-const MESSAGE_LOADERS: Record<AppLocale, () => Promise<MessagesDictionary>> = {
-  en: async () => (await import('@/../messages/en.json')).default,
-  de: async () => (await import('@/../messages/de.json')).default,
-  tu: async () => (await import('@/../messages/tu.json')).default,
-  ar: async () => (await import('@/../messages/ar.json')).default,
-  ve: async () => (await import('@/../messages/ve.json')).default,
-  zh: async () => (await import('@/../messages/zh.json')).default,
-  hi: async () => (await import('@/../messages/hi.json')).default,
-};
+async function loadMessagesForLocale(locale: AppLocale): Promise<MessagesDictionary> {
+  return (await import(`@/../messages/${locale}/landingpage.json`)).default;
+}
 
 function isAppLocale(locale: string | null | undefined): locale is AppLocale {
   return typeof locale === 'string' && locales.includes(locale as AppLocale);
 }
 
 async function loadMessages(locale: AppLocale): Promise<MessagesDictionary> {
-  const loader = MESSAGE_LOADERS[locale] ?? MESSAGE_LOADERS[DEFAULT_LOCALE];
-
-
   try {
-    const messages = await loader();
+    const messages = await loadMessagesForLocale(locale);
     if (isDev) console.debug('[I18N] loaded messages keys =>', Object.keys(messages).slice(0, 20));
     return messages;
   } catch (error) {
     if (isDev) console.error('[I18N] failed to load messages for', locale, error);
     if (locale !== DEFAULT_LOCALE) {
       if (isDev) console.warn('[I18N] falling back to default locale messages');
-      return loadMessages(DEFAULT_LOCALE);
+      return loadMessagesForLocale(DEFAULT_LOCALE);
     }
     return {};
   }
@@ -75,7 +66,6 @@ export default getRequestConfig(async ({ locale }) => {
   }
 
   const safeLocale: AppLocale = isAppLocale(actualLocale) ? actualLocale : defaultLocale;
-
 
   const messages = await loadMessages(safeLocale);
 

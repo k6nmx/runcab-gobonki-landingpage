@@ -7,7 +7,9 @@
     "build": "next build ",
     "start": "next start",
     "lint": "eslint",
-    "prepare": "husky"
+    "prepare": "husky",
+    "i18n:push": "crowdin upload sources",
+    "i18n:pull": "crowdin download translations"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -40,6 +42,7 @@
     "zod": "^4.1.12"
   },
   "devDependencies": {
+    "@crowdin/cli": "^4.11.0",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4.1.13",
     "@types/node": "^20",
