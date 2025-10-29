@@ -41,6 +41,7 @@ export default function ImprintPage() {
         <p className="mb-4">Eingetragener Sitz: Germany</p>
         <p className="mb-4">Registergericht: Amtsgericht Charlottenburg</p>
         <p className="mb-4">Handelsregisternummer: HRB 278388 B</p>
+        <p className="mb-4">Umsatzsteuer-ID-Nr.: DE 457638982</p>
       </div>
     </main>
     <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
