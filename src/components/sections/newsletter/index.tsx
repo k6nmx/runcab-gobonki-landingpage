@@ -56,12 +56,6 @@ export default function NewsletterSection({ className }: { className?: string })
 
     const parsed = clientSchema.safeParse({ email })
     if (!parsed.success) {
-      // Capture validation failure
-      if (typeof window !== 'undefined' && posthog.__loaded) {
-        posthog.capture('newsletter_signup_validation_failed', {
-          userType: mode,
-        })
-      }
       setStatus('error')
       return
     }
