@@ -32,23 +32,23 @@ export default function MiniModeToggle({
           >
             <SegmentedToggle
               value={mode}
-              onChange={(v) => onModeChange(v as "customer" | "business")}
+              onChange={(v) => onModeChange(v as "business" | "customer")}
               options={[
-                {
-                  value: "customer",
-                  label: (
-                    <span className="inline-flex items-center justify-center">
-                      <Users size={16} />
-                      <span className="sr-only">Customer</span>
-                    </span>
-                  ),
-                },
                 {
                   value: "business",
                   label: (
                     <span className="inline-flex items-center justify-center">
                       <Building2 size={16} />
                       <span className="sr-only">Business</span>
+                    </span>
+                  ),
+                },
+                {
+                  value: "customer",
+                  label: (
+                    <span className="inline-flex items-center justify-center">
+                      <Users size={16} />
+                      <span className="sr-only">Customer</span>
                     </span>
                   ),
                 },
