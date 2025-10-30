@@ -116,7 +116,7 @@ export async function submitContactForm(
   // Step 6: Send email to support
   try {
     await sgMail.send({
-      from: process.env.FROM_EMAIL!,
+      from: process.env.AUTO_REPLY_FROM!,
       to: process.env.CONTACT_EMAIL!,
       replyTo: email,
       subject: `Contact Form: ${name}`,
@@ -133,7 +133,7 @@ export async function submitContactForm(
   // Step 7: Send auto-reply (non-blocking)
   try {
     await sgMail.send({
-      from: process.env.FROM_EMAIL!,
+      from: process.env.AUTO_REPLY_FROM!,
       to: email,
       subject: 'We received your message',
       text: `Hi ${name},\n\nThank you for contacting us! We've received your message and will get back to you as soon as possible.\n\nBest regards,\nThe gobonki Team`,
