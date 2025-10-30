@@ -4,6 +4,8 @@ import withNextIntl from 'next-intl/plugin';
 const withNextIntlConfigured = withNextIntl();
 
 const nextConfig: NextConfig = {
+  skipTrailingSlashRedirect: true,
+
   images: {
     domains: ['localhost'],
   },

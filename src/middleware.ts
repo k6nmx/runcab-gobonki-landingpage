@@ -9,5 +9,15 @@ export default createMiddleware({
 });
 
 export const config = {
-  matcher: ['/((?!_next|api|privacy|imprint|.*\\..*).*)'],
+  matcher: [
+    /*
+     * Match all request paths EXCEPT:
+     * - /api/* (API routes)
+     * - /ingest/* (PostHog)
+     * - /_next/* (Next.js internals)
+     * - /privacy, /imprint (static pages)
+     * - Static files (*.ico, *.png, etc.)
+     */
+    '/((?!api/|ingest/|_next/|privacy|imprint|.*\\..*).*)',
+  ],
 };
