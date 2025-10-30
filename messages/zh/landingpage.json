@@ -1,0 +1,337 @@
+{
+  "navigation": {
+    "features": "功能",
+    "testimonials": "用户评价",
+    "faq": "常见问题",
+    "contact": "邮件订阅",
+    "forCustomers": "面向客户",
+    "forBusinesses": "面向企业",
+    "cta": "打开应用",
+    "language": "语言"
+  },
+  "hero": {
+    "customer": {
+      "title": "您的手机 = 您的会员卡",
+      "subtitle": "再也不会错过奖励。每次消费都算数。适用于餐厅、理发店、咖啡厅——无需下载。",
+      "cta": "立即下载应用"
+    },
+    "business": {
+      "title": "瞬间将陌生人变成常客",
+      "subtitle": "二分钟设置，完全自定义，零月费。真正适合小企业的忠诚度计划。",
+      "cta": "观看演示"
+    }
+  },
+  "features": {
+    "customer": {
+      "title": "为什么选择 gobonki？",
+      "subtitle": "在一个简单界面中享受所有您喜爱场所的奖励",
+      "count": "六",
+      "items": [
+        {
+          "icon": "credit-card",
+          "title": "所有卡片集中管理",
+          "description": "在一个便利的位置跟踪来自不同企业的所有会员卡。"
+        },
+        {
+          "icon": "gift",
+          "title": "即时奖励",
+          "description": "收集印章并即时兑换奖励。无需等待，无复杂流程。"
+        },
+        {
+          "icon": "zap",
+          "title": "无注册麻烦",
+          "description": "立即开始收集印章。无需冗长的注册流程或个人信息。"
+        },
+        {
+          "icon": "map-pin",
+          "title": "查找参与场所",
+          "description": "发现您附近提供印章奖励的咖啡厅、餐厅和商店。"
+        },
+        {
+          "icon": "bookmark",
+          "title": "永不丢失进度",
+          "description": "您的印章自动保存——不再有丢失的纸质卡片或遗忘的奖励。"
+        },
+        {
+          "icon": "bell",
+          "title": "智能通知",
+          "description": "当您即将获得奖励或特殊优惠可用时收到提醒。"
+        }
+      ]
+    },
+    "business": {
+      "title": "为什么企业选择 gobonki？",
+      "subtitle": "建立客户忠诚度和推动重复业务所需的一切",
+      "count": "六",
+      "items": [
+        {
+          "icon": "trending-up",
+          "title": "提高客户留存率",
+          "description": "通过客户实际使用的引人入胜的数字忠诚度计划，将重复访问量提升高达百分之四十。"
+        },
+        {
+          "icon": "bar-chart-3",
+          "title": "详细分析",
+          "description": "通过全面的仪表板跟踪客户行为、奖励兑换率和投资回报率。"
+        },
+        {
+          "icon": "settings",
+          "title": "简单设置和管理",
+          "description": "几分钟内启动您的忠诚度计划。无需技术知识，无需复杂集成。"
+        },
+        {
+          "icon": "users",
+          "title": "客户数据库",
+          "description": "建立有价值的客户数据库，深入了解偏好和访问模式。"
+        },
+        {
+          "icon": "dollar-sign",
+          "title": "增加收入",
+          "description": "通过有针对性的奖励和促销活动提高平均订单价值和频率。"
+        },
+        {
+          "icon": "smartphone",
+          "title": "移动优先体验",
+          "description": "客户喜欢这种便利。无需下载应用，无需携带卡片——只需扫描即可获得。"
+        }
+      ]
+    }
+  },
+  "testimonials": {
+    "customerTitle": "用户评价",
+    "businessTitle": "企业主评价",
+    "customer": {
+      "count": "三",
+      "items": [
+        {
+          "rating": "五",
+          "quote": "我钱包里有六张不同的积分卡，总是找不到正确的那张。这个应用真的简单多了。",
+          "author": "Sarah M.",
+          "location": "多伦多"
+        },
+        {
+          "rating": "四",
+          "quote": "相当不错的应用。这个月我可能节省了三十到四十美元，只是因为记得使用我的奖励。二维码扫描器有时有点慢，但没关系，它有效。",
+          "author": "Mike R.",
+          "location": "温哥华"
+        },
+        {
+          "rating": "五",
+          "quote": "我在本地餐厅还差一个印章就能获得免费卷饼，应用给我发了通知。小事一桩，但让我很开心，哈哈。",
+          "author": "Emma L.",
+          "location": "卡尔加里"
+        }
+      ]
+    },
+    "business": {
+      "count": "三",
+      "items": [
+        {
+          "rating": "五",
+          "quote": "我们在第一个月内看到重复客户增加了百分之三十五。设置过程非常简单。",
+          "author": "David Chen",
+          "role": "咖啡厅老板，Brew & Bean"
+        },
+        {
+          "rating": "五",
+          "quote": "分析帮助我们更好地了解客户。我们优化了奖励并增加了销售额。",
+          "author": "Maria Rodriguez",
+          "role": "餐厅经理，Taco Corner"
+        },
+        {
+          "rating": "五",
+          "quote": "我们的客户喜欢这种便利。不再有纸质卡片塞满他们的钱包！",
+          "author": "James Wilson",
+          "role": "理发店老板"
+        }
+      ]
+    }
+  },
+  "newsletter": {
+    "title": "保持领先优势",
+    "subtitle": "订阅我们的邮件列表，获取独家更新、技巧和优惠。",
+    "forCustomers": "面向购物者",
+    "forBusinesses": "面向企业",
+    "customer": {
+      "title": "作为购物者，您将获得：",
+      "benefits": [
+        "来自您喜爱的本地商店的独家优惠和奖励的早期访问权。",
+        "最大化您的储蓄并永不错过免费赠品的技巧和窍门。",
+        "关于您附近新加入平台企业的通知。"
+      ]
+    },
+    "business": {
+      "title": "作为企业，您将获得：",
+      "benefits": [
+        "来自我们数据分析的客户留存可行见解。",
+        "来自像您这样的成功企业的案例研究和增长策略。",
+        "帮助您增加销售额的新功能的早期公告。"
+      ]
+    },
+    "emailPlaceholder": "输入您的电子邮件地址",
+    "cta": "订阅",
+    "disclaimer": "我们尊重您的隐私。无垃圾邮件。",
+    "success": "感谢您的订阅！请检查您的电子邮件以确认。",
+    "error": "出现错误。请重试。"
+  },
+  "cta": {
+    "customer": {
+      "title": "今天开始收集奖励",
+      "subtitle": "加入成千上万从不错过奖励的聪明购物者。找到您附近的参与企业并立即开始赚取。",
+      "cta": "查找附近企业",
+      "href": "#directory"
+    },
+    "business": {
+      "title": "准备提升客户忠诚度？",
+      "subtitle": "加入数百家使用 gobonki 增加重复客户和推动收入的企业。几分钟内设置您的忠诚度计划。",
+      "cta": "开始您的免费忠诚度计划",
+      "href": "#get-started"
+    },
+    "title": "准备提升客户忠诚度？",
+    "subtitle": "加入成千上万使用 gobonki 建立持久客户关系的企业",
+    "cta": "今天免费开始",
+    "href": "#get-started"
+  },
+  "faq": {
+    "title": "常见问题",
+    "forCustomers": "面向客户",
+    "forBusinesses": "面向企业",
+    "customers": [
+      {
+        "q": "我需要安装应用吗？",
+        "a": "无需应用。您在柜台扫描二维码，您的印章会保存到手机浏览器钱包中。"
+      },
+      {
+        "q": "如何兑换奖励？",
+        "a": "一旦您收集了足够的印章，向收银员展示您的手机。他们点击'兑换'，您的奖励立即生效。"
+      },
+      {
+        "q": "如果我更换或丢失手机怎么办？",
+        "a": "使用相同的电子邮件或电话号码，您的印章会同步回来。无需账户密码。"
+      },
+      {
+        "q": "我的数据是私密的吗？",
+        "a": "是的。我们只存储跟踪您的印章所需的信息。无位置跟踪，无个人数据转售。"
+      },
+      {
+        "q": "它在不同商店都有效吗？",
+        "a": "是的。gobonki 在咖啡厅、理发店、餐厅都有效——每个企业都可以有自己的卡片和奖励。"
+      },
+      {
+        "q": "它离线工作吗？",
+        "a": "您可以离线打开您的卡片，但盖章/兑换需要快速在线检查以防止欺诈。"
+      }
+    ],
+    "businesses": [
+      {
+        "q": "设置需要多长时间？",
+        "a": "大约二分钟。创建卡片，设置您的奖励，打印您的二维码。就这样——无需 POS 集成。"
+      },
+      {
+        "q": "我需要新硬件吗？",
+        "a": "不需要。任何能打开浏览器的手机或平板电脑都可以。员工只需扫描或点击客户的二维码。"
+      },
+      {
+        "q": "印章如何验证？",
+        "a": "二维码 + 服务器检查防止重复。可选择要求员工 PIN 或设备批准以获得额外控制。"
+      },
+      {
+        "q": "我可以自定义奖励和品牌吗？",
+        "a": "是的。设置印章数量、奖励文本、品牌颜色，甚至在付费层级上白标。"
+      },
+      {
+        "q": "价格如何？",
+        "a": "免费开始。白标和分析等付费功能是可选的且透明的——无交易费用。"
+      },
+      {
+        "q": "它与我的 POS 集成吗？",
+        "a": "不是必需的。如果您想要 POS 同步，我们在更高层级提供简单导出和 REST API。"
+      },
+      {
+        "q": "gobonki 的 API 如何？",
+        "a": "goBonki 可根据需求提供 API 集成，实现系统之间的无缝连接。我们的 API 可以根据您的具体要求进行定制，实现您的应用程序与 goBonki 之间高效、自动化的通信。如需了解更多有关我们的 API 解决方案，请通过 hello@gobonki.com 与我们联系。"
+      }
+    ]
+  },
+  "footer": {
+    "brand": {
+      "logoAlt": "gobonki",
+      "tagline": "您的数字印章卡解决方案",
+      "social": {
+        "linkedin": "https://linkedin.com/company/gobonki",
+        "instagram": "https://instagram.com/gobonki",
+        "tiktok": "https://tiktok.com/@gobonki"
+      }
+    },
+    "columns": [
+      {
+        "title": "产品",
+        "items": [
+          {
+            "type": "anchor",
+            "label": "功能",
+            "href": "#features"
+          },
+          {
+            "type": "anchor",
+            "label": "用户评价",
+            "href": "#testimonials"
+          }
+        ]
+      },
+      {
+        "title": "公司",
+        "items": [
+          {
+            "type": "link",
+            "label": "关于我们",
+            "href": "/about"
+          },
+          {
+            "type": "mailto",
+            "label": "联系我们",
+            "email": "hello@gobonki.com",
+            "subject": "你好 gobonki",
+            "body": "我想联系。"
+          },
+          {
+            "type": "anchor",
+            "label": "邮件订阅",
+            "href": "#contact"
+          }
+        ]
+      },
+      {
+        "title": "法律",
+        "items": [
+          {
+            "type": "link",
+            "label": "隐私政策",
+            "href": "/privacy"
+          },
+          {
+            "type": "link",
+            "label": "版权声明",
+            "href": "/imprint"
+          }
+        ]
+      }
+    ],
+    "bottom": {
+      "copyright": "® {year} gobonki。保留所有权利。",
+      "madeIn": "在欧洲用心制作 ❤️"
+    }
+  },
+  "languageDisclaimer": {
+    "title": "Disclaimer",
+    "description": "This document is only available in German."
+  },
+  "legal": {
+    "imprint": {
+      "title": "Imprint"
+    },
+    "privacy": {
+      "title": "Privacy Policy"
+    }
+  }
+}

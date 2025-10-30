@@ -1,0 +1,31 @@
+{
+  "welcome": "Willkommen",
+  "welcomeWithName": "Willkommen, {name}!",
+  "stampsCollected": "Gesammelte Stempel",
+  "rewardsReceived": "Erhaltene Belohnungen",
+  "dashboard": "Dashboard",
+  "dashboardDescription": "Wenn ein neuer Stempel ausgestellt wird, eine Belohnung gesammelt wird oder ein Kunde beitritt, wird es hier angezeigt. Klicke auf den QR-Button, um einen Stempel auszustellen oder eine Belohnung zu verifizieren.",
+  "stampsIssued": "Ausgestellte Stempel",
+  "rewardsAwarded": "Verliehene Belohnungen",
+  "rewardsRedeemed": "Eingelöste Belohnungen",
+  "numberOfCustomers": "Anzahl der Kunden",
+  "scan": "Scannen",
+  "account": "Konto",
+  "store": "Geschäft",
+  "terms": {
+    "terms": "Nutzungsbedingungen",
+    "usage": "Um gobonki weiterhin nutzen zu können, bitte überprüfe und akzeptiere unsere rechtlichen Bedingungen.",
+    "agreeContact": "Ich stimme zu, dass gobonki mich für Produktupdates und Promotions kontaktiert.",
+    "agreeTerms": "gobonki unterliegt <terms>Allgemeinen Geschäftsbedingungen</terms> sowie der <privacy>Datenschutzerklärung</privacy>, welche du hier in den jeweilig aktuellen Fassungen abrufen kannst. Wenn du diesen (teilweise) widersprichst, ist dir die Nutzung von gobonki nicht gestattet.",
+    "submit": "Akzeptieren und fortfahren",
+    "saving": "Speichern..."
+  },
+  "storeInfo": {
+    "mapsLegalOverlay": {
+      "description": "Dieser Inhalt wird dir nicht angezeigt, weil du die Einbindung von Drittanbieterinhalten nicht akzeptiert hast.",
+      "terms": "Informationen zur Datenverarbeitung durch gobonki und Drittanbieter im Zusammenhang mit Drittanbieterinhalten findest du in der gobonki <privacy>Datenschutzerklärung</privacy>",
+      "submit": "Akzeptieren und Karte laden",
+      "saving": "Speichern..."
+    }
+  }
+}

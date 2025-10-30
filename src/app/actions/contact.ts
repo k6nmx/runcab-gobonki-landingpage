@@ -2,6 +2,7 @@
 
 import sgMail from '@sendgrid/mail';
 import { z } from 'zod';
+import { validateTurnstileToken } from 'next-turnstile';
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
 
@@ -18,23 +19,16 @@ const contactSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
-// Helper: verify Turnstile token
-async function verifyCaptcha(token: string, ip: string): Promise<boolean> {
+async function validateToken(token: string) {
   try {
-    const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        secret: process.env.TURNSTILE_SECRET_KEY,
-        response: token,
-        remoteip: ip,
-      }),
+    const result = await validateTurnstileToken({
+      token,
+      secretKey: process.env.TURNSTILE_SECRET_KEY!,
     });
 
-    const data = await response.json();
-    return data.success === true;
+    return result.success
   } catch (error) {
-    console.error('Captcha verification failed:', error);
+    console.error("Validation failed:", error);
     return false;
   }
 }
@@ -90,7 +84,7 @@ export async function submitContactForm(
   const { name, email, message, captchaToken } = validation.data;
 
   // Step 2: Verify captcha
-  const captchaValid = await verifyCaptcha(captchaToken, ip);
+  const captchaValid = await validateToken(captchaToken);
   if (!captchaValid) {
     console.error('Captcha failed:', { ip });
     return { success: false, error: 'Security check failed. Please try again.' };

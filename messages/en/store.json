@@ -1,0 +1,175 @@
+{
+  "dashboard": "Dashboard",
+  "dashboardDescription": "When a new stamp is issues, reward is collected, or customer joins it will appear here. Click the QR button to issue a stamp or verify a reward.",
+  "stampsIssued": "Stamps issued",
+  "rewardsAwarded": "Rewards awarded",
+  "rewardsRedeemed": "Rewards redeemed",
+  "numberOfCustomers": "Number of customers",
+  "action": "Action",
+  "scan": "Scan",
+  "account": "Account",
+  "accountPage": {
+    "myAccount": "My <color>account</color>",
+    "businessInformation": "Business information",
+    "stampsAndRewards": "Stamps & rewards",
+    "email": "Email",
+    "phoneNumber": "Phone number",
+    "logo": "Logo",
+    "storeTheme": "Store theme",
+    "storeStamp": "Store stamp",
+    "rewardName": "Reward name",
+    "stampRequirement": "Stamp requirement",
+    "numberOfStampsNeeded": "Number of stamps needed for reward",
+    "facebook": "Facebook",
+    "website": "Website",
+    "instagram": "Instagram",
+    "termsAndConditions": "Terms & Conditions",
+    "saveChanges": "Save changes",
+    "storeName": "Store name",
+    "storeAddress": "Store address",
+    "storeDescription": "Store description",
+    "typeOfBusiness": "Type of business",
+    "selectOne": "Select one",
+    "enterYourTypeOfStore": "Enter your type of store",
+    "storeSettingsUpdated": "Store settings updated successfully",
+    "failedToUpdateStore": "Failed to update store settings",
+    "logoUploaded": "Logo uploaded",
+    "failedToUploadLogo": "Failed to upload logo",
+    "failedToGetSignedUrl": "Failed to get signed URL",
+    "placeholders": {
+      "storeName": "E.g. John's Cafe",
+      "email": "bob@burgers.com",
+      "storeDescription": "Store description ...",
+      "rewardName": "Free coffee",
+      "stampRequirement": "Any purchase above €50",
+      "numberOfStamps": "5",
+      "facebook": "https://www.facebook.com/gobonki",
+      "website": "https://www.gobonki.com",
+      "instagram": "https://www.instagram.com/gobonki"
+    }
+  },
+  "businessTypes": {
+    "cafe": "Cafe",
+    "restaurant": "Restaurant",
+    "groceryStore": "Grocery store",
+    "bar": "Bar",
+    "clothingStore": "Clothing store",
+    "electronicsStore": "Electronics store",
+    "nailSalon": "Nail salon",
+    "hairSalon": "Hair salon",
+    "beautyCosmetics": "Beauty & cosmetics",
+    "carRental": "Car rental",
+    "fitnessCentre": "Fitness centre",
+    "airline": "Airline",
+    "hotel": "Hotel",
+    "bedAndBreakfast": "Bed & breakfast",
+    "other": "Other"
+  },
+  "setup": {
+    "common": {
+      "back": "Back",
+      "next": "Next",
+      "submit": "Submit",
+      "optional": "(optional)"
+    },
+    "storeDetail": {
+      "storeName": "Store name",
+      "storeAddress": "Store address",
+      "storeDescription": "Store description",
+      "typeOfBusiness": "Type of business",
+      "phoneNumber": "Phone number",
+      "storeLogo": "Store logo",
+      "selectOne": "Select one",
+      "enterYourTypeOfStore": "Enter your type of store",
+      "placeholders": {
+        "storeName": "E.g. John's Cafe",
+        "storeDescription": "Describe your store ...",
+        "selectOne": "Select one"
+      }
+    },
+    "stampDesign": {
+      "selectYourStamp": "Select your stamp",
+      "stampDescription1": "This is how customers will remember you!",
+      "stampDescription2": "Swipe to browse through our different icons.",
+      "pickYourColour": "Pick your colour",
+      "colourDescription": "This will be the theme for your loyalty store!"
+    },
+    "rewards": {
+      "chooseYourReward": "Choose your reward",
+      "rewardsDescription": "Outline the reward you want to offer your customers, along with the conditions required for them to earn a stamp and ultimately receive the reward.",
+      "rewardsNote": "Note: By default, all rewards expire after 36 months.",
+      "customersWillGet": "Customers will get",
+      "for": "for",
+      "stamps": "stamps",
+      "andTheyWillReceiveStampFor": "and they will receive a stamp for",
+      "placeholders": {
+        "reward": "A reward for your customers",
+        "numberOfStamps": "5",
+        "stampRequirement": "any purchase above €50"
+      }
+    },
+    "legal": {
+      "title": "Stamp Card Legal Terms",
+      "disclaimer": "These terms serve as a guideline for legal conditions and expressly do not replace legal advice!",
+      "description": "The following text represents a possible formulation of Terms and Conditions and a Privacy Policy for the stamp card provider (Shop Owner), which already covers all aspects related to the use of the gobonki product.",
+      "placeholder": "Enter your custom terms and conditions here ..."
+    },
+    "privacy": {
+      "title": "Stamp Card Privacy Policy",
+      "disclaimer": "This privacy policy serves as a guideline for legal conditions and expressly does not replace legal advice!",
+      "description": "The following text represents a possible formulation of a Privacy Policy pursuant to Art. 12 et seq. GDPR for the stamp card provider (Shop Owner), which already covers all aspects related to the use of the gobonki product.",
+      "note": "Note: Please add a privacy officer (if you have one).",
+      "placeholder": "Enter your custom privacy policy here ..."
+    },
+    "review": {
+      "title": "Review",
+      "storeDetails": "Store details",
+      "storeName": "Store name",
+      "storeAddress": "Store address",
+      "storeDescription": "Store description",
+      "typeOfBusiness": "Type of business",
+      "phoneNumber": "Phone number",
+      "storeLogo": "Store logo",
+      "stampDesign": "Stamp design",
+      "storeStamp": "Store stamp",
+      "storeTheme": "Store theme",
+      "rewards": "Rewards",
+      "stampCardLegalTerms": "Stamp Card Legal Terms",
+      "stampCardPrivacyPolicy": "Stamp Card Privacy Policy",
+      "notProvided": "Not provided",
+      "usingCustomTerms": "Using custom terms",
+      "usingStandardTerms": "Using the standard terms",
+      "usingCustomPrivacy": "Using custom privacy policy",
+      "usingStandardPrivacy": "Using the standard privacy policy",
+      "agreeContact": "I agree to be contacted by gobonki for product updates and promotions.",
+      "agreeTerms": "By clicking submit, you agree to the <terms>Terms and Conditions</terms> of gobonki and that you are authorised to represent the store. If you (partially) disagree with these terms, you are not authorised to use gobonki.",
+      "rewardsSummary": "Customers will get {reward} for every {stamps} stamps they collect. Customers will receive a stamp for {requirement}.",
+      "optional": "(optional)",
+      "failedToSubmit": "Failed to submit form, please try again."
+    },
+    "completed": {
+      "title": "You're all set!",
+      "description": "You have successfully set up your loyalty programs. Customers can now scan QR codes generated by you and start collecting stamps and redeeming rewards!",
+      "issueStampsTitle": "Issue stamps",
+      "issueStampsDescription": "You can generate a new stamp for a customer by clicking the QR code icon on the bottom right corner of your screen.",
+      "verifyRewardsTitle": "Verify rewards",
+      "verifyRewardsDescription1": "Once a customer collects the required amount of stamps, they will receive a QR code from us.",
+      "verifyRewardsDescription2": "To verify this reward, scan their code by clicking on the QR code icon on the bottom right corner of your screen. Once verified, you can give them their reward!",
+      "toDashboard": "To Dashboard"
+    }
+  },
+  "components": {
+    "inputAddress": {
+      "searchPlaceholder": "Search for an address",
+      "loadingSuggestions": "Loading suggestions...",
+      "noSuggestionsFound": "No suggestions found",
+      "suggestions": "Suggestions"
+    },
+    "inputName": {
+      "searchPlaceholder": "Search for a place",
+      "loadingSuggestions": "Loading suggestions...",
+      "noSuggestionsFound": "No suggestions found",
+      "suggestions": "Suggestions"
+    }
+  }
+}
