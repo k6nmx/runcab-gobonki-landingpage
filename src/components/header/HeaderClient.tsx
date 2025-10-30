@@ -47,7 +47,13 @@ export default function HeaderClient() {
     router.push(`/${locale}${pathWithoutLocale}${params.toString() ? `?${params.toString()}` : ""}`);
   };
 
-  const toHome = (hash: string) => `/${currentLocale}${hash}`;
+  const toHome = (hash: string) => {
+    if (hash === '#contact') {
+      return `/${currentLocale}${hash}`;
+    }
+    const section = hash.substring(1); // remove #
+    return `/${currentLocale}#${mode}:${section}`;
+  };
 
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;

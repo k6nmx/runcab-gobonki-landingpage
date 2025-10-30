@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from 'react'
 import { useTranslations, useMessages } from 'next-intl'
+import { useScrollToSection } from '@/hooks/use-scroll-to-section';
 import { z } from 'zod'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -16,7 +17,8 @@ import posthog from 'posthog-js'
 const clientSchema = z.object({ email: z.string().email() })
 
 export default function NewsletterSection({ className }: { className?: string }) {
-  const t = useTranslations('newsletter')
+  const t = useTranslations('newsletter');
+  const sectionRef = useScrollToSection('newsletter');
   const messages = useMessages() as
     | {
         newsletter?: {
@@ -116,8 +118,7 @@ export default function NewsletterSection({ className }: { className?: string })
   }
 
   return (
-    <section id="contact" className={cn('relative py-14 sm:py-20', className)}>
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <section id="newsletter" ref={sectionRef} className={cn('relative py-14 sm:py-20', className)}>
         <div className="relative rounded-3xl p-[1px] bg-gradient-to-r from-brand-400 to-secondary-400 shadow-[0_18px_50px_-12px_rgba(14,165,233,0.28)]">
           <Card className="rounded-3xl border-none bg-white/80 backdrop-blur overflow-hidden">
             <CardContent className="relative p-6 sm:p-10">
@@ -206,7 +207,6 @@ export default function NewsletterSection({ className }: { className?: string })
             </CardContent>
           </Card>
         </div>
-      </div>
-    </section>
   )
-}
+    </section>
+)}

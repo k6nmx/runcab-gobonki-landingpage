@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { useScrollToSection } from '@/hooks/use-scroll-to-section';
 import {
   Accordion,
   AccordionContent,
@@ -17,6 +18,7 @@ type QA = { q: string; a: string };
 export default function FAQSection({ className }: { className?: string }) {
   const t = useTranslations('faq');
   const { mode } = useMode();
+  const sectionRef = useScrollToSection('faq');
   const audience = mode === 'customer' ? 'customers' : 'businesses';
   const items = (t.raw(audience) as QA[]) ?? [];
 
@@ -33,8 +35,7 @@ export default function FAQSection({ className }: { className?: string }) {
   };
 
   return (
-    <section id="faq" className={cn('relative py-14 sm:py-20', className)}>
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-50/60 via-white to-white" />
+    <section id="faq" ref={sectionRef} className={cn('relative py-14 sm:py-20', className)}>
 
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">

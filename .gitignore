@@ -41,4 +41,5 @@ yarn-error.log*
 next-env.d.ts
 
 # instructions
-instructions.json
+instructions.txt
+errors.txt

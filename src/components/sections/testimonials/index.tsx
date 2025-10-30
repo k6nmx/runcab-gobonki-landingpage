@@ -1,6 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import { useScrollToSection } from '@/hooks/use-scroll-to-section';
 import { TestimonialCard } from "./testimonial-card"
 import { useMode } from "@/context/mode-context"
 
@@ -14,6 +15,7 @@ type NormalizedTestimonial = {
 export default function TestimonialsSection() {
   const { mode } = useMode()
   const t = useTranslations('testimonials')
+  const sectionRef = useScrollToSection('testimonials');
 
   // Get title based on mode
   const title = mode === 'customer' ? t('customerTitle') : t('businessTitle')
@@ -58,7 +60,7 @@ export default function TestimonialsSection() {
   }
 
   return (
-    <section id="testimonials" className="relative">
+    <section id="testimonials" ref={sectionRef} className="relative">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-brand-50/70 to-white" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="py-16 sm:py-20">
