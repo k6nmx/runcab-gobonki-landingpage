@@ -27,28 +27,28 @@ export default function Hero() {
   const isRTL = locale === "ar";
 
   useEffect(() => setMounted(true), []);
-
+  
   const content: HeroContentShape = useMemo(() => {
-    return mode === "customer"
-      ? {
-          title: t("customer.title"),
-          subtitle: t("customer.subtitle"),
-          ctaText: t("customer.cta"),
-          ctaHref: "https://app.gobonki.com/customer",
-          image: "/hero-image2.jpg",
-          imageAlt: "Customers view of participating cafe",
-        }
-      : {
-          title: t("business.title"),
-          subtitle: t("business.subtitle"),
-          ctaText: t("business.cta"),
-          ctaHref: "https://app.gobonki.com/store",
-          image: "/hero-image1.jpg",
-          imageAlt: "Business dashboard / cafe interior",
-        };
+    return mode === "business"
+    ? {
+        title: t("business.title"),
+        subtitle: t("business.subtitle"),
+        ctaText: t("business.cta"),
+        ctaHref: "https://app.gobonki.com/store",
+        image: "/hero-image1.jpg",
+        imageAlt: "Business dashboard / cafe interior",
+      }
+    : {
+      title: t("customer.title"),
+      subtitle: t("customer.subtitle"),
+      ctaText: t("customer.cta"),
+      ctaHref: "https://app.gobonki.com/customer",
+      image: "/hero-image2.jpg",
+      imageAlt: "Customers view of participating cafe",
+    };
   }, [mode, t]);
 
-  const handleModeChange = (newMode: 'customer' | 'business') => {
+  const handleModeChange = (newMode: 'business' | 'customer') => {
     const { section } = parseHash(window.location.hash);
     setMode(newMode);
     if (section) {
@@ -60,8 +60,8 @@ export default function Hero() {
 
   const toggleLabels = useMemo(
     () => ({
-      customer: nav("forCustomers"),
-      business: nav("forBusinesses"),
+      customer: nav("forBusinesses"),
+      business: nav("forCustomers"),
     }),
     [nav]
   );
