@@ -7,6 +7,7 @@ import { ModeProvider } from '@/context/mode-context'
 import { IsScrolledProvider } from '@/context/is-scrolled-context'
 import '@/instrumentation-client';
 import '../globals.css'
+import CookieConsentBanner from "@/components/CookieConsent";
 import { SchemaMarkup } from '@/components/SchemaMarkup'
 import { Metadata } from 'next'
 
@@ -43,11 +44,13 @@ export default async function LocaleLayout({
           <ModeProvider>
             <IsScrolledProvider>
               <Header />
-              <main className="min-h-dvh">{children}</main>
+              <main className="min-h-dvh">{children}
+              </main>
               <Footer />
             </IsScrolledProvider>
           </ModeProvider>
         </NextIntlClientProvider>
+        <CookieConsentBanner />
       </body>
     </html>
   )
