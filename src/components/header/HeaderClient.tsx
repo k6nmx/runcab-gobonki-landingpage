@@ -23,7 +23,7 @@ const NAV_ITEMS: NavItem[] = [
   { hash: "#features", key: "features" },
   { hash: "#testimonials", key: "testimonials" },
   { hash: "#faq", key: "faq" },
-  { hash: "#contact", key: "contact" },
+  { hash: "#newsletter", key: "newsletter" },
 ];
 
 export default function HeaderClient() {

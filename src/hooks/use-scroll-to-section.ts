@@ -1,38 +1,45 @@
+// src/hooks/use-scroll-to-section.ts
 import { useEffect, useRef } from 'react';
 import { parseHash } from '@/lib/hash-utils';
 
 export function useScrollToSection(sectionId: string) {
   const sectionRef = useRef<HTMLDivElement>(null);
-  
+  const lastHashRef = useRef<string>('');
+
   useEffect(() => {
     const scrollToSelfIfTarget = () => {
-      const { section } = parseHash(window.location.hash);
+      const currentHash = window.location.hash;
       
-      // Only scroll if this section is the target
+      // Only process if hash actually changed
+      if (currentHash === lastHashRef.current) return;
+      lastHashRef.current = currentHash;
+
+      const { section } = parseHash(currentHash);
+
       if (section === sectionId && sectionRef.current) {
-        // Use requestAnimationFrame to ensure DOM is painted
         requestAnimationFrame(() => {
-          if (sectionRef.current) {
-            sectionRef.current.scrollIntoView({ 
-              behavior: 'smooth', 
-              block: 'start'
-            });
-          }
+          sectionRef.current?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
         });
       }
     };
-    
-    // Scroll on initial mount (handles page load with hash)
+
+    // Initial scroll
     scrollToSelfIfTarget();
-    
-    // Listen for hash changes (handles navigation)
+
+    // Check periodically (optimized with lastHashRef)
+    const intervalId = setInterval(scrollToSelfIfTarget, 100);
+
+    // Also listen to native hashchange
     window.addEventListener('hashchange', scrollToSelfIfTarget);
-    
-    // Cleanup listener on unmount
+
     return () => {
+      clearInterval(intervalId);
       window.removeEventListener('hashchange', scrollToSelfIfTarget);
     };
   }, [sectionId]);
-  
+
   return sectionRef;
 }
