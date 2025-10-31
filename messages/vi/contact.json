@@ -1,0 +1,38 @@
+{
+  "title": "Liên hệ chúng tôi",
+  "description": "Gửi tin nhắn cho chúng tôi và chúng tôi sẽ liên hệ lại với bạn sớm nhất có thể.",
+  "form": {
+    "name": {
+      "label": "Tên",
+      "placeholder": "John Doe"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "john@example.com"
+    },
+    "message": {
+      "label": "Tin nhắn",
+      "placeholder": "Chúng tôi có thể giúp gì cho bạn?"
+    },
+    "submit": "Gửi tin nhắn",
+    "submitting": "Đang gửi..."
+  },
+  "validation": {
+    "nameRequired": "Tên là bắt buộc",
+    "invalidEmail": "Địa chỉ email không hợp lệ",
+    "messageTooShort": "Tin nhắn phải có ít nhất 10 ký tự"
+  },
+  "captcha": {
+    "loading": "Đang tải kiểm tra bảo mật...",
+    "error": "Vui lòng hoàn thành kiểm tra bảo mật",
+    "tooltip": "Hoàn thành kiểm tra bảo mật để bật nút gửi"
+  },
+  "success": {
+    "title": "Tin nhắn đã được gửi thành công!",
+    "description": "Chúng tôi sẽ sớm liên hệ lại với bạn."
+  },
+  "errors": {
+    "unknown": "Đã xảy ra lỗi",
+    "network": "Lỗi mạng. Vui lòng thử lại."
+  }
+}

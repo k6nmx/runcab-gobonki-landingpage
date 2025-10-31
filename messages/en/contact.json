@@ -1,0 +1,38 @@
+{
+  "title": "Contact Us",
+  "description": "Send us a message and we'll get back to you as soon as possible.",
+  "form": {
+    "name": {
+      "label": "Name",
+      "placeholder": "John Doe"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "john@example.com"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "How can we help you?"
+    },
+    "submit": "Send Message",
+    "submitting": "Sending..."
+  },
+  "validation": {
+    "nameRequired": "Name is required",
+    "invalidEmail": "Invalid email address",
+    "messageTooShort": "Message must be at least 10 characters"
+  },
+  "captcha": {
+    "loading": "Loading security check...",
+    "error": "Please complete the security check",
+    "tooltip": "Complete the security check to enable the submit button"
+  },
+  "success": {
+    "title": "Message sent successfully!",
+    "description": "We'll get back to you soon."
+  },
+  "errors": {
+    "unknown": "Something went wrong",
+    "network": "Network error. Please try again."
+  }
+}

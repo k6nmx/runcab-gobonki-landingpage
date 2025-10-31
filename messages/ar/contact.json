@@ -1,0 +1,38 @@
+{
+  "title": "اتصل بنا",
+  "description": "أرسل لنا رسالة وسنرد عليك في أقرب وقت ممكن.",
+  "form": {
+    "name": {
+      "label": "الاسم",
+      "placeholder": "John Doe"
+    },
+    "email": {
+      "label": "البريد الإلكتروني",
+      "placeholder": "john@example.com"
+    },
+    "message": {
+      "label": "الرسالة",
+      "placeholder": "كيف يمكننا مساعدتك؟"
+    },
+    "submit": "إرسال رسالة",
+    "submitting": "جارٍ الإرسال..."
+  },
+  "validation": {
+    "nameRequired": "الاسم مطلوب",
+    "invalidEmail": "عنوان بريد إلكتروني غير صالح",
+    "messageTooShort": "يجب أن لا تقل الرسالة عن 10 أحرف"
+  },
+  "captcha": {
+    "loading": "جارٍ تحميل التحقق الأمني...",
+    "error": "يرجى إكمال التحقق الأمني",
+    "tooltip": "أكمل التحقق الأمني لتمكين زر الإرسال"
+  },
+  "success": {
+    "title": "تم إرسال الرسالة بنجاح!",
+    "description": "سنعود إليك قريبا."
+  },
+  "errors": {
+    "unknown": "حدث خطأ ما",
+    "network": "خطأ في الشبكة. يرجى المحاولة مرة أخرى."
+  }
+}

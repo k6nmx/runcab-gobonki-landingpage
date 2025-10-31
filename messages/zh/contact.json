@@ -1,0 +1,38 @@
+{
+  "title": "联系我们",
+  "description": "请给我们留言，我们会尽快给您回复。",
+  "form": {
+    "name": {
+      "label": "姓名",
+      "placeholder": "John Doe"
+    },
+    "email": {
+      "label": "电子邮件",
+      "placeholder": "john@example.com"
+    },
+    "message": {
+      "label": "信息",
+      "placeholder": "我们能为您做些什么？"
+    },
+    "submit": "发送信息",
+    "submitting": "发送中..."
+  },
+  "validation": {
+    "nameRequired": "姓名是必需的",
+    "invalidEmail": "无效的电子邮件地址",
+    "messageTooShort": "信息至少需要10个字符"
+  },
+  "captcha": {
+    "loading": "正在加载安全检查...",
+    "error": "请完成安全检查",
+    "tooltip": "完成安全检查以启用提交按钮"
+  },
+  "success": {
+    "title": "信息已成功发送！",
+    "description": "我们会尽快给您回复。"
+  },
+  "errors": {
+    "unknown": "出错了",
+    "network": "网络错误。请再试一次。"
+  }
+}

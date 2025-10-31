@@ -1,0 +1,38 @@
+{
+  "title": "Bize Ulaşın",
+  "description": "Bize bir mesaj gönderin, size en kısa sürede geri döneceğiz.",
+  "form": {
+    "name": {
+      "label": "İsim",
+      "placeholder": "John Doe"
+    },
+    "email": {
+      "label": "E-posta",
+      "placeholder": "john@example.com"
+    },
+    "message": {
+      "label": "Mesaj",
+      "placeholder": "Size nasıl yardımcı olabiliriz?"
+    },
+    "submit": "Mesaj Gönder",
+    "submitting": "Gönderiliyor..."
+  },
+  "validation": {
+    "nameRequired": "İsim gerekli",
+    "invalidEmail": "Geçersiz e-posta adresi",
+    "messageTooShort": "Mesaj en az 10 karakter olmalıdır"
+  },
+  "captcha": {
+    "loading": "Güvenlik kontrolü yükleniyor...",
+    "error": "Lütfen güvenlik kontrolünü tamamlayın",
+    "tooltip": "Gönder düğmesini etkinleştirmek için güvenlik kontrolünü tamamlayın"
+  },
+  "success": {
+    "title": "Mesaj başarıyla gönderildi!",
+    "description": "Yakında size geri döneceğiz."
+  },
+  "errors": {
+    "unknown": "Bir şeyler yanlış gitti",
+    "network": "Ağ hatası. Lütfen tekrar deneyin."
+  }
+}

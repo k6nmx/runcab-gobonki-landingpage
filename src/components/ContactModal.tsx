@@ -19,14 +19,7 @@ import { Label } from '@/components/ui/label';
 import { Loader2 } from 'lucide-react';
 import { submitContactForm } from '@/app/actions/contact';
 import {Turnstile} from 'next-turnstile';
-
-const formSchema = z.object({
-  name: z.string().min(1, 'Name is required').max(100),
-  email: z.email('Invalid email address').max(255),
-  message: z.string().min(10, 'Message must be at least 10 characters').max(2000),
-});
-
-type FormData = z.infer<typeof formSchema>;
+import { useTranslations } from 'next-intl';
 
 interface ContactModalProps {
   open: boolean;
@@ -34,6 +27,16 @@ interface ContactModalProps {
 }
 
 export default function ContactModal({ open, onOpenChange }: ContactModalProps) {
+  const t = useTranslations('contact');
+
+  const formSchema = z.object({
+    name: z.string().min(1, t('validation.nameRequired')).max(100),
+    email: z.email(t('validation.invalidEmail')).max(255),
+    message: z.string().min(10, t('validation.messageTooShort')).max(2000),
+  });
+
+  type FormData = z.infer<typeof formSchema>;
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -48,9 +51,10 @@ export default function ContactModal({ open, onOpenChange }: ContactModalProps) 
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
   });
+
   const onSubmit = async (data: FormData) => {
     if (!captchaToken) {
-      setSubmitError('Please complete the security check');
+      setSubmitError(t('captcha.error'));
       return;
     }
 
@@ -73,17 +77,16 @@ export default function ContactModal({ open, onOpenChange }: ContactModalProps) 
           onOpenChange(false);
         }, 2500);
       } else {
-        setSubmitError(result.error || 'Something went wrong');
+        setSubmitError(result.error || t('errors.unknown'));
       }
     } catch (error) {
       console.log("Error:", error);
-      setSubmitError('Network error. Please try again.');
+      setSubmitError(t('errors.network'));
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  
   const handleOpenChange = (open: boolean) => {
     if (!open) {
       setSubmitError(null);
@@ -100,9 +103,9 @@ export default function ContactModal({ open, onOpenChange }: ContactModalProps) 
   "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg data-[state=open]:dialog-spring-in data-[state=closed]:dialog-spring-out sm:rounded-lg",
 )}>
         <DialogHeader>
-          <DialogTitle className="text-2xl">Contact Us</DialogTitle>
+          <DialogTitle className="text-2xl">{t('title')}</DialogTitle>
           <DialogDescription>
-            Send us a message and we&apos;ll get back to you as soon as possible.
+            {t('description')}
           </DialogDescription>
         </DialogHeader>
 
@@ -114,22 +117,22 @@ export default function ContactModal({ open, onOpenChange }: ContactModalProps) 
               </svg>
             </div>
             <div className="text-green-600 text-xl font-semibold mb-2">
-              Message sent successfully!
+              {t('success.title')}
             </div>
             <p className="text-sm text-neutral-600">
-              We&apos;ll get back to you soon.
+              {t('success.description')}
             </p>
           </div>
         ) : (
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 mt-2">
             <div>
               <Label htmlFor="name" className="text-sm font-medium">
-                Name <span className="text-red-500">*</span>
+                {t('form.name.label')} <span className="text-red-500">*</span>
               </Label>
               <Input
                 id="name"
                 {...register('name')}
-                placeholder="John Doe"
+                placeholder={t('form.name.placeholder')}
                 disabled={isSubmitting}
                 className="mt-1.5"
               />
@@ -140,13 +143,13 @@ export default function ContactModal({ open, onOpenChange }: ContactModalProps) 
 
             <div>
               <Label htmlFor="email" className="text-sm font-medium">
-                Email <span className="text-red-500">*</span>
+                {t('form.email.label')} <span className="text-red-500">*</span>
               </Label>
               <Input
                 id="email"
                 type="email"
                 {...register('email')}
-                placeholder="john@example.com"
+                placeholder={t('form.email.placeholder')}
                 disabled={isSubmitting}
                 className="mt-1.5"
               />
@@ -157,12 +160,12 @@ export default function ContactModal({ open, onOpenChange }: ContactModalProps) 
 
             <div>
               <Label htmlFor="message" className="text-sm font-medium">
-                Message <span className="text-red-500">*</span>
+                {t('form.message.label')} <span className="text-red-500">*</span>
               </Label>
               <Textarea
                 id="message"
                 {...register('message')}
-                placeholder="How can we help you?"
+                placeholder={t('form.message.placeholder')}
                 rows={5}
                 maxLength={2000}
                 disabled={isSubmitting}
@@ -177,7 +180,7 @@ export default function ContactModal({ open, onOpenChange }: ContactModalProps) 
               <Turnstile siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!} onLoad={() => setCaptchaLoading(false)} onVerify={setCaptchaToken} theme="light" />
               {captchaLoading && (
                 <p className="text-xs text-neutral-500 mt-2">
-                  Loading security check...
+                  {t('captcha.loading')}
                 </p>
               )}
             </div>
@@ -196,16 +199,16 @@ export default function ContactModal({ open, onOpenChange }: ContactModalProps) 
               {isSubmitting ? (
                 <>
                   <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                  Sending...
+                  {t('form.submitting')}
                 </>
               ) : (
-                'Send Message'
+                t('form.submit')
               )}
             </Button>
 
             {!captchaToken && !captchaLoading && (
               <p className="text-xs text-center text-neutral-500">
-                Complete the security check to enable the submit button
+                {t('captcha.tooltip')}
               </p>
             )}
           </form>

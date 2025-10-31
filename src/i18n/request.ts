@@ -13,7 +13,9 @@ const isDev = process.env.NODE_ENV !== 'production';
 type MessagesDictionary = Record<string, unknown>;
 
 async function loadMessagesForLocale(locale: AppLocale): Promise<MessagesDictionary> {
-  return (await import(`@/../messages/${locale}/landingpage.json`)).default;
+  const landingPageMessages = (await import(`@/../messages/${locale}/landingpage.json`)).default;
+  const contactMessages = (await import(`@/../messages/${locale}/contact.json`)).default;
+  return { ...landingPageMessages, contact: contactMessages };
 }
 
 function isAppLocale(locale: string | null | undefined): locale is AppLocale {

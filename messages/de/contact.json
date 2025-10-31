@@ -1,0 +1,38 @@
+{
+  "title": "Kontaktieren Sie uns",
+  "description": "Senden Sie uns eine Nachricht und wir werden uns so schnell wie möglich bei Ihnen melden.",
+  "form": {
+    "name": {
+      "label": "Name",
+      "placeholder": "John Doe"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "john@example.com"
+    },
+    "message": {
+      "label": "Nachricht",
+      "placeholder": "Wie können wir Ihnen helfen?"
+    },
+    "submit": "Nachricht senden",
+    "submitting": "Wird gesendet..."
+  },
+  "validation": {
+    "nameRequired": "Name ist erforderlich",
+    "invalidEmail": "Ungültige E-Mail-Adresse",
+    "messageTooShort": "Nachricht muss mindestens 10 Zeichen lang sein"
+  },
+  "captcha": {
+    "loading": "Sicherheitsüberprüfung wird geladen...",
+    "error": "Bitte schließen Sie die Sicherheitsüberprüfung ab",
+    "tooltip": "Schließen Sie die Sicherheitsüberprüfung ab, um die Senden-Schaltfläche zu aktivieren"
+  },
+  "success": {
+    "title": "Nachricht erfolgreich gesendet!",
+    "description": "Wir werden uns bald bei Ihnen melden."
+  },
+  "errors": {
+    "unknown": "Etwas ist schief gelaufen",
+    "network": "Netzwerkfehler. Bitte versuchen Sie es erneut."
+  }
+}
