@@ -18,18 +18,18 @@ export default function ModeToggle({
       onChange={(v) => onModeChange(v as "customer" | "business")}
       options={[
         {
-          value: "customer",
-          label: (
-            <span className="inline-flex items-center gap-2 whitespace-nowrap">
-              <Users size={16} /> {labels.customer}
-            </span>
-          ),
-        },
-        {
           value: "business",
           label: (
             <span className="inline-flex items-center gap-2 whitespace-nowrap">
               <Building2 size={16} /> {labels.business}
+            </span>
+          ),
+        },
+        {
+          value: "customer",
+          label: (
+            <span className="inline-flex items-center gap-2 whitespace-nowrap">
+              <Users size={16} /> {labels.customer}
             </span>
           ),
         },

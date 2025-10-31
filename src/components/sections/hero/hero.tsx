@@ -60,8 +60,8 @@ export default function Hero() {
 
   const toggleLabels = useMemo(
     () => ({
-      customer: nav("forBusinesses"),
-      business: nav("forCustomers"),
+      customer: nav("forCustomers"),
+      business: nav("forBusinesses"),
     }),
     [nav]
   );

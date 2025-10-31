@@ -22,7 +22,7 @@ export default function CTASection() {
     }
   };
 
-  const ns = mode === 'business' ? 'business' : 'customer';
+  const ns = mode === 'customer' ? 'customer' : 'business';
   const title = get(`${ns}.title`, mode === 'customer' ? 'Start Collecting Rewards Today' : 'Ready to Boost Customer Loyalty?');
   const subtitle = get(`${ns}.subtitle`, '');
   const ctaText = get(`${ns}.cta`, mode === 'customer' ? 'Find Businesses Near Me' : 'Start Your Free Loyalty Program');

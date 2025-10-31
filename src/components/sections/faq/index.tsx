@@ -19,7 +19,7 @@ export default function FAQSection({ className }: { className?: string }) {
   const t = useTranslations('faq');
   const { mode } = useMode();
   const sectionRef = useScrollToSection('faq');
-  const audience = mode === 'business' ? 'businesses' : 'customers';
+  const audience = mode === 'customer' ? 'customers' : 'businesses';
   const items = (t.raw(audience) as QA[]) ?? [];
 
   const prefersReducedMotion = useReducedMotion();

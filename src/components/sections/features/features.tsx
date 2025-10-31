@@ -11,7 +11,7 @@ export default function FeaturesSection() {
   const t = useTranslations('features')
   const sectionRef = useScrollToSection('features');
 
-  const namespace = mode === 'business' ? 'business' : 'customer'
+  const namespace = mode === 'customer' ? 'customer' : 'business'
 
   const title = t(`${namespace}.title`)
   const subtitle = t(`${namespace}.subtitle`)

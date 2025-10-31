@@ -40,9 +40,9 @@ export default function NewsletterSection({ className }: { className?: string })
   }
 
   const rawBenefits =
-    mode === 'business'
-      ? newsletterMessages.business?.benefits ?? []
-      : newsletterMessages.customer?.benefits ?? []
+    mode === 'customer'
+      ? newsletterMessages.customer?.benefits ?? []
+      : newsletterMessages.business?.benefits ?? []
 
   const benefits = Array.isArray(rawBenefits)
     ? rawBenefits

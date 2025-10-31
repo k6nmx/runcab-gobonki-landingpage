@@ -18,10 +18,10 @@ export default function TestimonialsSection() {
   const sectionRef = useScrollToSection('testimonials');
 
   // Get title based on mode
-  const title = mode === 'business' ? t('businessTitle') : t('customerTitle')
+  const title = mode === 'customer' ? t('customerTitle') : t('businessTitle')
 
   // Get the correct testimonials array based on mode
-  const modeKey = mode === 'business' ? 'business' : 'customer'
+  const modeKey = mode === 'customer' ? 'customer' : 'business'
   
   // Read count from translations
   const countRaw = t(`${modeKey}.count`)
