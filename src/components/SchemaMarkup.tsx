@@ -44,8 +44,8 @@ export function SchemaMarkup() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "gobonki",
-    url: "https://runcab-gobonki-landingpage.vercel.app",
-    logo: "https://runcab-gobonki-landingpage.vercel.app/logo.png",
+    url: process.env.APPBASEURL,
+    logo: `${process.env.APPBASEURL}/logo.png`,
     sameAs: [
       // Add your social media profiles
       // 'https://twitter.com/gobonki',

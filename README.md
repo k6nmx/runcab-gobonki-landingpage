@@ -1,40 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gobonki - Modern Landing Page
 
-## Getting Started
+This repository contains the source code for the Gobonki landing page, a modern, responsive, and highly interactive web application built with Next.js and TypeScript.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyour-repo%2Fgencraft-gobonki-landingpage)
+
+**Live Demo:** [https://gobonki.com](https://gobonki.com) (placeholder)
+
+---
+
+## ✨ Key Features
+
+This project showcases a variety of modern web development features:
+
+*   **Dual-Mode Content:** A unique feature that dynamically tailors the content for two different audiences ("customers" and "businesses") using a sleek toggle switch.
+*   **Internationalization (i18n):** Fully localized into 7 languages (English, German, Spanish, Hindi, Turkish, Vietnamese, and Chinese) using `next-intl`.
+*   **Interactive UI:** Smooth animations and transitions powered by Framer Motion.
+*   **Responsive Design:** A mobile-first approach ensuring a seamless experience on all devices, from desktops to smartphones.
+*   **Component-Based Architecture:** Built with a well-structured and reusable set of React components.
+*   **Smooth Scrolling:** Hash-based navigation that smoothly scrolls to different sections of the page.
+*   **Modern Tech Stack:** Utilizes the latest features of Next.js (App Router), TypeScript, and Tailwind CSS.
+*   **Cookie Consent Banner:** A non-intrusive cookie consent mechanism.
+*   **Newsletter & Contact Forms:** Integrated forms for user engagement.
+
+---
+
+## 🚀 Tech Stack
+
+*   **Framework:** [Next.js](https://nextjs.org/)
+*   **Language:** [TypeScript](https://www.typescriptlang.org/)
+*   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+*   **Animations:** [Framer Motion](https://www.framer.com/motion/)
+*   **Internationalization:** [next-intl](https://next-intl-docs.vercel.app/)
+*   **ORM:** [Drizzle ORM](https://orm.drizzle.team/) (for database interactions)
+*   **Linting/Formatting:** ESLint, Prettier
+
+---
+
+## 🏁 Getting Started
+
+Follow these instructions to get a local copy up and running for development and testing purposes.
+
+### Prerequisites
+
+*   Node.js (v18 or later recommended)
+*   npm, yarn, or pnpm
+
+### Installation & Setup
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-repo/gencraft-gobonki-landingpage.git
+    cd gencraft-gobonki-landingpage
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+    ```
+
+3.  **Set up environment variables:**
+    Create a `.env.local` file in the root of the project by copying the example file:
+    ```bash
+    cp .env.example .env.local
+    ```
+    Update the variables in `.env.local` as needed.
+
+4.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result. The page will auto-update as you edit the source files.
 
 ### Local Git Hooks
 
-This repo uses [Husky](https://typicode.github.io/husky/) to enforce local Git hooks. After installing dependencies (`npm install`), Husky installs automatically through the `prepare` script. Before pushing, Git runs the pre-push hook that executes `npm run build`. Make sure the build succeeds locally before pushing changes.
+This repo uses [Husky](https://typicode.github.io/husky/) to enforce local Git hooks. After installing dependencies, Husky installs automatically. Before pushing, a `pre-push` hook runs `npm run build` to ensure that the project builds successfully.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 📂 Project Structure
+
+The project follows a feature-colocated structure, making it easy to navigate and maintain.
+
+```
+.
+├── src
+│   ├── app                 # Next.js App Router pages and layouts
+│   │   ├── [locale]        # Internationalized routes
+│   │   └── api             # API routes
+│   ├── components          # Shared React components
+│   │   ├── layout          # Header, Footer, etc.
+│   │   ├── sections        # Page sections (Hero, Features, FAQ, etc.)
+│   │   └── ui              # Basic UI elements (Button, Card, etc.)
+│   ├── context             # React contexts (e.g., ModeContext)
+│   ├── hooks               # Custom React hooks
+│   ├── i18n                # Internationalization setup
+│   ├── lib                 # Utility functions and libraries
+│   └── ...
+├── messages                # Translation files for each locale
+│   ├── en
+│   ├── de
+│   └── ...
+├── public                  # Static assets (images, fonts, etc.)
+└── ...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚢 Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The easiest way to deploy this Next.js application is to use the [Vercel Platform](https://vercel.com/new), from the creators of Next.js.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

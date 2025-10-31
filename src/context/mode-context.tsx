@@ -1,6 +1,7 @@
 'use client'
 
 import React, { createContext, useContext, useState, ReactNode, useEffect, useCallback } from 'react'
+import { parseHash } from '@/lib/hash-utils';
 
 type Mode = 'customer' | 'business'
 
@@ -12,13 +13,11 @@ interface ModeContextType {
 const ModeContext = createContext<ModeContextType | undefined>(undefined)
 
 export function ModeProvider({ children }: { children: ReactNode }) {
-  const [mode, setMode] = useState<Mode>('business')
+  const [mode, setMode] = useState<Mode>('customer')
 
   const handleHashChange = useCallback(() => {
-    const hash = window.location.hash.substring(1)
-    if (hash === 'customer' || hash === 'business') {
-      setMode(hash)
-    }
+    const { audience } = parseHash(window.location.hash)
+    setMode(audience)
   }, [])
 
   useEffect(() => {
@@ -28,7 +27,6 @@ export function ModeProvider({ children }: { children: ReactNode }) {
       window.removeEventListener('hashchange', handleHashChange)
     }
   }, [handleHashChange])
-
 
   return (
     <ModeContext.Provider value={{ mode, setMode }}>

@@ -9,7 +9,7 @@ type Props = {
   options: Option[]
   className?: string
   dir?: 'ltr' | 'rtl'
-  compact?: boolean // NEW: flag for mini version
+  compact?: boolean
 }
 
 export function SegmentedToggle({
@@ -18,7 +18,7 @@ export function SegmentedToggle({
   onChange,
   options,
   className,
-  compact = false, // NEW
+  compact = false,
 }: Props) {
   const displayOptions = React.useMemo(
     () => (dir === 'rtl' ? [...options].reverse() : options),
@@ -68,11 +68,11 @@ export function SegmentedToggle({
         return
       }
 
-      const left = btn.offsetLeft
-      const top = btn.offsetTop
-      const width = btn.offsetWidth
-      const height = btn.offsetHeight
-
+                const inset = compact ? 4 : 0; // 4px inset for mini-mode, 0 for hero toggle
+                const left = btn.offsetLeft + inset;
+                const top = btn.offsetTop + inset;
+                const width = btn.offsetWidth - (inset * 2);
+                const height = btn.offsetHeight - (inset * 2);
       const L = Math.round(left)
       const T = Math.round(top)
       const W = Math.round(width)
@@ -203,12 +203,16 @@ export function SegmentedToggle({
       onKeyDown={onKeyDown}
       className={cn(
         'relative inline-flex items-center rounded-full bg-neutral-100 p-1 shadow-sm',
+        compact && 'gap-1',
         className
       )}
     >
       <div
         aria-hidden="true"
-        className="absolute z-0 rounded-full bg-white shadow-sm transition-[transform,width,height,opacity] duration-200 ease-out pointer-events-none"
+        className={cn(
+          "absolute z-0 bg-white shadow-sm transition-[transform,width,height,opacity] duration-200 ease-out pointer-events-none",
+          compact ? "rounded-[20px]" : "rounded-full"
+        )}
         style={{
           left: 0,
           top: `${highlight.top}px`,
@@ -242,7 +246,7 @@ export function SegmentedToggle({
             className={cn(
               'relative z-10 text-sm font-medium transition-colors rounded-full focus:outline-none cursor-pointer',
               // Conditional padding based on compact mode
-              compact ? 'px-2.5 py-1.5' : 'px-4 py-2',
+              compact ? 'px-3 py-1.5' : 'px-4 py-2',
               selected ? 'text-neutral-900' : 'text-neutral-600 hover:text-neutral-800'
             )}
           >

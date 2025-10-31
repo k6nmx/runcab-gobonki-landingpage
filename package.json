@@ -32,14 +32,15 @@
     "next-turnstile": "^1.0.7",
     "nodemailer": "^7.0.6",
     "postgres": "^3.4.7",
-    "posthog-js": "^1.276.0",
-    "posthog-node": "^5.10.0",
+    "posthog-js": "^1.281.0",
+    "posthog-node": "^5.10.4",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-hook-form": "^7.65.0",
     "react-turnstile": "^1.1.4",
     "tailwind-merge": "^3.3.1",
     "tailwindcss-animate": "^1.0.7",
+    "vanilla-cookieconsent": "^3.1.0",
     "zod": "^4.1.12"
   },
   "devDependencies": {

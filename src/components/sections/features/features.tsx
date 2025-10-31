@@ -1,6 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import { useScrollToSection } from '@/hooks/use-scroll-to-section';
 import { FeatureCard } from "./feature-card"
 import { useMode } from "@/context/mode-context"
 import { ICONS } from "./feature-card"
@@ -8,6 +9,7 @@ import { ICONS } from "./feature-card"
 export default function FeaturesSection() {
   const { mode } = useMode()
   const t = useTranslations('features')
+  const sectionRef = useScrollToSection('features');
 
   const namespace = mode === 'customer' ? 'customer' : 'business'
 
@@ -28,7 +30,7 @@ export default function FeaturesSection() {
   })
 
   return (
-    <section id="features" className="relative">
+    <section id="features" ref={sectionRef} className="relative">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-50 via-white to-white" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="py-16 sm:py-20">

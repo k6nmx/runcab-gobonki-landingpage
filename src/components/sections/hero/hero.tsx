@@ -12,6 +12,8 @@ import HeroImageContainer from "./HeroImageContainer";
 import LoadingSkeleton from "./LoadingSkeleton";
 import { HeroContentShape } from "./types";
 
+import { parseHash } from '@/lib/hash-utils';
+
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
   const { mode, setMode } = useMode();
@@ -47,8 +49,13 @@ export default function Hero() {
   }, [mode, t]);
 
   const handleModeChange = (newMode: 'customer' | 'business') => {
+    const { section } = parseHash(window.location.hash);
     setMode(newMode);
-    window.location.hash = newMode;
+    if (section) {
+      window.location.hash = `#${newMode}:${section}`;
+    } else {
+      window.location.hash = `#${newMode}`;
+    }
   };
 
   const toggleLabels = useMemo(

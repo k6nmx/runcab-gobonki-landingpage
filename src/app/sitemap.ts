@@ -3,7 +3,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://runcab-gobonki-landingpage.vercel.app'
+  const baseUrl = `${process.env.APPBASEURL}`;
   const currentDate = new Date()
 
   // Your supported locales

@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from 'react'
 import { useTranslations, useMessages } from 'next-intl'
+import { useScrollToSection } from '@/hooks/use-scroll-to-section';
 import { z } from 'zod'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -11,11 +12,13 @@ import { cn } from '@/lib/utils'
 import { useMode } from '@/context/mode-context'
 import { subscribe } from '@/components/sections/newsletter/actions'
 import { motion, AnimatePresence } from 'framer-motion'
+import posthog from 'posthog-js'
 
 const clientSchema = z.object({ email: z.string().email() })
 
 export default function NewsletterSection({ className }: { className?: string }) {
-  const t = useTranslations('newsletter')
+  const t = useTranslations('newsletter');
+  const sectionRef = useScrollToSection('newsletter');
   const messages = useMessages() as
     | {
         newsletter?: {
@@ -57,6 +60,14 @@ export default function NewsletterSection({ className }: { className?: string })
       return
     }
 
+    // Capture attempt before any async operations
+    if (typeof window !== 'undefined' && posthog.__loaded) {
+      posthog.capture('newsletter_signup_attempted', {
+        userType: mode,
+        source: 'landing_page_newsletter_section',
+      })
+    }
+
     setStatus('loading')
 
     startTransition(async () => {
@@ -67,13 +78,33 @@ export default function NewsletterSection({ className }: { className?: string })
 
         const result = await subscribe(formData)
         if (result.ok) {
+          // Capture success
+          if (typeof window !== 'undefined' && posthog.__loaded) {
+            posthog.capture('newsletter_signup_success', {
+              userType: mode,
+            })
+          }
           setStatus('success')
           setEmail('')
         } else {
+          // Capture backend failure
+          if (typeof window !== 'undefined' && posthog.__loaded) {
+            posthog.capture('newsletter_signup_failed', {
+              userType: mode,
+              reason: 'backend_error',
+            })
+          }
           console.error('subscribe failed:', result)
           setStatus('error')
         }
       } catch (err) {
+        // Capture exception
+        if (typeof window !== 'undefined' && posthog.__loaded) {
+          posthog.capture('newsletter_signup_error', {
+            userType: mode,
+            error: err instanceof Error ? err.message : 'unknown',
+          })
+        }
         console.error('subscribe error:', err)
         setStatus('error')
       }
@@ -81,8 +112,7 @@ export default function NewsletterSection({ className }: { className?: string })
   }
 
   return (
-    <section id="contact" className={cn('relative py-14 sm:py-20', className)}>
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <section id="newsletter" ref={sectionRef} className={cn('relative py-14 sm:py-20', className)}>
         <div className="relative rounded-3xl p-[1px] bg-gradient-to-r from-brand-400 to-secondary-400 shadow-[0_18px_50px_-12px_rgba(14,165,233,0.28)]">
           <Card className="rounded-3xl border-none bg-white/80 backdrop-blur overflow-hidden">
             <CardContent className="relative p-6 sm:p-10">
@@ -171,7 +201,6 @@ export default function NewsletterSection({ className }: { className?: string })
             </CardContent>
           </Card>
         </div>
-      </div>
-    </section>
   )
-}
+    </section>
+)}

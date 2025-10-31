@@ -23,7 +23,7 @@ const NAV_ITEMS: NavItem[] = [
   { hash: "#features", key: "features" },
   { hash: "#testimonials", key: "testimonials" },
   { hash: "#faq", key: "faq" },
-  { hash: "#contact", key: "contact" },
+  { hash: "#newsletter", key: "newsletter" },
 ];
 
 export default function HeaderClient() {
@@ -47,7 +47,13 @@ export default function HeaderClient() {
     router.push(`/${locale}${pathWithoutLocale}${params.toString() ? `?${params.toString()}` : ""}`);
   };
 
-  const toHome = (hash: string) => `/${currentLocale}${hash}`;
+  const toHome = (hash: string) => {
+    if (hash === '#contact') {
+      return `/${currentLocale}${hash}`;
+    }
+    const section = hash.substring(1); // remove #
+    return `/${currentLocale}#${mode}:${section}`;
+  };
 
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
@@ -58,7 +64,7 @@ export default function HeaderClient() {
       className={clsx(
         "mx-auto pointer-events-auto transition-all duration-300 ease-out",
         isScrolled
-          ? "glass-pill w-[min(92vw,64rem)] px-4 sm:px-6 mt-2 rounded-full"
+          ? "glass w-[min(92vw,64rem)] px-4 sm:px-6 mt-2 rounded-full"
           : "w-[min(100vw,80rem)] px-6 mt-0"
       )}
     >
