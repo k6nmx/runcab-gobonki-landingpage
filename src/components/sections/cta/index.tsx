@@ -4,6 +4,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useMode } from '@/context/mode-context';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 
 export default function CTASection() {
   const { mode } = useMode();
@@ -26,7 +27,6 @@ export default function CTASection() {
   const title = get(`${ns}.title`, mode === 'customer' ? 'Start Collecting Rewards Today' : 'Ready to Boost Customer Loyalty?');
   const subtitle = get(`${ns}.subtitle`, '');
   const ctaText = get(`${ns}.cta`, mode === 'customer' ? 'Find Businesses Near Me' : 'Start Your Free Loyalty Program');
-  const href = get(`${ns}.href`, mode === 'customer' ? '#directory' : '#get-started');
 
   return (
     <section aria-labelledby="cta-title" className="relative isolate">
@@ -51,7 +51,7 @@ export default function CTASection() {
                 asChild
                 className="rounded-xl bg-white text-neutral-900 hover:bg-white/90 px-6 py-3 text-sm font-semibold shadow-lg transform transition-transform duration-200 hover:scale-105"
               >
-                <a href={href}>{ctaText}</a>
+                <Link href="https://app.gobonki.com" target="_blank">{ctaText}</Link>
               </Button>
             </div>
           </div>

@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion, useReducedMotion, easeInOut } from "framer-motion";
 import { HeroContentProps } from "./types";
+import Link from "next/link";
 
 
 
@@ -47,11 +48,11 @@ export default function HeroContent({
             className="btn-gradient btn-shadow px-6 py-2.5 hover:translate-y-0 transform-none text-sm font-semibold rounded-lg"
             asChild
           >
-            <a href={ctaHref} target="_blank">
+            <Link href={ctaHref} target="_blank">
               {!isRTL && <ArrowRight className="mr-2 h-4 w-4" />}
               {ctaText}
               {isRTL && <ArrowRight className="ml-2 h-4 w-4 rotate-180" />}
-            </a>
+            </Link>
           </Button>
         </div>
       </motion.div>

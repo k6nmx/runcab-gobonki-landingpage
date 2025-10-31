@@ -58,6 +58,8 @@ export default function ImprintPage() {
             Registergericht: Amtsgericht Charlottenburg
             <br />
             Handelsregisternummer: HRB 278388 B
+            <br />
+            Umsatzsteuer-ID-Nr.: DE 457638982
           </p>
         </div>
       </article>

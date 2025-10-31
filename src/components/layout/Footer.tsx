@@ -139,7 +139,7 @@ export default function Footer() {
                 {/* Social Links */}
                 <div className="flex space-x-4 mt-4">
                   {brand.social?.linkedin && (
-                    <a
+                    <Link
                       href={brand.social.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -147,10 +147,10 @@ export default function Footer() {
                       aria-label="Follow us on LinkedIn"
                     >
                       <Linkedin className="w-5 h-5" />
-                    </a>
+                    </Link>
                   )}
                   {brand.social?.instagram && (
-                    <a
+                    <Link
                       href={brand.social.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -158,10 +158,10 @@ export default function Footer() {
                       aria-label="Follow us on Instagram"
                     >
                       <Instagram className="w-5 h-5" />
-                    </a>
+                    </Link>
                   )}
                   {brand.social?.tiktok && (
-                    <a
+                    <Link
                       href={brand.social.tiktok}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -169,7 +169,7 @@ export default function Footer() {
                       aria-label="Follow us on TikTok"
                     >
                       <TikTokIcon />
-                    </a>
+                    </Link>
                   )}
                 </div>
               </div>
@@ -199,9 +199,9 @@ export default function Footer() {
                                 const anchor = it as AnchorItem;
                                 return (
                                   <li key={j}>
-                                    <a href={anchor.href} className="footer-link">
+                                    <Link href={anchor.href} className="footer-link">
                                       {anchor.label}
-                                    </a>
+                                    </Link>
                                   </li>
                                 );
                               }
@@ -251,9 +251,9 @@ export default function Footer() {
                             const anchor = it as AnchorItem;
                             return (
                               <li key={k}>
-                                <a href={anchor.href} className="footer-link">
+                                <Link href={anchor.href} className="footer-link">
                                   {anchor.label}
-                                </a>
+                                </Link>
                               </li>
                             );
                           }
