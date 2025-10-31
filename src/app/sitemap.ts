@@ -3,7 +3,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.APPBASEURL;
+  const baseUrl = `${process.env.APPBASEURL}`;
   const currentDate = new Date()
 
   // Your supported locales
